@@ -24,11 +24,11 @@ body {
 }
 
 /* MEDIUM DEVICES*/
-@media (min-width: 768px) {
+@media (max-width: 768px) {
 
 }
 
 /* LARGE DEVICES */
-@media (min-width: 1024px) {
+@media (max-width: 1024px) {
     
 }

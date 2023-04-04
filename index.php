@@ -9,9 +9,10 @@
     <link rel="stylesheet" href="styles/global.css">
 </head>
 <body>
-<?php require_once 'components/navbar.php'?>
+    <div><?php require_once 'components/navbar.php'?></div>
+<div><h1>sad</h1></div>
+<div><?php require_once 'components/footer.php'?></div>
 
-<?php require_once 'components/footer.php'?>
 </body>
 </html>
 

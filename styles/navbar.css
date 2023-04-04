@@ -43,14 +43,14 @@ nav .menu-btn i {
 input[type="checkbox"] {
     display: none;
 }
-  
-@media (max-width: 1000px) {
+
+@media (max-width: 1024px) {
     nav{
       padding: 0 40px 0 50px;
     }
 }
   
-@media (max-width: 920px) {
+@media (max-width: 768px) {
     nav .menu-btn i{
       display: block;
     }
