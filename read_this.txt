@@ -1,0 +1,28 @@
+
+
+    1. The css that will contain in  all  pages is GLOBAL.CSS 
+
+    SQL
+    users -
+    `user_ID`, 
+    `first_name`, 
+    `last_name`, 
+    `email`, 
+    `password`, 
+    `business_name`, 
+    `user_type`, 
+    `phone_number`, 
+    `address`, 
+    `v_image`, 
+    `profile`, 
+    `v2_image`
+    
+    product -
+    `product_id`, 
+    `user_ID`, 
+    `seller_name`, 
+    `category`, 
+    `product_name`, 
+    `product_price`, 
+    `product_image`, 
+    `product_desc`
