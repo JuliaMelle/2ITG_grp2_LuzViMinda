@@ -1,1 +1,26 @@
 /* The css that will contain in  all  pages */
+:root {
+    --bg: #FFEFD1;
+    --wheat: #FEF5E4;
+    --dark-blue: #003077;
+    --orange: #FFA72A;
+    --black: #000;
+    --white: #FFF;
+    --pastel-orange: #FFD892;
+    --pastel-blue: #D6E6FE;
+}
+
+
+body {
+    background: var(--bg);
+}
+
+/* MEDIUM DEVICES*/
+@media (min-width: 768px) {
+
+}
+
+/* LARGE DEVICES */
+@media (min-width: 1024px) {
+    
+}
