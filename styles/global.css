@@ -10,6 +10,14 @@
     --pastel-blue: #D6E6FE;
 }
 
+/* RESET STYLES */
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    box-sizing: border-box;
+    color: var(--black);
+}
 
 body {
     background: var(--bg);
