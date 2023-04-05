@@ -25,7 +25,17 @@
             <ul>
                 <li><a class="active" href="#">PRODUCTS</a></li>
                 <li><a href="#">SEARCH</a></li>
-                <li><a href="#">ACCOUNT</a></li>
+                <li class="btn-account">
+                  <div class="dropdown">
+                    <a href="#">ACCOUNT</a>
+                  </div>
+                  
+                  <div class="drop-content">
+                  <a href="#">EDIT ACCOUNT</a>
+                  <a href="#">VIEW PRODUCTS</a>
+
+                  </div>
+              </li>
             </ul>
         </div>
 </nav>
