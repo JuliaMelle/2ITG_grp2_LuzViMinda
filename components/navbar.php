@@ -10,24 +10,42 @@
     <link rel="stylesheet" href="styles/navbar.css">
 </head>
 <body>
-
-<nav>
+<nav class="sticky" id="navbar">
         <div class="logo">
-            TITLE
+            <p>TITLE</p>
         </div>
-        <input type="checkbox" id="click">
-        <label for="click" class="menu-btn">
-        
-        <i><ion-icon name="menu-outline"></ion-icon></i>
-        </label>
-        <ul>
-           <li><a class="active" href="#">PRODUCTS</a></li>
-           <li><a href="#">SEARCH</a></li>
-           <li><a href="#">ACCOUNT</a></li>
-        </ul>
 
+        <div>
+            <!-- RIGHT SIDE OF NAVBAR -->
+            <input type="checkbox" id="click">
+            <label for="click" class="menu-btn">
+                <i><ion-icon name="menu-outline"></ion-icon></i>
+            </label>
+
+            <ul>
+                <li><a class="active" href="#">PRODUCTS</a></li>
+                <li><a href="#">SEARCH</a></li>
+                <li><a href="#">ACCOUNT</a></li>
+            </ul>
+        </div>
+</nav>
 
         <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
         <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+        <script>
+window.onscroll = function() {myFunction()};
+
+var navbar = document.getElementById('navbar');
+var sticky = navbar.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add('sticky')
+  } else {
+    navbar.classList.remove('sticky');
+  }
+}
+        </script>
 </body>
 </html>

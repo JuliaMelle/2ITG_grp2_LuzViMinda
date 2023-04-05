@@ -7,11 +7,28 @@
     <title>Document</title>
 
     <link rel="stylesheet" href="styles/global.css">
+
+    <style>
+        h2 {
+            font-size: 32px;
+        }
+    </style>
 </head>
 <body>
-    <div><?php require_once 'components/navbar.php'?></div>
-<div><h1>sad</h1></div>
-<div><?php require_once 'components/footer.php'?></div>
+    <?php require_once 'components/navbar.php'?>
+    <div>
+     <h2>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi corrupti maiores at animi vero voluptatum officia beatae aspernatur tempora nesciunt, vel ad facere ea repudiandae, deleniti blanditiis necessitatibus incidunt. Sequi.</h2>
+
+    </div>
+
+    <div>
+     <h2>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi corrupti maiores at animi vero voluptatum officia beatae aspernatur tempora nesciunt, vel ad facere ea repudiandae, deleniti blanditiis necessitatibus incidunt. Sequi.</h2>
+
+    </div>
+    <div>
+     <h2>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi corrupti maiores at animi vero voluptatum officia beatae aspernatur tempora nesciunt, vel ad facere ea repudiandae, deleniti blanditiis necessitatibus incidunt. Sequi.</h2>
+
+    <?php require_once 'components/footer.php'?>
 
 </body>
 </html>

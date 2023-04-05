@@ -21,6 +21,10 @@
 
 body {
     background: var(--bg);
+
+    /* REMOVES OVERLAP FROM NAVBAR AND FOOTER */
+    padding-top: 80px; /* for top navbar */
+    padding-bottom: 80px; /* for footer */
 }
 
 /* MEDIUM DEVICES*/

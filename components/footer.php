@@ -12,7 +12,7 @@
 <body>
     <footer>
         <div class="footer">
-            TITLE EST. 2023
+            <p>TITLE EST. 2023</p>
         </div>
     </footer>
 </body>
