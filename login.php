@@ -16,19 +16,20 @@
 
   <?php require_once 'components/navbar.php' ?>
   <div class="container">
-    <div class="card">
+    <div class="mid_container">
 
-      <div class="mid">
-        <h2 class="welcome">WELCOME</h2>
+      <div class="card"> <!-- CARD -->
+        <h2 class="welcome">WELCOME!</h2>
         <!-- input username -->
         <b>USERNAME</b>
         <input type="text" class="input"></input>
         <!-- input password -->
         <b>PASSWORD</b>
         <input type="password" class="input"></input>
-        
-        <button class="">LOGIN</button>
-        <button class="">LOGIN</button>
+        <div class="mid_position_buttons">
+        <button class="button login">LOGIN</button>
+        <button class="button">REGISTER</button>
+        </div>
       </div>
 
  
