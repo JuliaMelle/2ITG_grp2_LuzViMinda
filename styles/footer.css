@@ -14,7 +14,7 @@ footer {
     flex-wrap: wrap;
     border-top: 3px solid var(--black);
     background-color: var(--wheat);
-    z-index: 999;
+    z-index: 0;
 }
 
 .footer {
