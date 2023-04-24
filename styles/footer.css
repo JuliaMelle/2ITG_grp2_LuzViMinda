@@ -6,11 +6,11 @@ footer {
 
     /* FOOTER FLEX */
     display: flex;
-    height: 80px;
+    height: 50px;
     width: 100%;
     align-items: center;
     justify-content: flex-end;
-    padding: 0 50px 0 100px;
+    padding: 5px 50px 0 100px;
     flex-wrap: wrap;
     border-top: 3px solid var(--black);
     background-color: var(--wheat);
@@ -20,24 +20,30 @@ footer {
 .footer {
     height: 80px;
 }
-  
+
 footer .footer {
-    font-size: 35px;
+    font-size: 25px;
     font-weight: 600;
 }
 
 
 @media (max-width: 1024px) {
     footer {
-        padding: 20px 20px 0 100px;
+        padding: 10px 20px 0 100px;
+
+    }
+
+    footer .footer {
+        font-size: 15px;
+        font-weight: 600;
     }
 
     .footer p {
         font-size: 24px;
     }
 }
-  
-  
+
+
 @media (max-width: 768px) {
     .footer p {
         font-size: 24px;
