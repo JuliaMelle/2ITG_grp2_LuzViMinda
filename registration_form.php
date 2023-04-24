@@ -12,7 +12,7 @@
   
   <!-- css files -->
   <link rel="stylesheet" href="styles/global.css">
-  <link rel="stylesheet" href="styles/register.css">
+  <link rel="stylesheet" href="styles/registration_form.css">
 </head>
 
 <body>
