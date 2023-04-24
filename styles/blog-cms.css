@@ -1,0 +1,226 @@
+.blog-container {
+  margin: auto auto 1rem auto;
+  width: 95%;
+  height: auto;
+}
+
+.blog-id {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 120px;
+  height: 35px;
+  background: var(--pastel-orange);
+  border-radius: 25px;
+  text-align: center;
+  font-weight: bold;
+  margin: auto 1rem auto 1rem;
+}
+
+.blog-title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: auto;
+  width: 70%;
+}
+
+.blog-delete,
+.blog-edit {
+  text-align: center;
+  justify-content: center;
+  width: 100px;
+  margin: auto;
+  font-size: 1.5rem;
+}
+
+.blog-delete,
+.blog-edit:hover {
+  cursor: pointer;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20%;
+  background: var(--black);
+  color: var(--white);
+  height: 40px;
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.3s ease-in-out;
+  margin: 1rem 0 1rem 0;
+}
+
+.button:hover {
+  background: var(--orange);
+  color: var(--black);
+}
+
+/* ADD POST MODAL */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+/* ADD POST MODAL Content/Box */
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  background-color: #fefefe;
+  margin: 5% auto 1% auto; /* 15% from the top and centered */
+  border: 3px solid var(--black);
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* ADD POST MODAL Close Button */
+.close {
+  text-align: right;
+  font-size: 28px;
+  font-weight: bold;
+  margin: 0 1rem 0 1rem;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+hr {
+  background: var(--black);
+  height: 3px;
+  border: none;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 25px;
+}
+
+input[type="text"],
+textarea {
+  font-family: "Poppins", sans-serif;
+  padding: 1rem;
+  word-wrap: break-word;
+  word-break: break-all;
+  border: 3px solid var(--black);
+}
+
+input[type="text"],
+textarea:focus {
+  outline: none;
+}
+
+textarea {
+  height: 400px;
+  resize: none;
+}
+
+form p {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+form .button {
+  margin: 1rem auto 1rem auto !important;
+}
+
+.blog-category {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 120px;
+  height: 35px;
+  background: var(--pastel-orange);
+  border-radius: 25px;
+  text-align: center;
+  font-weight: bold;
+  margin: 1rem 0 1rem 0;
+}
+
+table {
+  width: 100%;
+  height: 100%;
+  border: 3px solid var(--black);
+  border-collapse: collapse;
+  padding: 5px;
+}
+
+.a {
+  table-layout: auto;
+}
+
+table th {
+  border: none;
+  padding: 5px;
+  background: #f0f0f0;
+  color: #313030;
+}
+table td {
+  border-top: 3px solid var(--black);
+  height: 70px;
+  padding: 5px;
+  background: #ffffff;
+  color: #313030;
+  max-width: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.id {
+  width: 5%;
+}
+
+.delete,
+.edit {
+  width: 5%;
+  text-align: center;
+  margin: auto;
+}
+
+.title {
+  width: 60%;
+  text-align: left;
+}
+
+td span i {
+  text-align: center !important;
+  margin: auto !important;
+  width: 100%;
+}
+
+td .blog-id {
+  width: 100%;
+  text-align: center;
+  margin: auto;
+}
+
+/* MEDIUM DEVICES*/
+@media (max-width: 768px) {
+  .button {
+    width: 40%;
+  }
+
+  form .button {
+    width: 50%;
+  }
+}
