@@ -18,34 +18,45 @@
 
     <div class="blog-container">
         <button class="button" id="btn-add">ADD A POST</button>
-        <table class="a">
-            <thead>
-                <tr>
-                    <th class="id">ID</th>
-                    <th class="title">BLOG TITLE</th>
-                    <th class="delete">DELETE</th>
-                    <th class="edit">EDIT</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td class="blog"><span class="blog-id">123123</span></td>
-                    <td><span class="blog-title">A VERY LONG TITLE BECACUSE WE ARE RTESTING THE RESPNSIVENESS OF THIS SHIT</span>
-                    </td>
-                    <td><span class="blog-delete"><i class="fa-regular fa-trash-can"></i></span></td>
-                    <td><span class="blog-edit"><i class="fa-regular fa-pen-to-square"></i></span></td>
-                </tr>
-                <tr>
-                    <td><span class="blog-id">123124</span></td>
-                    <td><span class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id pellentesque ipsum. Curabitur viverra turpis sed vestibulum porttitor. Sed risus arcu, mattis at luctus vitae, varius in magna. Fusce velit sem, malesuada id iaculis vitae, iaculis quis quam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id pellentesque ipsum. Curabitur viverra turpis sed vestibulum porttitor. Sed risus arcu, mattis at luctus vitae, varius in magna. Fusce velit sem, malesuada id iaculis vitae, iaculis quis quam.</span>
-                    </td>
-                    <td><span class="blog-delete"><i class="fa-regular fa-trash-can"></i></span></td>
-                    <td><span class="blog-edit"><i class="fa-regular fa-pen-to-square"></i></span></td>
-                </tr>
-            </tbody>
-        </table>
+        <?php
+        
+        require_once 'config.php';
+        $sql = "SELECT * FROM blog_post";
+        if ($result = $mysqli->query($sql)) {
+            if ($result->num_rows > 0) {
+        echo '<table class="a">';
+        echo    '<thead>';
+        echo        '<tr>';
+        echo            '<th class="id">ID</th>';
+        echo           ' <th class="title">BLOG TITLE</th>';
+        echo           ' <th class="title">BLOG CONTENT</th>';
+        echo           '<th class="delete">DELETE</th>';
+        echo           '<th class="edit">EDIT</th>';
+        echo        '</tr>';
+        echo    '</thead>';
+        echo    '<tbody>';
+        while ($row = $result->fetch_array()) {
+        echo        '<tr>';
+        echo            '<td class="blog"><span class="blog-id">' . $row['post_id'] . '</span></td>';
+        echo            '<td><span class="blog-title">' . $row['title'] . '</span></td>';
+        echo            '<td><span class="blog-title">' . $row['content'] . '</span></td>';
+        echo            '<td><span class="blog-delete"><i class="fa-regular fa-trash-can"></i></span></td>';
+        echo            '<td><span class="blog-edit"><i class="fa-regular fa-pen-to-square"></i></span></td>';
+        echo        '</tr>';
+        }
+        echo    '</tbody>';
+        echo '</table>';
+        $result->free();
+    } else {
+        echo '<div class="alert alert-danger"><em>No records were found.</em></div>';
+    }
+} else {
+    echo "Oops! Something went wrong. Please try again later.";
+}
 
-
+// Close connection
+$mysqli->close();
+?>
 
     </div>
 
