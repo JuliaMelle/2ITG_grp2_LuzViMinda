@@ -62,9 +62,9 @@
     margin-bottom: 20px;
 }
 
-input[type="file"] {
+/* input[type="file"] {
     display: none;
-}
+} */
 
 .profpic {
     display: flex;
