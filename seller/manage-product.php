@@ -19,7 +19,11 @@
     <?php require_once '../components/navbar.php' ?>
     <!-- product_id	user_id	category	product_name	product_price	product_img	product_desc -->
     <div class="blog-container">
+<<<<<<< Updated upstream
 
+=======
+        
+>>>>>>> Stashed changes
         <table class="a">
             <thead>
                 <tr>
