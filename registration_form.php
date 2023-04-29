@@ -34,6 +34,8 @@
         <!-- input password -->
         <b>PASSWORD</b>
         <input type="password" class="input" name="password"></input>
+        <br>
+        <br>
 
         <h3 class="register">BUSINESS INFORMATION</h3>
         <!-- input display name -->
@@ -48,17 +50,15 @@
         <b>ADDRESS</b>
         <input type="address" class="input" name="address"></input>
 
-        <!-- input profile picture -->
-        <b>PROFILE PICTURE</b>
+         <!-- input profile picture -->
+         <b>PROFILE PICTURE</b>
         <input type="file" class="upload-btn" name="image"></input>
         <br>
 
         <!-- input profile valid ID -->
-        <!-- <b>VALID ID</b>
-        <input type="file" id="picture" name="imagevalid" style="color:black;"  ></input>
-        <label for="picture" class="profpic" >UPLOAD YOUR VALID ID</label> -->
-        
-  
+        <b>VALID ID</b>
+        <input type="file" class="upload-btn" name="image"></input>
+        <br>
     
         <div class="mid_position_buttons">
         <button type="submit" name="Submit" class="button login" onclick="validateForm()">SUBMIT</button>
