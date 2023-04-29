@@ -50,7 +50,6 @@
 
         <!-- input profile picture -->
         <b>PROFILE PICTURE</b>
-        <label for="picture" class="profpic" >UPLOAD YOUR PROFILE PICTURE</label>
         <input type="file" class="upload-btn" name="image"></input>
         <br>
 

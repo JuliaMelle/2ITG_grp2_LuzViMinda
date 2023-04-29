@@ -81,24 +81,6 @@ input[type="file"] {
     cursor: pointer;
 }
 
-.profpic {
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    background: var(--dark-blue);
-    color: var(--white);
-    height: 37px;
-    padding: 5px;
-    margin-top: 10px;
-    border: none;
-    border-radius: 0 !important;
-    font-size: 16px;
-    font-weight: bold;
-    outline: none;
-    transition: all 0.3s ease-in-out;
-}
-
 .button {
     display: flex;
     justify-content: center;
