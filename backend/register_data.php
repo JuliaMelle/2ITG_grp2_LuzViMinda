@@ -11,6 +11,8 @@
     $email = $_POST['email'];
     $address = $_POST['address'];
     $password = $_POST['password'];
+    // $password = md5($_POST['password']); 
+    //MD5 encryption
 
     $imgName = $_FILES['image']['name'];
     $imgTmp = $_FILES['image']['tmp_name'];
@@ -74,15 +76,7 @@
         $errorMsg ='Please input your address';
         header('Location: ../registration_form.php?authenticate=false');
       }
-      else if(empty($_FILES['image']["tmp_name"])){
-        $errorMsg ='Please input valid files';
-        header('Location: ../registration_form.php?authenticate=false');
-      }
-      else if(empty($_FILES['imgName2']["imgTmp2"])){
-        $errorMsg ='Please input valid files';
-        header('Location: ../registration_form.php?authenticate=false');
-      }
-      
+
     //2. Insert SQL
     else {
     $sql = "  INSERT INTO 

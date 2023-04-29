@@ -62,7 +62,7 @@
           <br>
 
           <div class="mid_position_buttons">
-            <button type="submit" name="Submit" class="button login" onclick="validateForm()">SUBMIT</button>
+            <button type="submit" name="Submit" class="button login" onclick="validateForm()">Sign Up</button>
           </div>
       </form>
       <?php
@@ -72,7 +72,7 @@
           <br>
           <div class="alert">
             <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-            <strong style="color:white">Please fill out all required fields.</strong>
+            <strong style="color:white">Invalid</strong> Please try again
           </div>
 
       <?php
