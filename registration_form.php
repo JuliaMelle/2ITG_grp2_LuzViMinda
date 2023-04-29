@@ -50,9 +50,10 @@
 
         <!-- input profile picture -->
         <b>PROFILE PICTURE</b>
-        <input type="file"  name="image"></input>
-        <label for="picture" class="profpic">UPLOAD YOUR PROFILE PICTURE</label>
+        <label for="picture" class="profpic" >UPLOAD YOUR PROFILE PICTURE</label>
+        <input type="file" class="upload-btn" name="image"></input>
         <br>
+
         <!-- input profile valid ID -->
         <!-- <b>VALID ID</b>
         <input type="file" id="picture" name="imagevalid" style="color:black;"  ></input>
@@ -71,6 +72,7 @@
   <br>
   <br>
   <br>
+
   <?php
     if (isset($_GET['authenticate'])) { //check if authenticate key exists in URL
       if ($_GET['authenticate'] == "false") {
@@ -84,6 +86,7 @@
       }
     }
     ?>
+
   <?php require_once 'components/footer.php' ?>
 
 </body>
