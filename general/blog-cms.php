@@ -42,8 +42,9 @@ if (isset($_SESSION['loggedin'])) {
             <tbody>
 
                 <?php
+
                 require_once '../config.php';
-                $sql = "SELECT * FROM blog_post";
+                $sql = "SELECT * FROM blog_post WHERE user_id = 1"; // to change user_id to session id variable
                 if ($result = $conn-> query($sql)) {
                     if ($result->num_rows > 0) {
                         while ($row = $result->fetch_array()) {

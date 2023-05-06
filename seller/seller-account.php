@@ -28,97 +28,71 @@ session_start();
     <div class="wrapper">
         <div class="header orange"></div>
         <div class="flex content">
+            <?php
+            require_once '../config.php';
+            $sql = "SELECT * FROM users WHERE user_id = 1"; // to change user_id to session id variable
+            $sql_2 = "SELECT * FROM products WHERE user_id = 1"; // to change user_id to session id variable
+            if ($result = $conn->query($sql)) {
+                if ($result->num_rows > 0) {
+                    while ($row = $result->fetch_array()) {
 
-            <div class="profile-img">
-                <h1>EXAMPLE</h1>
-            </div>
+                        echo '<div >';
+                        echo '<img class="profile-img" src="../user_identification/' . $row['valid_id_img'] . '"/>';
+                        echo '</div>';
 
-            <div class="details">
-                <h3>Seller Name</h3>
-                <div class="box"></div>
-                <h3>Email</h3>
-                <div class="box"></div>
-                <h3>Link</h3>
-                <div class="box"></div>
+                        echo '<div class="details">';
+                        echo '<h3>Seller Name</h3>';
+                        echo '<div class="box">' . $row['business_name'] . '</div>';
+                        echo '<h3>Email</h3>';
+                        echo '<div class="box">' . $row['email'] . '</div>';
+                        echo '<h3>Link</h3>';
+                        echo '<div class="box">' . $row['website'] . '</div>';
+                        echo '</div>';
+                        echo '</div>';
+                        echo '</div>';
+                    }
+                    $result->free();
+                }
+            }
+            ?>
+             <div class="wrapper-prod">
+                        <div class="header blue"></div>
+                        <h1 class="label">Products</h1>
+                        <div class="card-wrapper">
+                        <div class="flex-2">
+            <?php
+            if ($result = $conn->query($sql_2)) {
+                if ($result->num_rows > 0) {
+                    while ($row = $result->fetch_array()) {
+
+
+                        
+
+                        echo            '<div class="card">';
+                        echo               '<div class="details-prod">';
+                        echo                   '<div class="category">' . $row['category'] . '</div>';
+                        echo                   '<img class="product-img">';
+                        echo              '</div>';
+                        echo              '<h3>' . $row['product_price'] . '</h3>';
+                        echo               '<h3>' . $row['product_name'] . '</h3>';
+                        echo               '<h3>'. $row['product_desc'] .'</h3>';
+                        echo            '</div>';
+
+                        
+                        
+                    }
+                    $result->free();
+                }
+            }
+            $conn->close();
+            ?>
+              </div>
             </div>
+        </div>
 
         </div>
 
     </div>
-
-    <!-- // SHOW PRODUCTS OF SELLER -->
-    <div class="wrapper-prod">
-
-        <div class="header blue"></div>
-        <h1 class="label">Products</h1>
-        <div class="card-wrapper">
-            <div class="flex-2">
-            
-                <div class="card">
-                    <div class="details-prod">
-                        <div class="category">category</div>
-                        <img class="product-img">
-                    </div>
-                    <h3>IMG</h3>
-                    <h3>naame item</h3>
-                    <h3>sellrer</h3>
-
-                </div>
-
-                <div class="card">
-                    <div class="details-prod">
-                        <div class="category">category</div>
-                        <img class="product-img">
-                    </div>
-                    <h3>IMG</h3>
-                    <h3>naame item</h3>
-                    <h3>sellrer</h3>
-
-                </div>
-
-                <div class="card">
-                    <div class="details-prod">
-                        <div class="category">category</div>
-                        <img class="product-img">
-                    </div>
-                    <h3>IMG</h3>
-                    <h3>naame item</h3>
-                    <h3>sellrer</h3>
-
-                </div>
-
-                <div class="card">
-                    <div class="details-prod">
-                        <div class="category">category</div>
-                        <img class="product-img">
-                    </div>
-                    <h3>IMG</h3>
-                    <h3>naame item</h3>
-                    <h3>sellrer</h3>
-
-                </div>
-
-                <div class="card">
-                    <div class="details-prod">
-                        <div class="category">category</div>
-                        <img class="product-img">
-                    </div>
-                    <h3>IMG</h3>
-                    <h3>naame item</h3>
-                    <h3>sellrer</h3>
-
-                </div>
-                
-            </div>
-
-            
-
-
-
-        </div>
-
-    </div>
-
 
     <?php require_once '../components/footer.php' ?>
 </body>
