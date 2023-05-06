@@ -18,7 +18,7 @@
     if (isset($_GET["post_id"])) {
         $sql = "SELECT * FROM blog_post WHERE post_id = ?";
 
-        if ($stmt = $mysqli->prepare($sql)) {
+        if ($stmt = $conn->prepare($sql)) {
             // Bind variables to the prepared statement as parameters
             $stmt->bind_param("i", $param_id);
 
@@ -50,7 +50,7 @@
         $stmt->close();
 
         // Close connection
-        $mysqli->close();
+        $conn->close();
     } else {
         // URL doesn't contain id parameter. Redirect to error page
         header("location: error.php");

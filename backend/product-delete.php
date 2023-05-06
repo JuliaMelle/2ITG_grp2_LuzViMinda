@@ -5,7 +5,7 @@
     require_once "../config.php";
 
     // Prepare a delete statement
-    $sql = "DELETE FROM blog_post WHERE post_id = ?";
+    $sql = "DELETE FROM products WHERE product_id = ?";
 
     if ($stmt = $conn->prepare($sql)) {
         // Bind variables to the prepared statement as parameters

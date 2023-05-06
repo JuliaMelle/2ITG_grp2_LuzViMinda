@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Prepare an insert statement
         $sql = "INSERT INTO blog_post (title, content) VALUES (?, ?)";
     
-        if ($stmt = $mysqli->prepare($sql)) {
+        if ($stmt = $conn->prepare($sql)) {
             // Bind variables to the prepared statement as parameters
             $stmt->bind_param("ss", $param_title, $param_content);
     
@@ -37,7 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
     
     // Close connection
-    $mysqli->close();
+    $conn->close();
 }
 
 ?>

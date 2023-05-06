@@ -186,18 +186,18 @@ table tr {
 }
 
 .id {
-  width: 2%;
+  width: 10%;
 }
 
 .delete,
 .edit {
-  width: 1%;
+  width: 5%;
   text-align: center;
   margin: auto;
 }
 
 .title {
-  width: 5%;
+  width: 20%;
 }
 
 td span i {

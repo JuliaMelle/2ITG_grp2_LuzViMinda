@@ -36,9 +36,8 @@
                 <?php
                 require_once 'config.php';
                 $sql = "SELECT * FROM blog_post";
-                if ($result = $mysqli->query($sql)) {
+                if ($result = $conn-> query($sql)) {
                     if ($result->num_rows > 0) {
-
                         while ($row = $result->fetch_array()) {
                             echo '<tr>';
                             echo '<td class="blog"><span class="blog-id">' . $row['post_id'] . '</span></td>';
@@ -50,8 +49,10 @@
                             echo '<td><a href="edit-blog.php?post_id=' . $row['post_id'] . '" title="Edit Record" data-toggle="tooltip"><span class="blog-edit"><i class="fa-regular fa-pen-to-square"></i></span></a></td>';
                             
                         }
+                        $result->free();
                     }
                 }
+                $conn->close();
                 ?>
 
                 </tr>

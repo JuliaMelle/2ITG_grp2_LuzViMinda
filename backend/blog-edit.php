@@ -17,7 +17,7 @@ if (isset($_POST["id"]) && !empty($_POST["id"])) {
         // Prepare an update statement
         $sql = "UPDATE blog_post SET title = ?, content = ? WHERE post_id = ?";
 
-        if ($stmt = $mysqli->prepare($sql)) {
+        if ($stmt = $conn->prepare($sql)) {
             // Bind variables to the prepared statement as parameters
             $stmt->bind_param("ssi", $param_title, $param_content, $param_id);
 
@@ -41,7 +41,7 @@ if (isset($_POST["id"]) && !empty($_POST["id"])) {
     }
 
     // Close connection
-    $mysqli->close();
+    $conn->close();
 } else {
     // Check existence of id parameter before processing further
     if (isset($_GET["id"]) && !empty(trim($_GET["id"]))) {
@@ -50,7 +50,7 @@ if (isset($_POST["id"]) && !empty($_POST["id"])) {
 
         // Prepare a select statement
         $sql = "SELECT * FROM blog_post WHERE post_id = ?";
-        if ($stmt = $mysqli->prepare($sql)) {
+        if ($stmt = $conn->prepare($sql)) {
             // Bind variables to the prepared statement as parameters
             $stmt->bind_param("i", $param_id);
 
@@ -83,7 +83,7 @@ if (isset($_POST["id"]) && !empty($_POST["id"])) {
         $stmt->close();
 
         // Close connection
-        $mysqli->close();
+        $conn->close();
     } else {
         // URL doesn't contain id parameter. Redirect to error page
         header("location: error.php");
