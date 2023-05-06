@@ -9,6 +9,9 @@
 
     <link rel="stylesheet" href="styles/global.css">
     <link rel="stylesheet" href="styles/home.css">
+    <link rel="stylesheet" href="styles/navbar.css">
+    <link rel="stylesheet" href="../styles/footer.css">
+
 </head>
 
 <body>
@@ -96,7 +99,7 @@
         <button class="button">VIEW PRODUCTS</button>
     </div>
 
-    <?php require_once 'components/footer.php'?>
+    <?php require_once 'components/footer-index.php'?>
 
 </body>
 </html>

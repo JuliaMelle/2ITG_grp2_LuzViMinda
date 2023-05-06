@@ -6,15 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta title="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Post</title>
-    <link rel="stylesheet" href="styles/global.css">
-    <link rel="stylesheet" href="styles/add-post.css">
+    <link rel="stylesheet" href="../styles/global.css">
+    <link rel="stylesheet" href="../styles/add-post.css">
 
     <script src="https://kit.fontawesome.com/b1d36f5527.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
     <?php
-    require_once "config.php";
+    require_once "../config.php";
     if (isset($_GET["post_id"])) {
         $sql = "SELECT * FROM blog_post WHERE post_id = ?";
 
@@ -60,9 +60,9 @@
 
     <div class="wrapper">
         <div class="wrapper-content">
-            <p>ADD A BLOG</p>
+            <p>EDIT A BLOG</p>
             <hr>
-            <form action="backend/blog-edit.php" method="post">
+            <form action="../backend/blog-edit.php" method="post">
                 <p>TITLE</p>
                 <input required type="text" name="title" id="blog_title" placeholder="<?php echo $row["title"]; ?>">
                 <span class="blog-category">BLOG</span>
@@ -75,7 +75,7 @@
     </div>
 
 
-    <?php require_once 'components/footer.php' ?>
+    <?php require_once '../components/footer.php' ?>
 </body>
 
 </html>

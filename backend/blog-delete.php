@@ -17,7 +17,7 @@
         // Attempt to execute the prepared statement
         if ($stmt->execute()) {
             // Records deleted successfully. Redirect to landing page
-            header("location: ../blog-cms.php");
+            header("location: ../general/blog-cms.php");
             exit();
         } else {
             echo "Oops! Something went wrong. Please try again later.";
