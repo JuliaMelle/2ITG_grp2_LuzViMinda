@@ -90,9 +90,15 @@
   width: 300px;
   padding: 20px;
   height: 450px;
-  background-color: var(--gray);
+  background-color: var(--white);
   border: 3px solid var(--black);
   margin: 0 0.5rem 1rem 0.5rem;
+}
+
+h3 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .category {
@@ -114,6 +120,8 @@
   height: 250px;
   background-color: var(--orange);
   margin: auto;
+  border-image: 3px solid var(--black);
+  object-fit: cover;
 }
 
 /* MEDIUM DEVICES*/
