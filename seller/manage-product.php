@@ -19,15 +19,9 @@
     <?php require_once '../components/navbar.php' ?>
     <!-- product_id	user_id	category	product_name	product_price	product_img	product_desc -->
     <div class="blog-container">
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
 
-=======
-        
->>>>>>> Stashed changes
-=======
     <button class="button" id="btn-add">ADD A PRODUCT</button>
->>>>>>> Stashed changes
+
         <table class="a">
             <thead>
                 <tr>
@@ -41,9 +35,8 @@
                 </tr>
             </thead>
             <tbody>
-<<<<<<< Updated upstream
+
                 <tr>
-=======
             <?php
                 require_once '../config.php';
                 $sql = "SELECT * FROM products";
@@ -59,6 +52,7 @@
 
                             echo '<td><a href="../backend/product-delete.php?product_id=' . $row['product_id'] . '"title="Delete Record" data-toggle="tooltip"><span class="blog-delete" onclick="return confirm('."'". "Are you sure?" ."'".');"><i class="fa-regular fa-trash-can"></i></span></a></td>';
                             echo '<td><a href="product-edit.php?product_id=' . $row['product_id'] . '" title="Edit Record" data-toggle="tooltip"><span class="blog-edit"><i class="fa-regular fa-pen-to-square"></i></span></a></td>';
+
                             
                         }
                         $result->free();
@@ -66,16 +60,6 @@
                 }
                 $conn->close();
                 ?>
-                <!-- <tr>
->>>>>>> Stashed changes
-                    <td class="blog"><span class="prod-id">123123</span></td>
-                    <td><span class="blog-title">A VERY LONG TITLE BECACUSE WE ARE RTESTING THE RESPNSIVENESS OF THIS SHIT</span></td>
-                    <td><span class="blog-title">price dito</span></td>
-                    <td><span class="blog-title">IMG DITO MAHABA</span></td>
-                    <td><span class="blog-title">DESCRIPTION dito naman mahaba</span></td>
-                    <td><span class="blog-delete"><i class="fa-regular fa-trash-can"></i></span></td>
-                    <td><span class="blog-edit"><i class="fa-regular fa-pen-to-square"></i></span></td>
-                </tr>
 
             </tbody>
         </table>

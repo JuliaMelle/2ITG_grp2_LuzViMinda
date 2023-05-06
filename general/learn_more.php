@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LuzViMinda | Learn More</title>
 
-    <link rel="stylesheet" href="styles/global.css">
-    <link rel="stylesheet" href="styles/learn_more.css">
+    <link rel="stylesheet" href="../styles/global.css">
+    <link rel="stylesheet" href="../styles/learn_more.css">
 
     <style>
         h2 {
@@ -18,7 +18,7 @@
 </head>
 
 <body>
-    <?php require_once 'components/navbar.php' ?>
+    <?php require_once '../components/navbar.php' ?>
     <div class="container">
         <div class="mid_container">
 
@@ -88,7 +88,7 @@
             <!-- MID CONTAINER END -->
         </div>
     </div>
-    <?php require_once 'components/footer.php' ?>
+    <?php require_once '../components/footer.php' ?>
 
 </body>
 
