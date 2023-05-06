@@ -20,7 +20,7 @@
 </head>
 
 <body>
-    <?php require_once '../components/navbar.php' ?>
+<?php require_once '../components/navbar-general.php' ?>
     <div class="container">
         <div class="mid_container">
 

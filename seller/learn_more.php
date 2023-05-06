@@ -18,7 +18,7 @@
 </head>
 
 <body>
-    <?php require_once '../components/navbar-general.php' ?>
+    <?php require_once '../components/navbar-seller.php' ?>
     <div class="container">
         <div class="mid_container">
 

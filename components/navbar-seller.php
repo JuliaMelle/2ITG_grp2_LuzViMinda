@@ -26,12 +26,28 @@ session_start();
             </label>
 
             <ul>
-            <li><a class="active" href="index.php">HOME</a></li>
-                <li><a class="active" href="general/product-catalog.php">PRODUCT CATALOG</a></li>
-                <li><a class="active" href="general/learn_more.php">LEARN MORE</a></li>
+                <li><a class="active" href="product-catalog.php">PRODUCT CATALOG</a></li>
+                <li><a class="active" href="learn_more.php">LEARN MORE</a></li>
                 <!-- <li><a href="#">SEARCH</a></li> -->
-                <li><a class="active" href="login.php">LOGIN</a></li>
-                
+                <li class="btn-account">
+                  <div class="dropdown">
+                  <a href="#"><?php $current_username=$_SESSION['username'];
+echo strtoupper($current_username)
+?></a>
+
+                  </div>
+                  
+                  <div class="drop-content">
+                  <a href="seller-account.php">ACCOUNT PAGE</a>
+                  <a href="acc-page-seller.php">EDIT ACCOUNT</a>
+                  <a href="manage-product.php">VIEW PRODUCTS</a>
+                  <a href="../general/blog-cms.php">BLOGS</a>
+                  <a href="manage-product.php">VIEW PRODUCTS</a>
+
+                  <a href="../logout.php">LOGOUT</a>
+
+                  </div>
+              </li>
             </ul>
         </div>
 </nav>

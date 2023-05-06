@@ -10,6 +10,9 @@
   <!-- css -->
   <link rel="stylesheet" href="styles/global.css">
   <link rel="stylesheet" href="styles/login.css">
+  <link rel="stylesheet" href="styles/navbar.css">
+    <link rel="stylesheet" href="styles/footer.css">
+
 </head>
 
 <body>
