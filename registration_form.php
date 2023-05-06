@@ -12,6 +12,8 @@
 
   <!-- css files -->
   <link rel="stylesheet" href="styles/global.css">
+  <link rel="stylesheet" href="styles/navbar.css">
+  <link rel="stylesheet" href="styles/footer.css">
   <link rel="stylesheet" href="styles/registration_form.css">
 </head>
 
