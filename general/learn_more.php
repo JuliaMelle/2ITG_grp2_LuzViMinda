@@ -18,8 +18,17 @@
 </head>
 
 <body>
-    <?php require_once '../components/navbar-general.php' ?>
-    <div class="container">
+<?php
+session_start();
+if (isset($_SESSION['loggedin'])) {
+    require_once '../components/navbar-seller.php';
+}
+    else{
+    require_once '../components/navbar-general.php';
+
+}
+
+ ?>    <div class="container">
         <div class="mid_container">
 
             <div class="card"> <!-- CARD -->

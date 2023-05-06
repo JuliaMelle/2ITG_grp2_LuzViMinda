@@ -1,5 +1,7 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html>
+    
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,11 +13,22 @@
     <script src="https://kit.fontawesome.com/b1d36f5527.js" crossorigin="anonymous"></script>
 </head>
 <body>
-<?php require_once '../components/navbar.php' ?>
+
+<?php
+session_start();
+if (isset($_SESSION['loggedin'])) {
+    require_once '../components/navbar-seller.php';
+}
+    else{
+    require_once '../components/navbar-general.php';
+
+}
+
+ ?>
 
 <div class="wrapper">
         <div class="wrapper-content">
-            <p>ADD A BLOG</p>
+            <p>ADD A BLOG <?php echo $_SESSION['loggedin'];?></p>
             <hr>
             <form action="../backend/blog-add.php" method="post">
                 <p>TITLE</p>
