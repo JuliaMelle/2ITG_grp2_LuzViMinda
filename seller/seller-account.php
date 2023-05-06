@@ -16,7 +16,7 @@
 </head>
 
 <body>
-    <?php require_once '../components/navbar.php' ?>
+    <?php require_once '../components/navbar-seller.php' ?>
 
     <!-- ITO YUNG PAGE FOR VIEWERS ONLY -->
 

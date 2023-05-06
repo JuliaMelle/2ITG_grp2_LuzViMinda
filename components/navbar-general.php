@@ -26,11 +26,11 @@ session_start();
             </label>
 
             <ul>
-            <li><a class="active" href="index.php">HOME</a></li>
-                <li><a class="active" href="general/product-catalog.php">PRODUCT CATALOG</a></li>
-                <li><a class="active" href="general/learn_more.php">LEARN MORE</a></li>
+            <li><a class="active" href="../index.php">HOME</a></li>
+                <li><a class="active" href="product-catalog.php">PRODUCT CATALOG</a></li>
+                <li><a class="active" href="learn_more.php">LEARN MORE</a></li>
                 <!-- <li><a href="#">SEARCH</a></li> -->
-                <li><a class="active" href="login.php">LOGIN</a></li>
+                <li><a class="active" href="../login.php">LOGIN</a></li>
                 
             </ul>
         </div>

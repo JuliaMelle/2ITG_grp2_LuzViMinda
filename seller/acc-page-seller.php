@@ -2,13 +2,13 @@
 // require_once '../templates/navbar_seller.php'
 session_start();
 
-if (isset($_SESSION['isLogin'])) {
-    if ($_SESSION['isLogin'] == false) {
-        header('Location: ../login.php?security=false');
-    }
-} else {
-    header('Location: ../login.php?security=false');
-}
+// if (isset($_SESSION['isLogin'])) {
+//     if ($_SESSION['isLogin'] == false) {
+//         header('Location: ../login.php?security=false');
+//     }
+// } else {
+//     header('Location: ../login.php?security=false');
+// }
 ?>
 
 <!DOCTYPE html>
@@ -20,7 +20,7 @@ if (isset($_SESSION['isLogin'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- MAIN CSS Sheet-->
-    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../styles/main.css">
 
     <!-- Google Font: Poppins-->
     <!-- Weights: 400 REGULAR, 600 SEMIBOLD, 700 BOLD -->
@@ -29,13 +29,13 @@ if (isset($_SESSION['isLogin'])) {
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
     <!-- FAVICON -->
-    <link rel="icon" href="../img/aGROWculture-Favicon.png" type="image/gif" sizes="16x16">
+    <!-- <link rel="icon" href="../img/aGROWculture-Favicon.png" type="image/gif" sizes="16x16"> -->
 
-    <title>aGROWculture: My Profile</title>
+    <title>LuzViMinda: My Profile</title>
 </head>
 <body>
 
-<?php require_once '../templates/navbar_seller.php' ?>
+<?php require_once '../components/navbar-seller.php' ?>
     <div style="height:5rem;"></div>
 
     <main class="full-container">

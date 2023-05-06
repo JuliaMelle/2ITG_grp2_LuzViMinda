@@ -16,7 +16,7 @@
 </head>
 
 <body>
-    <?php require_once '../components/navbar.php' ?>
+    <?php require_once '../components/navbar-seller.php' ?>
     <!-- product_id	user_id	category	product_name	product_price	product_img	product_desc -->
     <div class="blog-container">
 
