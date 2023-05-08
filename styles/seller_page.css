@@ -1,0 +1,22 @@
+.columns {
+    display: grid;
+    grid-template-columns: 50% 50%;
+  }
+  .button {
+    display: inline;
+    justify-content: center;
+    align-items: center;
+    width: 22%;
+    background: var(--black);
+    color: var(--white);
+    height: 40px;
+    margin-top: 30px;
+    margin-left: 33px;
+    border: none;
+    border-radius: 0 !important;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.3s ease-in-out;
+}
