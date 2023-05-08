@@ -42,14 +42,14 @@ if (isset($_SESSION['loggedin'])) {
             <tbody>
 
                 <?php
-
                 require_once '../config.php';
-                $sql = "SELECT * FROM blog_post WHERE user_id = 1"; // to change user_id to session id variable
+                $id = $_SESSION['id'];
+                $sql = "SELECT * FROM blog_post WHERE user_id = $id"; // to change user_id to session id variable
                 if ($result = $conn-> query($sql)) {
                     if ($result->num_rows > 0) {
                         while ($row = $result->fetch_array()) {
                             echo '<tr>';
-                            echo '<td class="blog"><span class="blog-id">' . $row['post_id'] . '</span></td>';
+                            echo '<td class="blog"><span class="blog-id">' . $row['post_id'] . '</span></td>';                            
                             echo '<td><span class="blog-title">' . $row['title'] . '</span></td>';
                             echo '<td><span class="blog-title">' . $row['content'] . '</span></td>';
                             // echo '<td><a id="btn-add" href="backend/blog-delete2.php?post_id=' . $row['post_id'] . '" title="Delete Record" data-toggle="tooltip"><span class="blog-delete"><i class="fa-regular fa-trash-can"></i></span></a></td>';
