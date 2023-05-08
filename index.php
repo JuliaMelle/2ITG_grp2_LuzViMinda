@@ -31,12 +31,10 @@
     <div>
     <h1 class="welcome">READ OUR BLOG POSTS</h1>
 
-    <h2 class="tagline">Various Filipino Merchandise from Various Regions in the Philippines</h2>
+    <h2 class="tagline">We Love What is Local! Filipino-made goods for you to look into.</h2>
 
-    <h3 class="content">A website that embodies the idea of supporting locals. This highlights the products made by the local Filipino artisans, 
-    being an instrument to promote and preserve the Filipino culture. LuzViMinda features locally made products available from different regions present in the Philippines. 
-    A market place that offers high-quality products made with the greatest love and care of each Filipino maker. At LuzViMinda, our goal is to let this platform be a space for showcasing the creations of each Filipino. 
-    Flourishing the local Filipino industry. Through this website, we hope to be able to contribute how supporting local products can have a greater impact in promoting cultural growth in our country.</h3>
+    <h3 class="content">Every Filipino owns at least one local product that came from a place whom he or she visited in the past. Or, can be a "pasalubong" from a friend, a family, or a relative. 
+    May it be an item to display or an item that can be used at home. If you are planning to look for more Filipino products you may check the blog posts below.</h3>
     </div>
 
     <div class="container">
