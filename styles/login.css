@@ -20,6 +20,7 @@
     align-self: center;
 
     margin-top: 3vh;
+
 }
 
 .login {
@@ -84,8 +85,17 @@
     cursor: pointer;
     outline: none;
     transition: all 0.3s ease-in-out;
-}
 
+    text-decoration: none;
+    color: white;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+a:hover{
+    color:black;
+}
 .button:hover {
     background: var(--orange);
     color: var(--black);
