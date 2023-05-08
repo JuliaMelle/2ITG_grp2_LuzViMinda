@@ -92,8 +92,13 @@
     </div>
 
     <div class="mid_position_buttons">
+        <a href="learn_more.php">
         <button class="button login">LEARN MORE</button>
+        </a>
+
+        <a href="general/product-catalog.php">
         <button class="button">VIEW PRODUCTS</button>
+        </a>
     </div>
 
     <?php require_once 'components/footer.php'?>
