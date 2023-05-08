@@ -93,12 +93,16 @@
     </div>
 
     <div class="mid_position_buttons">
+        <a href="registration_form.php">
+        <button class="button login">REGISTER HERE</button>
+        </a>
+
         <a href="general/learn_more.php">
         <button class="button login">LEARN MORE</button>
         </a>
 
         <a href="general/product-catalog.php">
-        <button class="button">VIEW PRODUCTS</button>
+        <button class="button login">VIEW PRODUCTS</button>
         </a>
     </div>
 
