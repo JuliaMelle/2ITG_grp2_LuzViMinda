@@ -13,8 +13,8 @@ session_start();
     <title>LuzViMinda | Learn More</title>
 
     <link rel="stylesheet" href="../styles/global.css">
-    <link rel="stylesheet" href="../styles/learn_more.css">
-
+    <link rel="stylesheet" href="../styles/learn_more_specific.css">
+    <script src="https://kit.fontawesome.com/96362859e2.js" crossorigin="anonymous"></script>
     <style>
         h2 {
             font-size: 32px;
@@ -37,37 +37,32 @@ if (isset($_SESSION['loggedin'])) {
 
         <!-- SEARCH PAGE -->
         <?php
-        $sql = "SELECT* FROM blog_post";
+        $varUserid = $_GET['id'];
+        $to_id = intval($varUserid);
+  
+        $sql = "SELECT * FROM `blog_post` WHERE `post_id`=".$varUserid;
         $result = mysqli_query($conn, $sql);
                     $resultCheck = mysqli_num_rows($result);
         if ($resultCheck > 0) {
             while ($row = mysqli_fetch_assoc($result)) {  
         ?>
             <div class="card"> <!-- CARD -->
+            <div class="up"> 
                 <div class="capsule">
                     <p class="capsule_caption"> BLOG</p>
                 </div>
+                <div class="close-btn">  <a href="learn_more.php"> <i class="fa-solid fa-xmark" style="color: #000000;"></i> </a></div>
+                </div>
+             
                 <h4 class="head">
                 <?php echo   $row['title'] ?>
                 </h4>
-                <h5 class="read_more">
-                <?php 
-                // echo  $row['content'];
-                
-                $sentence=$row['content'];
-                if(strlen($sentence) >= 30) {
-                    echo substr($sentence,0,29)."...";
-                } else {
-                    echo $sentence;
-                }
-                
-                ?>
-                
-                <br> read more...
-                </h5>
+                <?php echo   $row['content'] ?> 
+            
             </div>
-         
-           <?php }
+           
+           <?php 
+        }
            }?>
 
 

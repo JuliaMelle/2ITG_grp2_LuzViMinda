@@ -1,7 +1,7 @@
 .card {
     margin-top: 50px;
 
-    width: 250px;
+    width: 100%;
     border: solid;
     color: black;
     background-color: var(--white);
@@ -52,10 +52,26 @@
     width: 100%;
     margin-bottom: 60px;
 }
-a{
+
+a {
     text-decoration: none;
     color: black;
 }
+
+.up {
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    align-self: center;
+}
+
+.close-btn {
+    font-size: larger;
+    margin-top: 0px;
+}
+
 /* Media Query for Mobile Devices */
 @media (max-width: 600px) {
 

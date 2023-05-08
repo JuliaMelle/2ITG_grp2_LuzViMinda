@@ -1,14 +1,3 @@
-<?php
-session_start();
-
-if (isset($_SESSION['isLogin'])) {
-    if ($_SESSION['isLogin'] == false) {
-        header('Location: ../login.php?security=false');
-    }
-} else {
-    header('Location: ../login.php?security=false');
-}
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -29,17 +18,17 @@ if (isset($_SESSION['isLogin'])) {
 </head>
 
 <body>
-    <?php 
-    // require_once '../components/navbar-seller.php' 
-    if (isset($_SESSION['loggedin'])) {
-        require_once '../components/navbar-seller.php';
-    }
-        else{
-        require_once '../components/navbar-general.php';
-    
-    }
-    ?>
-    <div class="container">
+<?php
+session_start();
+if (isset($_SESSION['loggedin'])) {
+    require_once '../components/navbar-seller.php';
+}
+    else{
+    require_once '../components/navbar-general.php';
+
+}
+
+ ?>    <div class="container">
         <div class="mid_container">
 
             <div class="card"> <!-- CARD -->
@@ -75,6 +64,7 @@ if (isset($_SESSION['isLogin'])) {
                 </h4>
                 <h5 class="read_more">
                     Read More
+                    
                 </h5>
             </div>
 

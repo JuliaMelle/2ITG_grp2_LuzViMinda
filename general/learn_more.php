@@ -1,3 +1,8 @@
+<?php
+require_once '../config.php';
+session_start();
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,7 +24,6 @@
 
 <body>
 <?php
-session_start();
 if (isset($_SESSION['loggedin'])) {
     require_once '../components/navbar-seller.php';
 }
@@ -31,65 +35,42 @@ if (isset($_SESSION['loggedin'])) {
  ?>    <div class="container">
         <div class="mid_container">
 
+        <!-- SEARCH PAGE -->
+        <?php
+        $sql = "SELECT* FROM blog_post";
+        $result = mysqli_query($conn, $sql);
+                    $resultCheck = mysqli_num_rows($result);
+        if ($resultCheck > 0) {
+            while ($row = mysqli_fetch_assoc($result)) {  
+        ?> <a href="learn_more_specific?id=<?php echo $row['post_id'] ?>" class="product-text sub-link">
             <div class="card"> <!-- CARD -->
                 <div class="capsule">
                     <p class="capsule_caption"> BLOG</p>
                 </div>
                 <h4 class="head">
-                    Example Post Title
+                <?php echo   $row['title'] ?>
                 </h4>
                 <h5 class="read_more">
-                    Read More
+                <?php 
+                // echo  $row['content'];
+                
+                $sentence=$row['content'];
+                if(strlen($sentence) >= 30) {
+                    echo substr($sentence,0,29)."...";
+                } else {
+                    echo $sentence;
+                }
+                ?>
+
+               
+             
                 </h5>
             </div>
 
-            <div class="card"> <!-- CARD -->
-                <div class="capsule">
-                    <p class="capsule_caption"> BLOG</p>
-                </div>
-                <h4 class="head">
-                    Example Post Title
-                </h4>
-                <h5 class="read_more">
-                    Read More
-                </h5>
-            </div>
-
-            <div class="card"> <!-- CARD -->
-                <div class="capsule">
-                    <p class="capsule_caption"> BLOG</p>
-                </div>
-                <h4 class="head">
-                    Example Post Title
-                </h4>
-                <h5 class="read_more">
-                    Read More
-                </h5>
-            </div>
-
-            <div class="card"> <!-- CARD -->
-                <div class="capsule">
-                    <p class="capsule_caption"> BLOG</p>
-                </div>
-                <h4 class="head">
-                    Example Post Title
-                </h4>
-                <h5 class="read_more">
-                    Read More
-                </h5>
-            </div>
-
-            <div class="card"> <!-- CARD -->
-                <div class="capsule">
-                    <p class="capsule_caption"> BLOG</p>
-                </div>
-                <h4 class="head">
-                    Example Post Title
-                </h4>
-                <h5 class="read_more">
-                    Read More
-                </h5>
-            </div>
+            </a>
+         
+           <?php }
+           }?>
 
 
 
