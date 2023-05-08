@@ -15,7 +15,7 @@ session_start();
 
 
     <link rel="stylesheet" href="../styles/seller-account.css">
-    <title>Account Page</title>
+    <title>LuzViMinda | Account Page</title>
 </head>
 
 <body>

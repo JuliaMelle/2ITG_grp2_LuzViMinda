@@ -97,7 +97,7 @@ session_start();
         <button class="button login">REGISTER HERE</button>
         </a>
 
-        <a href="general/learn_more2.php">
+        <a href="general/learn_more.php">
         <button class="button login">LEARN MORE</button>
         </a>
 

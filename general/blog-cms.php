@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="../styles/blog-cms.css">
 
     <script src="https://kit.fontawesome.com/b1d36f5527.js" crossorigin="anonymous"></script>
-    <title>Blog Management</title>
+    <title>LuzViMinda | Blog Management</title>
 </head>
 
 <body>
