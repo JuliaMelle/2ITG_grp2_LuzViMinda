@@ -33,6 +33,7 @@ if (isset($_SESSION['loggedin'])) {
             <form action="../backend/blog-add.php" method="post">
                 <p>TITLE</p>
                 <input type="text" name="blog_title" id="blog_title" placeholder='Title here' required>
+                <input type="hidden" name="user_id" value="<?php echo $_SESSION['id'];?>">
                 <span class="blog-category">BLOG</span>
                 <p>BLOG CONTENT</p>
                 <textarea required name="blog_content" placeholder='Enter comment...' maxlength='10000' minlength='100'></textarea>
