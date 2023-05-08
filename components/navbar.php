@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Navbar</title>
 
-    <link rel="stylesheet" href="styles/global.css">
-    <link rel="stylesheet" href="styles/navbar.css">
+    <link rel="stylesheet" href="../styles/global.css">
+    <link rel="stylesheet" href="../styles/navbar.css">
 </head>
 <body>
 <nav class="sticky" id="navbar">
@@ -23,19 +23,12 @@
             </label>
 
             <ul>
-                <li><a class="active" href="#">PRODUCTS</a></li>
-                <li><a href="#">SEARCH</a></li>
-                <li class="btn-account">
-                  <div class="dropdown">
-                    <a href="#">ACCOUNT</a>
-                  </div>
-                  
-                  <div class="drop-content">
-                  <a href="#">EDIT ACCOUNT</a>
-                  <a href="#">VIEW PRODUCTS</a>
-
-                  </div>
-              </li>
+            <li><a class="active" href="index.php">HOME</a></li>
+                <li><a class="active" href="general/product-catalog.php">PRODUCT CATALOG</a></li>
+                <li><a class="active" href="general/learn_more.php">LEARN MORE</a></li>
+                <!-- <li><a href="#">SEARCH</a></li> -->
+                <li><a class="active" href="login.php">LOGIN</a></li>
+                
             </ul>
         </div>
 </nav>
