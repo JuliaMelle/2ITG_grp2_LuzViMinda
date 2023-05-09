@@ -28,10 +28,27 @@ if (isset($_SESSION['loggedin'])) {
     <link rel="stylesheet" href="../styles/seller-account.css">
 
     <title>Account Page</title>
+
+    <style>
+    input[type="file"]::file-selector-button {
+        color: white;
+    }
+    input[type="text"] {
+        flex:1;
+        min-width:0;
+    }
+    .wrapper {
+        display: flex;
+    }
+    label {
+        margin-top:1rem;
+    }
+    </style>
     
 </head>
 <body>
 <?php require_once '../components/navbar-seller.php' ?>
+    
     <div style="height:7rem;"></div>
 
     <main class="full-container">
@@ -40,48 +57,38 @@ if (isset($_SESSION['loggedin'])) {
         
         <input type="hidden" name="id" value="">
         
-        <div class="columns">
-        <div class="column">
+        <div class="half-container" style="width: 30rem; margin-bottom:5rem;">
+        
             <form action="../db/update.php" method="post" enctype="multipart/form-data">
                 <fieldset>
 
-                
-                    <div class="wrapper">
+                    <div class="mid_position_buttons">
                     <button class="button">
-                         <a href="change-profile.php" style="color: white; text-decoration:none">CHANGE PROFILE
-                        </a>
+                         <a href="change-profile.php" style="color: white;">CHANGE PROFILE</a>
+                    </button>
                     </div>
-
                     
-                    <div class="wrapper">
+                    <div class="mid_position_buttons">
                     <button class="button">
-                         <a href="" style="color: white; text-decoration:none">SAVE CHANGES
-                        </a>
+                         <a href="" style="color: white;">SAVE CHANGES</a>
+                    </button>
                     </div>
 
                  
-                    <div class="wrapper">
+                    <div class="mid_position_buttons">
                     <button class="button">
                          <a href="add-contact.php" style="color: white; text-decoration:none">ADD CONTACT
                         </a>
                     </div>
             
-                </div>
-                </form>
-                </fieldset>
-
-            <div class="column">
-            <form action="../db/update.php" method="post" enctype="multipart/form-data">
-                <fieldset>
-            
+                    
                     <label for="username">Username:</label>
                     <div class="wrapper"><input type="username" id="username" name="username" value="" style="width: 514px;"></div>
                    
-                    <label for="password">Change password:</label>
-                    <div class="wrapper">
+                    <div class="mid_position_buttons">
                     <button class="button">
-                         <a href="change-password.php" style="color: white; text-decoration:none">CHANGE PASSWORD
-                        </a>
+                         <a href="change-password.php" style="color: white;">CHANGE PASSWORD</a>
+                    </button>
                     </div>
 
                     <label for="emailAddress">Email Address:</label>
@@ -94,10 +101,17 @@ if (isset($_SESSION['loggedin'])) {
                     <div class="wrapper"><input type="text" id="website" name="website" value=""></div>
 
 
-                    </div>
-</form>
-</fieldset>
+                    
+                    
                     <?php require_once '../components/footer.php' ?>
+                    </fieldset>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+
+    </footer>
 </body>
 
 </html>

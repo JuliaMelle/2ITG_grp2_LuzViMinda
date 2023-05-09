@@ -1,6 +1,12 @@
 .columns {
-    display: grid;
-    grid-template-columns: 50% 50%;
+   float:left;
+   width: 50%;
+
+  }
+.rows:after{
+  content: "";
+  display: table;
+  clear: both;
   }
   .button {
     display: inline;
