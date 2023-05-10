@@ -26,10 +26,15 @@ session_start();
         require_once 'components/navbar-seller.php';
     }
         else{
-        require_once 'components/navbar-general.php';
+        require_once 'components/navbar.php';
 
     }
     ?> 
+
+    <div>
+     <h2>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi corrupti maiores at animi vero voluptatum officia beatae aspernatur tempora nesciunt, vel ad facere ea repudiandae, deleniti blanditiis necessitatibus incidunt. Sequi.</h2>
+
+
 
     <div>
     <h1 class="welcome">WELCOME TO LUZVIMINDA!</h1>

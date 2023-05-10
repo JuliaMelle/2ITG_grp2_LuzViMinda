@@ -85,15 +85,12 @@
     cursor: pointer;
     outline: none;
     transition: all 0.3s ease-in-out;
-
+}
+.register{
     text-decoration: none;
     color: white;
 }
-a{
-    text-decoration: none;
-    color: white;
-}
-a:hover{
+.register:hover{
     color:black;
 }
 .button:hover {
