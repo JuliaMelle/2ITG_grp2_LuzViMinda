@@ -15,7 +15,7 @@ session_start();
     <link rel="stylesheet" href="../styles/manage-product.css">
     <script src="https://kit.fontawesome.com/b1d36f5527.js" crossorigin="anonymous"></script>
 
-    <title>Document</title>
+    <title>LuzViMinda | Manage Product</title>
 </head>
 
 <body>
