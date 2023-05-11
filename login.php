@@ -9,7 +9,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- css -->
   <link rel="stylesheet" href="styles/global.css">
+  <link rel="stylesheet" href="styles/navbar.css">
+  <link rel="stylesheet" href="styles/footer.css">
   <link rel="stylesheet" href="styles/login.css">
+  <link rel="stylesheet" href="styles/navbar.css">
+    <link rel="stylesheet" href="styles/footer.css">
+
 </head>
 
 <body>
@@ -20,17 +25,19 @@
 
       <div class="card"> <!-- CARD -->
         <h2 class="welcome">WELCOME!</h2>
+        <form action="backend/authenticate.php" method="post">
         <!-- input username -->
         <b>USERNAME</b>
-        <input type="text" class="input"></input>
+        <input type="text" class="input" name="username" placeholder="Username" id="username" ></input>
         <!-- input password -->
         <b>PASSWORD</b>
-        <input type="password" class="input"></input>
+        <input type="password" class="input" name="password" placeholder="Password" id="password" ></input>
         <div class="mid_position_buttons">
-        <button class="button login">LOGIN</button>
-        <button class="button">REGISTER</button>
+        <button class="button login" type="submit" value="Login">LOGIN</button>
+       <button class="button"> <a href="registration_form.php" class="register"> REGISTER </a></button>
         </div>
       </div>
+      </form>
 
  
     </div>

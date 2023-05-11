@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,9 +19,11 @@
 </head>
 
 <body>
-    <?php require_once '../components/navbar.php' ?>
+    <?php require_once '../components/navbar-seller.php' ?>
     <!-- product_id	user_id	category	product_name	product_price	product_img	product_desc -->
     <div class="blog-container">
+
+    <button class="button" id="btn-add">ADD A PRODUCT</button>
 
         <table class="a">
             <thead>
@@ -33,20 +38,37 @@
                 </tr>
             </thead>
             <tbody>
+
                 <tr>
-                    <td class="blog"><span class="prod-id">123123</span></td>
-                    <td><span class="blog-title">A VERY LONG TITLE BECACUSE WE ARE RTESTING THE RESPNSIVENESS OF THIS SHIT</span></td>
-                    <td><span class="blog-title">price dito</span></td>
-                    <td><span class="blog-title">IMG DITO MAHABA</span></td>
-                    <td><span class="blog-title">DESCRIPTION dito naman mahaba</span></td>
-                    <td><span class="blog-delete"><i class="fa-regular fa-trash-can"></i></span></td>
-                    <td><span class="blog-edit"><i class="fa-regular fa-pen-to-square"></i></span></td>
-                </tr>
+            <?php
+                require_once '../config.php';
+                $id = $_SESSION['id'];
+                $sql = "SELECT * FROM products WHERE user_id = $id";
+                if ($result = $conn-> query($sql)) {
+                    if ($result->num_rows > 0) {
+                        while ($row = $result->fetch_array()) {
+                            echo '<tr>';
+                            echo '<td class="blog"><span class="blog-id">' . $row['product_id'] . '</span></td>';
+                            echo '<td><span class="blog-title">' . $row['product_name'] . '</span></td>';
+                            echo '<td><span class="blog-title">' . $row['product_price'] . '</span></td>';
+                            echo '<td><span class="blog-title">' . $row['product_img'] . '</span></td>';
+                            echo '<td><span class="blog-title">' . $row['product_desc'] . '</span></td>';
+
+                            echo '<td><a href="../backend/product-delete.php?product_id=' . $row['product_id'] . '"title="Delete Record" data-toggle="tooltip"><span class="blog-delete" onclick="return confirm('."'". "Are you sure?" ."'".');"><i class="fa-regular fa-trash-can"></i></span></a></td>';
+                            echo '<td><a href="product-edit.php?product_id=' . $row['product_id'] . '" title="Edit Record" data-toggle="tooltip"><span class="blog-edit"><i class="fa-regular fa-pen-to-square"></i></span></a></td>';
+
+                            
+                        }
+                        $result->free();
+                    }
+                }
+                $conn->close();
+                ?>
 
             </tbody>
         </table>
 
-        <button class="button" id="btn-add">ADD A POST</button>
+        
 
     </div>
 
