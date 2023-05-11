@@ -40,7 +40,7 @@ if (isset($_SESSION['loggedin'])) {
 
             <div class="card"> <!-- CARD -->
                 <div class="capsule">
-                    <p class="capsule_caption"> BLOG</p>
+                    <p class="capsule_caption"> CATEGORY</p>
                 </div>
                 <img src="../img/temp.png" alt="Avatar" style="width:100%">
                 <h4 class="head">
@@ -53,7 +53,7 @@ if (isset($_SESSION['loggedin'])) {
 
             <div class="card"> <!-- CARD -->
                 <div class="capsule2">
-                    <p class="capsule_caption"> BLOG</p>
+                    <p class="capsule_caption"> CATEGORY</p>
                 </div>
                 <img src="../img/temp.png" alt="Avatar" style="width:100%">
                 <h4 class="head">
@@ -66,7 +66,7 @@ if (isset($_SESSION['loggedin'])) {
 
             <div class="card"> <!-- CARD -->
                 <div class="capsule">
-                    <p class="capsule_caption"> BLOG</p>
+                    <p class="capsule_caption"> CATEGORY</p>
                 </div>
                 <img src="../img/temp.png" alt="Avatar" style="width:100%">
                 <h4 class="head">
@@ -79,7 +79,7 @@ if (isset($_SESSION['loggedin'])) {
 
             <div class="card"> <!-- CARD -->
                 <div class="capsule2">
-                    <p class="capsule_caption"> BLOG</p>
+                    <p class="capsule_caption"> CATEGORY</p>
                 </div>
                 <img src="../img/temp.png" alt="Avatar" style="width:100%">
                 <h4 class="head">
