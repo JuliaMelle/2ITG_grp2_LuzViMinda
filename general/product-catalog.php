@@ -2,6 +2,7 @@
 require_once '../config.php';
 session_start();
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,12 +10,13 @@ session_start();
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>LuzViMinda | Product Catalog</title>
 
     <link rel="stylesheet" href="../styles/global.css">
     <link rel="stylesheet" href="../styles/product-catalog.css">
     <link rel="stylesheet" href="../styles/navbar.css">
-  <link rel="stylesheet" href="../styles/footer.css">
+    <link rel="stylesheet" href="../styles/footer.css">
 
     <style>
         h2 {
@@ -24,7 +26,15 @@ session_start();
 </head>
 
 <body>
-    <?php require_once '../components/navbar-seller.php' ?>
+    <?php 
+    if (isset($_SESSION['loggedin'])) {
+        require_once '../components/navbar-seller.php';
+    }
+        else{
+        require_once '../components/navbar-general.php';
+    
+    }
+    ?>
     <div class="container">
         <div class="mid_container">
 
@@ -36,6 +46,8 @@ session_start();
                   if ($resultCheck > 0) {
                         while ($row = mysqli_fetch_assoc($result)) {  
         ?>
+
+        <a href="view_product_specific?id=<?php echo $row['product_id'] ?>" class="product-text sub-link">
 
             <div class="card"> <!-- CARD -->
                 <div class="capsule">
