@@ -44,10 +44,7 @@
             <a href="../seller/acc-page-seller.php">EDIT ACCOUNT</a>
             <a href="../seller/manage-product.php">VIEW PRODUCTS</a>
             <a href="../general/blog-cms.php">BLOGS</a>
-            <a href="../seller/manage-product.php">VIEW PRODUCTS</a>
-
             <a href="../logout.php">LOGOUT</a>
-
           </div>
         </li>
       </ul>

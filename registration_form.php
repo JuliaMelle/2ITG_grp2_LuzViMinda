@@ -35,26 +35,26 @@
           <h3 class="register">LOGIN CREDENTIALS</h3>
           <!-- input username -->
           <b>USERNAME</b>
-          <input type="text" class="input" name="username" required></input>
+          <input type="text" class="input" name="username" placeholder="Username" required></input>
 
           <!-- input password -->
           <b>PASSWORD</b>
-          <input type="password" class="input" name="password" required></input>
+          <input type="password" class="input" name="password" placeholder="Password" required></input>
           <br>
           <br>
 
           <h3 class="register">BUSINESS INFORMATION</h3>
           <!-- input display name -->
           <b>DISPLAY NAME</b>
-          <input type="displayname" class="input" name="business_name" required></input>
+          <input type="displayname" class="input" name="business_name" placeholder="Display Name" required></input>
 
           <!-- input email -->
           <b>EMAIL</b>
-          <input type="email" class="input" name="email" required> </input>
+          <input type="email" class="input" name="email" placeholder="Email" placeholder="Email" required> </input>
 
           <!-- input address -->
           <b>ADDRESS</b>
-          <input type="address" class="input" name="address" required></input>
+          <input type="address" class="input" name="address" placeholder="Address" required></input>
 
           <!-- input profile picture -->
           <b>PROFILE PICTURE</b>
@@ -67,7 +67,7 @@
           <br>
 
           <div class="mid_position_buttons">
-            <button type="submit" name="Submit" class="button login" onclick="validateForm()">Sign Up</button>
+            <button type="submit" name="Submit" class="button login" onclick="validateForm()">SIGN UP</button>
           </div>
       </form>
       <?php

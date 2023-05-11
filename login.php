@@ -28,13 +28,13 @@
         <form action="backend/authenticate.php" method="post">
         <!-- input username -->
         <b>USERNAME</b>
-        <input type="text" class="input" name="username" placeholder="Username" id="username" required></input>
+        <input type="text" class="input" name="username" placeholder="Username" id="username" ></input>
         <!-- input password -->
         <b>PASSWORD</b>
-        <input type="password" class="input" name="password" placeholder="Password" id="password" required></input>
+        <input type="password" class="input" name="password" placeholder="Password" id="password" ></input>
         <div class="mid_position_buttons">
         <button class="button login" type="submit" value="Login">LOGIN</button>
-        <button class="button">REGISTER</button>
+       <button class="button"> <a href="registration_form.php" class="register"> REGISTER </a></button>
         </div>
       </div>
       </form>

@@ -20,6 +20,7 @@
     align-self: center;
 
     margin-top: 3vh;
+
 }
 
 .login {
@@ -29,7 +30,7 @@
 .card {
     /* box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); */
     /* transition: 0.3s; */
-    margin-top: 100px;
+    margin-top: 50px;
 
     width: 100%;
     border: solid;
@@ -85,7 +86,13 @@
     outline: none;
     transition: all 0.3s ease-in-out;
 }
-
+.register{
+    text-decoration: none;
+    color: white;
+}
+.register:hover{
+    color:black;
+}
 .button:hover {
     background: var(--orange);
     color: var(--black);

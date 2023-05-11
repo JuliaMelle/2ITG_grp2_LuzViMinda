@@ -5,12 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LuzViMinda | Product Catalog</title>
+    <title>LuzViMinda | Learn More</title>
 
     <link rel="stylesheet" href="../styles/global.css">
-    <link rel="stylesheet" href="../styles/product-catalog.css">
-    <link rel="stylesheet" href="../styles/navbar.css">
-  <link rel="stylesheet" href="../styles/footer.css">
+    <link rel="stylesheet" href="../styles/learn_more.css">
 
     <style>
         h2 {
@@ -21,11 +19,7 @@
 
 <body>
 <?php
-
 session_start();
-
-// $TRUE=$_SESSION['loggedin'];
-
 if (isset($_SESSION['loggedin'])) {
     require_once '../components/navbar-seller.php';
 }
@@ -37,30 +31,15 @@ if (isset($_SESSION['loggedin'])) {
  ?>    <div class="container">
         <div class="mid_container">
 
-
             <div class="card"> <!-- CARD -->
                 <div class="capsule">
                     <p class="capsule_caption"> BLOG</p>
                 </div>
-                <img src="../img/temp.png" alt="Avatar" style="width:100%">
                 <h4 class="head">
-                    ITEM NAME
+                    Example Post Title
                 </h4>
                 <h5 class="read_more">
-                    Seller
-                </h5>
-            </div>
-
-            <div class="card"> <!-- CARD -->
-                <div class="capsule2">
-                    <p class="capsule_caption"> BLOG</p>
-                </div>
-                <img src="../img/temp.png" alt="Avatar" style="width:100%">
-                <h4 class="head">
-                    ITEM NAME
-                </h4>
-                <h5 class="read_more">
-                    Seller
+                    Read More
                 </h5>
             </div>
 
@@ -68,27 +47,52 @@ if (isset($_SESSION['loggedin'])) {
                 <div class="capsule">
                     <p class="capsule_caption"> BLOG</p>
                 </div>
-                <img src="../img/temp.png" alt="Avatar" style="width:100%">
                 <h4 class="head">
-                    ITEM NAME
+                    Example Post Title
                 </h4>
                 <h5 class="read_more">
-                    Seller
+                    Read More
                 </h5>
             </div>
 
             <div class="card"> <!-- CARD -->
-                <div class="capsule2">
+                <div class="capsule">
                     <p class="capsule_caption"> BLOG</p>
                 </div>
-                <img src="../img/temp.png" alt="Avatar" style="width:100%">
                 <h4 class="head">
-                    ITEM NAME
+                    Example Post Title
                 </h4>
                 <h5 class="read_more">
-                    Seller
+                    Read More
+                    
                 </h5>
             </div>
+
+            <div class="card"> <!-- CARD -->
+                <div class="capsule">
+                    <p class="capsule_caption"> BLOG</p>
+                </div>
+                <h4 class="head">
+                    Example Post Title
+                </h4>
+                <h5 class="read_more">
+                    Read More
+                </h5>
+            </div>
+
+            <div class="card"> <!-- CARD -->
+                <div class="capsule">
+                    <p class="capsule_caption"> BLOG</p>
+                </div>
+                <h4 class="head">
+                    Example Post Title
+                </h4>
+                <h5 class="read_more">
+                    Read More
+                </h5>
+            </div>
+
+
 
 
             <!-- MID CONTAINER END -->

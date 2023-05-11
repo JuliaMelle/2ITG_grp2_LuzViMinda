@@ -15,7 +15,7 @@ session_start();
 
 
     <link rel="stylesheet" href="../styles/seller-account.css">
-    <title>Account Page</title>
+    <title>LuzViMinda | Account Page</title>
 </head>
 
 <body>
@@ -30,8 +30,9 @@ session_start();
         <div class="flex content">
             <?php
             require_once '../config.php';
-            $sql = "SELECT * FROM users WHERE user_id = 1"; // to change user_id to session id variable
-            $sql_2 = "SELECT * FROM products WHERE user_id = 1"; // to change user_id to session id variable
+            $id = $_SESSION['id'];
+            $sql = "SELECT * FROM users WHERE user_id = $id";
+            $sql_2 = "SELECT * FROM products WHERE user_id = $id";
             if ($result = $conn->query($sql)) {
                 if ($result->num_rows > 0) {
                     while ($row = $result->fetch_array()) {

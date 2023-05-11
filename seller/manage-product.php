@@ -42,7 +42,8 @@ session_start();
                 <tr>
             <?php
                 require_once '../config.php';
-                $sql = "SELECT * FROM products WHERE user_id = 2"; // to change user_id to session id variable
+                $id = $_SESSION['id'];
+                $sql = "SELECT * FROM products WHERE user_id = $id";
                 if ($result = $conn-> query($sql)) {
                     if ($result->num_rows > 0) {
                         while ($row = $result->fetch_array()) {
