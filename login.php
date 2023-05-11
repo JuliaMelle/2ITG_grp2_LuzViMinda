@@ -34,7 +34,7 @@
         <input type="password" class="input" name="password" placeholder="Password" id="password" ></input>
         <div class="mid_position_buttons">
         <button class="button login" type="submit" value="Login">LOGIN</button>
-       <button class="button"> <a href="registration_form.php"> REGISTER </a></button>
+       <button class="button"> <a href="registration_form.php" class="register"> REGISTER </a></button>
         </div>
       </div>
       </form>
