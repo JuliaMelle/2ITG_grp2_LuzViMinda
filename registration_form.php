@@ -58,11 +58,13 @@
 
           <!-- input profile picture -->
           <b>PROFILE PICTURE</b>
+          <h5 class="picture">This only accepts .jpeg, .jpg, and .png files.</h5>
           <input type="file" class="upload-btn" name="image" required></input>
           <br>
 
           <!-- input profile valid ID -->
           <b>VALID ID</b>
+          <h5 class="picture">This only accepts .jpeg, .jpg, and .png files.</h5>
           <input type="file" class="upload-btn" name="image_v2" required></input>
           <br>
 
