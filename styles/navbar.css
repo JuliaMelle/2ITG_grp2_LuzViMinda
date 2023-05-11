@@ -8,7 +8,7 @@
 
 nav {
     background-color: var(--wheat);
- 
+    color: black!important;
     display: flex;
     height: 80px;
     width: 100%;
@@ -17,6 +17,7 @@ nav {
     padding: 0 50px 0 100px;
     flex-wrap: wrap;
     border-bottom: 3px solid var(--black);
+
 }
   
 nav .logo {
@@ -36,6 +37,7 @@ nav ul li {
   
 nav ul li a {
     text-decoration: none;
+    color: var(--black);
     font-size: 18px;
     font-weight: 600;
     padding: 8px 15px 15px 15px;
@@ -63,9 +65,11 @@ input[type="checkbox"] {
   min-width: 160px;
   border: 3px solid var(--black);
   z-index: 1;
+  padding: 10px;
 }
 
 .drop-content a {
+  padding: 10px;
   float: none;
   text-decoration: none;
   display: block;
@@ -74,6 +78,7 @@ input[type="checkbox"] {
 
 .drop-content a:hover {
   background-color: #ddd;
+  padding: 10px;
 }
 
 .btn-account:hover .drop-content {

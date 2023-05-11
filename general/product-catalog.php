@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LuzViMinda | Learn More</title>
+    <title>LuzViMinda | Product Catalog</title>
 
     <link rel="stylesheet" href="../styles/global.css">
     <link rel="stylesheet" href="../styles/product-catalog.css">
@@ -20,8 +20,21 @@
 </head>
 
 <body>
-    <?php require_once '../components/navbar.php' ?>
-    <div class="container">
+<?php
+
+session_start();
+
+// $TRUE=$_SESSION['loggedin'];
+
+if (isset($_SESSION['loggedin'])) {
+    require_once '../components/navbar-seller.php';
+}
+    else{
+    require_once '../components/navbar-general.php';
+
+}
+
+ ?>    <div class="container">
         <div class="mid_container">
 
 

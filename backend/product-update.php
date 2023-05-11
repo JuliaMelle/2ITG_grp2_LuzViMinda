@@ -3,33 +3,40 @@
 require_once "../config.php";
 
 // Define variables and initialize with empty values
-$title = $content = "";
-$title_err = $content_err = "";
+$category = $product_name = $product_price = $product_img = $product_desc = "";
+$category_err = $name_err = $price_err = $img_err = $desc_err ="";
 
 if (isset($_POST["id"]) && !empty($_POST["id"])) {
     // Get hidden input value
     $id = $_POST["id"];
 
-    $title = $_POST["title"];
-    $content = $_POST["content"];
+    $category = $_POST["category"];
+    $product_name = $_POST["product_name"];
+    $product_price = $_POST["product_price"];
+    $product_img = $_POST["product_img"];
+    $product_desc = $_POST["product_desc"];
+    
     // Check input errors before inserting in database
-    if (empty($title_err) && empty($content_err)) {
+    if (empty($name_err) && empty($price_err) && empty($category_err) && empty($img_err) && empty($desc_err)) {
         // Prepare an update statement
-        $sql = "UPDATE blog_post SET title = ?, content = ? WHERE post_id = ?";
+        $sql = "UPDATE products SET category = ?, product_name = ?, product_price = ?, product_img = ?, product_desc = ? WHERE product_id = ?";
 
         if ($stmt = $conn->prepare($sql)) {
             // Bind variables to the prepared statement as parameters
-            $stmt->bind_param("ssi", $param_title, $param_content, $param_id);
+            $stmt->bind_param("ssiisi", $param_category, $param_name, $param_price, $param_img, $param_desc, $param_id);
 
             // Set parameters
-            $param_title = $title;
-            $param_content = $content;
+            $param_category = $category;
+            $param_name = $product_name;
+            $param_price = $product_price;
+            $param_img = $product_img;
+            $param_desc = $product_desc;
             $param_id = $id;
 
             // Attempt to execute the prepared statement
             if ($stmt->execute()) {
                 // Records updated successfully. Redirect to landing page
-                header("location: ../general/blog-cms.php");
+                header("location: ../seller/manage-product.php");
                 exit();
             } else {
                 echo "Oops! Something went wrong. Please try again later.";
@@ -67,8 +74,11 @@ if (isset($_POST["id"]) && !empty($_POST["id"])) {
                     $row = $result->fetch_array(MYSQLI_ASSOC);
 
                     // Retrieve individual field value
-                    $title = $row["title"];
-                    $content = $row["content"];
+                    $category = $row["category"];
+                    $product_name = $row["product_name"];
+                    $product_price = $row["product_price"];
+                    $product_img = $row["product_img"];
+                    $product_desc = $row["product_desc"];
                 } else {
                     // URL doesn't contain valid id. Redirect to error page
                     header("location: error.php");
