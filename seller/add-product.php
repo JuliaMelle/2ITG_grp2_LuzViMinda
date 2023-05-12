@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title></title>
+  <title>LuzViMinda | Add Product</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
@@ -13,16 +13,14 @@
   <link rel="stylesheet" href="../styles/footer.css">
   <link rel="stylesheet" href="../styles/add-product.css">
 
-  <title>LuzViMinda | Add Product</title>
-
 </head>
 <body>
       
-                  <div class="details">
-                      <h3 class="identifiers">PRODUCT NAME</h3>
-                      <input type="text" class="box"></input>
-                         
-                         
+                  <div class="container">
+                    <div class="mid_container">
+                      
+                         <h3 class="identifiers">PRODUCT NAME</h3>
+                         <input type="text" class="box"></input>
 
                          <h3 class="identifiers">PRODUCT DESCRIPTION</h3>
                          <input type="text" class="box"></input>
@@ -39,7 +37,7 @@
                          <button class="button login" type="submit" value="Login" style ="width:90%">ADD A PRODUCT</button>
 
                          </div>
-                         </div>
+                  </div>
                         
 </body>
 </html>
