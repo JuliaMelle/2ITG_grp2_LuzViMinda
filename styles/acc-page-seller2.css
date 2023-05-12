@@ -20,14 +20,28 @@
     margin-top: 2%;
     text-align: center;
 }
-.button {
+.login{
   display: flex;
   justify-content: center;
   align-items: center;
-
-
-
   width: 100%;
+  background: var(--black);
+  color: var(--white);
+  height: 40px;
+  margin-top: 5px;
+  border: none;
+  border-radius: 0 !important;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.3s ease-in-out;
+}
+.button {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background: var(--black);
   color: var(--white);
   height: 40px;
@@ -92,6 +106,8 @@
 
 .details {
     width: calc(100%/2);
+    margin-left: 20px;
+
 }
 
 .details-prod {
@@ -103,8 +119,13 @@
   height: 50px;
   background-color: var(--gray);
   border: 3px solid var(--black);
+  padding: 12px;
 }
+.identifiers{
 
+  padding: 10px;
+  padding-left: 0px;
+}
 .card {
   width: 300px;
   padding: 20px;
@@ -143,6 +164,7 @@ h3 {
   object-fit: cover;
 }
 
+
 /* MEDIUM DEVICES*/
 @media (max-width: 768px) {
     .flex-2 {
@@ -151,10 +173,13 @@ h3 {
         justify-content: center;
         flex-wrap: wrap;
     }
-
+    .upper {
+      width: 80%;
+      text-align: center;
+    }
     .profile-img {
-        width: 50%;
-        height: 300px;
+        width: 50vh;
+        height: 50vh;
         background-color: var(--orange);
       }
 
@@ -165,6 +190,11 @@ h3 {
         flex-direction: column;
 
         margin-top: 5%;
+
+          margin-left: 0px;
+      
+     
+      
     }
 
     .box {
