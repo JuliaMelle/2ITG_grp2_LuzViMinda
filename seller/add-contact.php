@@ -1,10 +1,13 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html>
 
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title></title>
+  <title>LuzViMinda | Add Contact</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- css -->
@@ -15,8 +18,7 @@
 </head>
 
 <body>
-
-  <?php require_once '../components/navbar.php' ?>
+  <?php require_once '../components/navbar-seller.php' ?>
   <div class="container">
 
     <div class="mid_container">
