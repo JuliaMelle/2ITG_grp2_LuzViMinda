@@ -1,5 +1,6 @@
 <?php
 session_start();
+<<<<<<< Updated upstream
 
 if (isset($_SESSION['loggedin'])) {
     require_once '../components/navbar-seller.php';
@@ -8,8 +9,9 @@ if (isset($_SESSION['loggedin'])) {
     require_once '../components/navbar-general.php';
 
 }
+=======
+>>>>>>> Stashed changes
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,6 +22,7 @@ if (isset($_SESSION['loggedin'])) {
     <title>LuzViMinda | Learn More</title>
 
     <link rel="stylesheet" href="../styles/global.css">
+<<<<<<< Updated upstream
     <link rel="stylesheet" href="../styles/product-catalog.css">
     <link rel="stylesheet" href="../styles/navbar.css">
     <link rel="stylesheet" href="../styles/footer.css">
@@ -45,8 +48,18 @@ if (isset($_SESSION['loggedin'])) {
     }
     </style>
     
+=======
+    <link rel="stylesheet" href="../styles/navbar.css">
+    <link rel="stylesheet" href="../styles/footer.css">
+
+
+    <link rel="stylesheet" href="../styles/acc-page-seller2.css">
+    <title>LuzViMinda | Account Page</title>
+>>>>>>> Stashed changes
 </head>
+
 <body>
+<<<<<<< Updated upstream
 <?php require_once '../components/navbar-seller.php' ?>
     
     <div style="height:7rem;"></div>
@@ -112,6 +125,64 @@ if (isset($_SESSION['loggedin'])) {
     <footer>
 
     </footer>
+=======
+    <?php require_once '../components/navbar-seller.php' ?>
+
+    <!-- ITO YUNG PAGE FOR VIEWERS ONLY -->
+
+
+    <!-- // ACCOUNT DETAILS -->
+    <div class="wrapper">
+        
+        <div class="header orange"></div>
+        <div class="flex content">
+            <?php
+            require_once '../config.php';
+            $id = $_SESSION['id'];
+            $sql = "SELECT * FROM users WHERE user_id = $id";
+            $sql_2 = "SELECT * FROM products WHERE user_id = $id";
+            if ($result = $conn->query($sql)) {
+                if ($result->num_rows > 0) {
+                    while ($row = $result->fetch_array()) {
+?>
+                       <div >
+                        <img class="profile-img" src="../user_identification/' .<?php $row['valid_id_img'] ?>. '"/> 
+                        
+                        
+                        <button class="button login" type="submit" value="Login">CHANGE PROFILE</button>
+                        <button class="button login" type="submit" value="Login">SAVE CHANGES</button>
+                        <button class="button login" type="submit" value="Login">ADD CONTACT </button>
+                    
+                       </div>
+
+                   <div class="details">
+                      <h3>USERNAME</h3>
+                         <div class="box"><?php echo $row['business_name'] ?></div> 
+                         <h3>CHANGE PASSWORD</h3>
+                         <button class="button login" type="submit" value="Login" style="width:90%">CHANGE PASSWORD</button>
+
+
+
+                         <h3>Email</h3> 
+                         <div class="box"><?php echo $row['email'] ?></div> 
+                         <h3>ADDRESS</h3>
+                         <div class="box"><?php echo $row['address'] ?></div> 
+                         <h3>WEBSITE</h3> 
+                         <div class="box"> <?php echo $row['website'] ?></div> 
+                         </div> 
+                         </div> 
+                         </div> 
+           <?php         }
+                    $result->free();
+                }
+            }
+            ?>
+        
+
+    </div>
+
+    <?php require_once '../components/footer.php' ?>
+>>>>>>> Stashed changes
 </body>
 
 </html>
