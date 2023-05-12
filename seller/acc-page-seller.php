@@ -54,8 +54,9 @@ session_start();
 
 
 
-
+                        <a href="add-contact.php">
                         <button class="button login" type="submit" value="Login">ADD CONTACT</button>
+                        </a>
 
 
                        </div>

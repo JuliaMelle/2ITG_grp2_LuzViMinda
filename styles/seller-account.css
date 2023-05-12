@@ -84,6 +84,7 @@
   height: 50px;
   background-color: var(--gray);
   border: 3px solid var(--black);
+  padding: 10px;
 }
 
 .card {
@@ -96,6 +97,8 @@
 }
 
 h3 {
+  margin-top: 10px;
+  margin-bottom: 10px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
