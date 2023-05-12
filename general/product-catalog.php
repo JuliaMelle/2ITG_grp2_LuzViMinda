@@ -1,3 +1,7 @@
+<?php
+require_once '../config.php';
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,76 +24,35 @@
 </head>
 
 <body>
-<?php
-
-session_start();
-
-// $TRUE=$_SESSION['loggedin'];
-
-if (isset($_SESSION['loggedin'])) {
-    require_once '../components/navbar-seller.php';
-}
-    else{
-    require_once '../components/navbar-general.php';
-
-}
-
- ?>    <div class="container">
+    <?php require_once '../components/navbar-seller.php' ?>
+    <div class="container">
         <div class="mid_container">
 
+        <?php
+        $sql = "SELECT* FROM products";
+        $result = mysqli_query($conn, $sql);
+                    $resultCheck = mysqli_num_rows($result);
+        
+                  if ($resultCheck > 0) {
+                        while ($row = mysqli_fetch_assoc($result)) {  
+        ?>
 
             <div class="card"> <!-- CARD -->
                 <div class="capsule">
-                    <p class="capsule_caption"> BLOG</p>
+                    <p class="capsule_caption">   <?php echo $row ['category'] ?> </p>
                 </div>
                 <img src="../img/temp.png" alt="Avatar" style="width:100%">
                 <h4 class="head">
-                    ITEM NAME
+                <?php echo $row ['product_name'] ?> 
                 </h4>
                 <h5 class="read_more">
-                    Seller
+                <?php echo $row ['seller_name'] ?>
                 </h5>
             </div>
 
-            <div class="card"> <!-- CARD -->
-                <div class="capsule2">
-                    <p class="capsule_caption"> BLOG</p>
-                </div>
-                <img src="../img/temp.png" alt="Avatar" style="width:100%">
-                <h4 class="head">
-                    ITEM NAME
-                </h4>
-                <h5 class="read_more">
-                    Seller
-                </h5>
-            </div>
 
-            <div class="card"> <!-- CARD -->
-                <div class="capsule">
-                    <p class="capsule_caption"> BLOG</p>
-                </div>
-                <img src="../img/temp.png" alt="Avatar" style="width:100%">
-                <h4 class="head">
-                    ITEM NAME
-                </h4>
-                <h5 class="read_more">
-                    Seller
-                </h5>
-            </div>
-
-            <div class="card"> <!-- CARD -->
-                <div class="capsule2">
-                    <p class="capsule_caption"> BLOG</p>
-                </div>
-                <img src="../img/temp.png" alt="Avatar" style="width:100%">
-                <h4 class="head">
-                    ITEM NAME
-                </h4>
-                <h5 class="read_more">
-                    Seller
-                </h5>
-            </div>
-
+            <?php }
+           }?>
 
             <!-- MID CONTAINER END -->
         </div>

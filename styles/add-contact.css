@@ -55,6 +55,8 @@
     height: 50px;
     background-color: var(--orange);
     margin: 5rem 0 0 0;
+    border: 3px solid var(--black);
+    border-bottom: none;
 }
 
 .welcome {
