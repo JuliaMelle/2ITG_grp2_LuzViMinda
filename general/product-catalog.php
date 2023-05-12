@@ -37,7 +37,7 @@ session_start();
 
         <div class="input-container">
             <form action="product-catalog.php" method="get">
-                <input type="text" name="text" class="input" placeholder="search..." aria-label="Search" name="query">
+                <input type="text" class="input" placeholder="search..." aria-label="Search" name="query">
             </form>
             <span class="icon">
                 <svg width="19px" height="19px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -65,12 +65,14 @@ session_start();
         if ($sSearch <> "") { ?>
             <!-- SEARCH PAGE -->
             <?php
-            $sql = "SELECT* FROM products p JOIN users us ON us.user_id=p.user_id WHERE `product_name` LIKE  '%" . $sSearch . "%' or `category` LIKE  '%" . $sSearch . "%'or `seller_name` LIKE  '%" . $sSearch . "%'";
+            $sql = "SELECT* FROM products WHERE `product_name` LIKE  '%" . $sSearch . "%' or `category` LIKE  '%" . $sSearch . "%'or `seller_name` LIKE  '%" . $sSearch . "%'or `product_price` LIKE  '" . $sSearch . "%'or `product_desc` LIKE  '" . $sSearch . "%'";
             ?>
             <!-- CARD -->
-            <div class="mid_container">
+            <div class="mid_text">
                 <h1 class="center"><?php echo " " . $sSearch; ?></h1>
+        </div>
 
+        <div class="mid_container">
                 <?php
                 $upload_dir = '../upload/';
                 $result = mysqli_query($conn, $sql);
@@ -94,10 +96,20 @@ session_start();
                                     <?php echo $row['seller_name'] ?>
                                 </h5>
                             </div>
+                            <!-- </div> -->
+                            
                             <!-- CARD -->
                     <?php
-                    }
-                }
+                    } 
+                } else { ?>
+                </div>
+                    <div class="ex1">
+                        <div class="card2">
+                            <!-- <h1 class="">No items found.</h1> -->
+                            <img src="../img/noitemsfound.png" style=" height: 300px;">
+                        </div>
+                    </div>
+                <?php }
             } else { ?>
 
                     <div class="mid_container">
@@ -124,18 +136,18 @@ session_start();
                                         <h5 class="read_more">
                                             <?php echo $row['seller_name'] ?>
                                         </h5>
-                                    </div>
+                            </div>
 
 
                             <?php }
                         } 
             }
                  ?>
-
-                 
-                        <!-- MID CONTAINER END -->
-                    </div>
+<!-- MID CONTAINER END -->
+</div>
             </div>
+                 
+                      
             <?php require_once '../components/footer.php' ?>
 
 </body>
