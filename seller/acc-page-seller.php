@@ -49,7 +49,7 @@ session_start();
                        <div >
                         <img class="profile-img" src="../user_identification/' .<?php $row['valid_id_img'] ?>. '"/>
                        
-                        <button class="button login" type="submit" value="Login" a href ="change-profile.php">CHANGE PROFILE</button></a>
+                        <button class="button login" type="submit" value="Login">CHANGE PROFILE</button>
                         <button class="button login" type="submit" value="Login">SAVE CHANGES</button>
 
 
