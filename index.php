@@ -63,7 +63,7 @@ session_start();
                     $resultCheck = mysqli_num_rows($result);
         if ($resultCheck > 0) {
             while ($row = mysqli_fetch_assoc($result)) {  
-        ?>
+        ?> <a href="general/learn_more_specific?id=<?php echo $row['post_id'] ?>" class="product-text sub-link">
             <div class="card"> <!-- CARD -->
                 <div class="capsule">
                     <p class="capsule_caption"> BLOG</p>
@@ -81,12 +81,14 @@ session_start();
                 } else {
                     echo $sentence;
                 }
-                
                 ?>
-                
-                <br> read more...
+
+               
+             
                 </h5>
             </div>
+
+            </a>
          
            <?php }
            }?>
