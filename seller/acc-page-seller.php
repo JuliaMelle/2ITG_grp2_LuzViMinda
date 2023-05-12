@@ -49,7 +49,7 @@ session_start();
                        <div >
                         <img class="profile-img" src="../user_identification/' .<?php $row['valid_id_img'] ?>. '"/>
                        
-                        <button class="button login" type="submit" value="Login">CHANGE PROFILE</button>
+                        <button class="button login" type="submit" value="Login" a href ="change-profile.php">CHANGE PROFILE</button></a>
                         <button class="button login" type="submit" value="Login">SAVE CHANGES</button>
 
 
@@ -65,10 +65,11 @@ session_start();
                       <h3>USERNAME</h3>
                          <div class="box"><?php echo $row['business_name'] ?></div>
                          
+                         <h3>CHANGE PASSWORD</h3>
                          <button class="button login" type="submit" value="Login" style ="width:90%">CHANGE PASSWORD</button>
 
 
-                         <h3>Email</h3>
+                         <h3>EMAIL</h3>
                          <div class="box"><?php echo $row['email'] ?></div>
                          <h3>ADDRESS</h3>
                          <div class="box"><?php echo $row['address'] ?></div>
