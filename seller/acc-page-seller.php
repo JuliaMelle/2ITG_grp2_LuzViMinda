@@ -50,13 +50,12 @@ session_start();
                         <img class="profile-img" src="../user_identification/' .<?php $row['valid_id_img'] ?>. '"/>
                        
                         <button class="button login" type="submit" value="Login">CHANGE PROFILE</button>
-                        <button class="button login" type="submit" value="Login">SAVE CHANGES</button>
-
-
-
+                        
                         <a href="add-contact.php">
                         <button class="button login" type="submit" value="Login">ADD CONTACT</button>
                         </a>
+
+                        <button class="save" type="submit" value="Login">SAVE CHANGES</button>
 
 
                        </div>
