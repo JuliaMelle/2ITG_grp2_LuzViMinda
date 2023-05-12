@@ -46,7 +46,7 @@ session_start();
                 if ($result->num_rows > 0) {
                     while ($row = $result->fetch_array()) {
 ?>
-                       <div >
+                       <div class="upper">
                         <img class="profile-img" src="../user_identification/' .<?php $row['valid_id_img'] ?>. '"/>
                        
                         <button class="button login" type="submit" value="Login">CHANGE PROFILE</button>
@@ -62,18 +62,18 @@ session_start();
 
 
                    <div class="details">
-                      <h3>USERNAME</h3>
+                      <h3 class="identifiers">USERNAME</h3>
                          <div class="box"><?php echo $row['business_name'] ?></div>
                          
-                         <h3>CHANGE PASSWORD</h3>
+                         <h3 class="identifiers">CHANGE PASSWORD</h3>
                          <button class="button login" type="submit" value="Login" style ="width:90%">CHANGE PASSWORD</button>
 
 
-                         <h3>EMAIL</h3>
+                         <h3 class="identifiers">EMAIL</h3>
                          <div class="box"><?php echo $row['email'] ?></div>
-                         <h3>ADDRESS</h3>
+                         <h3 class="identifiers">ADDRESS</h3>
                          <div class="box"><?php echo $row['address'] ?></div>
-                         <h3>WEBSITE</h3>
+                         <h3 class="identifiers">WEBSITE</h3>
                          <div class="box"> <?php echo $row['website'] ?></div>
                          </div>
                          </div>
