@@ -31,8 +31,10 @@
                          <h3 class="identifiers">CATEGORY</h3>
                          <input type="text" class="box"></input>
                          
-                         <h3 class="identifiers">PRODUCT PICTURE</h3>
-                         <input type="text" class="box"></input>
+                         <h3 class="identifiers1">PROFILE PICTURE</h3>
+                         <h5 class="picture">This only accepts .jpeg, .jpg, and .png files.</h5>
+                         <input type="file" class="upload-btn" name="image" required></input>
+                         <br>
 
                          <button class="button login" type="submit" value="Login" style ="width:90%">ADD A PRODUCT</button>
 

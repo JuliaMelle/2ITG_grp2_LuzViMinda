@@ -175,6 +175,11 @@ h3 {
   text-overflow: ellipsis;
 }
 
+.website {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
 .category {
   background-color: var(--pastel-orange);
   width: 150px;
