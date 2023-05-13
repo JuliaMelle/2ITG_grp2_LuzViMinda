@@ -49,7 +49,12 @@ session_start();
                         echo '<div class="box">' . $row['email'] . '</div>';
                         if ($result = $conn->query($sql_3)) {
                             if ($result->num_rows > 0) {
+                                if (!empty($row['website'])) {
+                                    echo '<h3>WEBSITE</h3>';
+                                    echo '<div class="box">' . $row['website'] . '</div>';
+                                }
                                 while ($row = $result->fetch_array()) {
+
                                     if(!empty($row['contact_no'])){
                                         echo '<h3>CONTACT NO.</h3>';
                                         echo '<div class="box">' . $row['contact_no'] . '</div>';
