@@ -70,6 +70,7 @@ session_start();
                         
 
                         echo            '<div class="card">';
+                        echo            '<a href="../general/view_product_specific?id='. $row['product_id'] .'" class="product-text sub-link">';
                         echo               '<div class="details-prod">';
                         echo                   '<div class="category">' . $row['category'] . '</div>';
                         echo                   '<img class="product-img">';
