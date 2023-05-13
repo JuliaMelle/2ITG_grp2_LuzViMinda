@@ -32,6 +32,7 @@ session_start();
     ?> 
 
     <div>
+
     <div>
     <h1 class="welcome">WELCOME TO LUZVIMINDA!</h1>
 
@@ -90,9 +91,8 @@ session_start();
                 }
                 $rowCount++;
                 ?>
-
-               
-             
+                
+                <br> read more...
                 </h5>
             </div>
             </a>
