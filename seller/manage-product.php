@@ -15,7 +15,7 @@ session_start();
     <link rel="stylesheet" href="../styles/manage-product.css">
     <script src="https://kit.fontawesome.com/b1d36f5527.js" crossorigin="anonymous"></script>
 
-    <title>Document</title>
+    <title>LuzViMinda | Manage Product</title>
 </head>
 
 <body>
@@ -23,7 +23,9 @@ session_start();
     <!-- product_id	user_id	category	product_name	product_price	product_img	product_desc -->
     <div class="blog-container">
 
+    <a href="add-product.php">
     <button class="button" id="btn-add">ADD A PRODUCT</button>
+    </a>
 
         <table class="a">
             <thead>

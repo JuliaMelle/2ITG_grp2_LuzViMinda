@@ -40,7 +40,7 @@ if ($stmt = $con->prepare('SELECT user_id, password FROM users WHERE username = 
             $_SESSION['loggedin'] = TRUE;
             $_SESSION['username'] = $_POST['username'];
             $_SESSION['id'] = $id;
-            header('Location: ../seller/product-catalog.php');
+            header('Location: ../general/product-catalog.php');
         } else {
             // Incorrect password
             echo 'Incorrect username and/or password!';

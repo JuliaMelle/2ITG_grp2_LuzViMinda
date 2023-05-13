@@ -3,9 +3,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-bottom: 50%;
-    margin: 1rem 0 0 0 !important;
-
 }
 
 .mid_container {
@@ -15,7 +12,7 @@
     align-self: center;
     width: 50%;
     flex-direction: column;
-    margin: 1rem 0 0 0;
+    /* margin: 1rem 0 0 0; */
 }
 
 .mid_position_buttons {
@@ -26,9 +23,6 @@
     margin-top: 3vh;
 }
 
-.login {
-    margin-right: 10px;
-}
 .card {
     /* box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); */
     /* transition: 0.3s; */
@@ -40,7 +34,7 @@
     background-color: var(--white);
 
     padding: 5vh;
-    padding-bottom: 10vh !important;
+    padding-bottom: 7vh !important;
     padding-top: 7vh !important;
 }
 .label {
@@ -54,7 +48,9 @@
     width: 100%;
     height: 50px;
     background-color: var(--orange);
-    margin: 5rem 0 0 0;
+    margin: 2rem 0 0 0;
+    border: 3px solid var(--black);
+    border-bottom: none;
 }
 
 .welcome {
