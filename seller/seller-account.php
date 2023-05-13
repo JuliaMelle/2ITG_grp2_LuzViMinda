@@ -42,11 +42,11 @@ session_start();
                         echo '</div>';
 
                         echo '<div class="details">';
-                        echo '<h3>Seller Name</h3>';
+                        echo '<h3>SELLER NAME</h3>';
                         echo '<div class="box">' . $row['business_name'] . '</div>';
-                        echo '<h3>Email</h3>';
+                        echo '<h3>EMAIL</h3>';
                         echo '<div class="box">' . $row['email'] . '</div>';
-                        echo '<h3>Link</h3>';
+                        echo '<h3>LINK</h3>';
                         echo '<div class="box">' . $row['website'] . '</div>';
                         echo '</div>';
                         echo '</div>';
