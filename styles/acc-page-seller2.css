@@ -1,3 +1,7 @@
+a {
+  text-decoration: none;
+}
+
 .wrapper {
   width: 80%;
   height: auto;
@@ -16,13 +20,72 @@
   border-right: 3px solid var(--black);
 }
 
-a {
-  text-decoration: none!important;
-}
-
 .label {
     margin-top: 2%;
     text-align: center;
+}
+.login{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background: var(--black);
+  color: var(--white);
+  height: 40px;
+  margin-top: 5px;
+  border: none;
+  border-radius: 0 !important;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.save{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background: var(--orange);
+  color: var(--black);
+  height: 40px;
+  margin-top: 5px;
+  border: none;
+  border-radius: 0 !important;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.save:hover {
+  background: var(--black);
+  color: var(--white);
+}
+
+.button {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--black);
+  color: var(--white);
+  height: 40px;
+  margin-top: 5px;
+  border: none;
+  border-radius: 0 !important;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.button:hover {
+  background: var(--orange);
+  color: var(--black);
 }
 
 .flex {
@@ -77,6 +140,8 @@ a {
 
 .details {
     width: calc(100%/2);
+    margin-left: 20px;
+
 }
 
 .details-prod {
@@ -88,9 +153,13 @@ a {
   height: 50px;
   background-color: var(--gray);
   border: 3px solid var(--black);
-  padding: 10px;
+  padding: 12px;
 }
+.identifiers{
 
+  padding: 10px;
+  padding-left: 0px;
+}
 .card {
   width: 300px;
   padding: 20px;
@@ -101,10 +170,6 @@ a {
 }
 
 h3 {
-
-  font-size: 1rem;
-  margin-top: 5px;
-  margin-bottom: 5px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -118,7 +183,6 @@ h3 {
   border-radius: 25px;
   text-align: center;
   margin-bottom: 1rem;
-  font-weight: bold;
 }
 
 /* .card .category:nth-of-type(even) {
@@ -134,6 +198,7 @@ h3 {
   object-fit: cover;
 }
 
+
 /* MEDIUM DEVICES*/
 @media (max-width: 768px) {
     .flex-2 {
@@ -142,10 +207,13 @@ h3 {
         justify-content: center;
         flex-wrap: wrap;
     }
-
+    .upper {
+      width: 80%;
+      text-align: center;
+    }
     .profile-img {
-        width: 50%;
-        height: 300px;
+        width: 50vh;
+        height: 50vh;
         background-color: var(--orange);
       }
 
@@ -156,6 +224,11 @@ h3 {
         flex-direction: column;
 
         margin-top: 5%;
+
+          margin-left: 0px;
+      
+     
+      
     }
 
     .box {
@@ -174,3 +247,4 @@ h3 {
         background-color: var(--orange);
       }
 }
+/* GUSTO KO LANG MAG COMMIT */

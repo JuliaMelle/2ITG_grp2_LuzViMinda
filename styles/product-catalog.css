@@ -1,3 +1,7 @@
+a {
+    text-decoration: none!important;
+}
+
 .card {
     margin-top: 90px;
 
@@ -11,8 +15,37 @@
     margin: 10px;
 }
 
+.center {
+  display: flex !important;
+  text-align: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+/* .center1{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  align-self: center;
+} */
+
+.ex1{ display:flex !important;
+  flex-direction:column;
+  justify-content:center!important;
+  align-items:center;
+  margin-top: 10px;
+
+  }
+  .card2{
+  flex-direction:column;
+  justify-content:center!important;
+  align-items:center;
+  text-align: center;
+  }
 .capsule_caption {
-    margin-left: 10px;
+    text-align: center;
     font-weight: bold;
 }
 
@@ -20,7 +53,7 @@
     border-radius: 10%/50%;
 
     width: 100px;
-    background-color: var(--pastel-orange);
+    background-color: var(--pastel-blue);
 
     margin-left: -5px;
     margin-bottom: 3vh;
@@ -53,6 +86,16 @@
     width: 90%;
 }
 
+.mid_text {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  align-self: center;
+  width: 90%;
+}
+
 .head {
     width: 100%;
     margin-bottom: 10px;
@@ -68,10 +111,62 @@ img {
     height: 150px;
     margin-left: -1px;
   }
+  .input-container {
+    width: 220px;
+    position: relative;
+  }
+  
+  .icon {
+    position: absolute;
+    right: 10px;
+    top: calc(50% + 5px);
+    transform: translateY(calc(-50% - 5px));
+  }
+  
+  .input {
+    
+    width: 100%;
+    height: 40px;
+    padding: 10px;
+    transition: .2s linear;
+    border: 2.5px solid black;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+  
+  .input:focus {
+    outline: none;
+    border: 0.5px solid black;
+    box-shadow: -5px -5px 0px black;
+  }
+  .input-container{
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+    width: 40%;
+  }
+  .input-container:hover > .icon {
+    animation: anim 1s linear infinite;
+  }
+  
+  @keyframes anim {
+    0%,
+    100% {
+      transform: translateY(calc(-50% - 5px)) scale(1);
+    }
+  
+    50% {
+      transform: translateY(calc(-50% - 5px)) scale(1.1);
+    }
+  }
 
 /* Media Query for Mobile Devices */
 @media (max-width: 600px) {
-
+    .input-container{
+        margin-top: 3vh;
+        margin-bottom: 3vh;
+        width: 80%;
+      }
     .container {
         display: flex;
         flex-direction: column;
@@ -85,12 +180,12 @@ img {
         justify-content: center;
         align-items: center;
 
-        width: 90%;
+        width: 100%;
     }
 
     .card {
 
-        width: 90%;
+        width: 100%;
         border: solid;
         color: black;
         background-color: var(--white);

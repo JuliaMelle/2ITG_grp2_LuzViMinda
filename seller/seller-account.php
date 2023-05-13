@@ -33,6 +33,7 @@ session_start();
             $id = $_SESSION['id'];
             $sql = "SELECT * FROM users WHERE user_id = $id";
             $sql_2 = "SELECT * FROM products WHERE user_id = $id";
+            $sql_3 = "SELECT * FROM contacts WHERE user_id = $id";
             if ($result = $conn->query($sql)) {
                 if ($result->num_rows > 0) {
                     while ($row = $result->fetch_array()) {
@@ -42,12 +43,39 @@ session_start();
                         echo '</div>';
 
                         echo '<div class="details">';
-                        echo '<h3>Seller Name</h3>';
+                        echo '<h3>SELLER NAME</h3>';
                         echo '<div class="box">' . $row['business_name'] . '</div>';
-                        echo '<h3>Email</h3>';
+                        echo '<h3>EMAIL</h3>';
                         echo '<div class="box">' . $row['email'] . '</div>';
-                        echo '<h3>Link</h3>';
-                        echo '<div class="box">' . $row['website'] . '</div>';
+                        if ($result = $conn->query($sql_3)) {
+                            if ($result->num_rows > 0) {
+                                if (!empty($row['website'])) {
+                                    echo '<h3>WEBSITE</h3>';
+                                    echo '<div class="box">' . $row['website'] . '</div>';
+                                }
+                                while ($row = $result->fetch_array()) {
+
+                                    if(!empty($row['contact_no'])){
+                                        echo '<h3>CONTACT NO.</h3>';
+                                        echo '<div class="box">' . $row['contact_no'] . '</div>';
+                                    }
+                                    if(!empty($row['facebook'])){
+                                        echo '<h3>FACEBOOK</h3>';
+                                        echo '<div class="box">' . $row['facebook'] . '</div>';
+                                    }
+                                    if(!empty($row['instagram'])){
+                                        echo '<h3>INSTAGRAM</h3>';
+                                        echo '<div class="box">' . $row['instagram'] . '</div>';
+                                    }
+                                    if(!empty($row['others'])){
+                                        echo '<h3>OTHERS</h3>';
+                                        echo '<div class="box">' . $row['others'] . '</div>';
+                                    }
+
+
+                                }
+                            }
+                        }
                         echo '</div>';
                         echo '</div>';
                         echo '</div>';
@@ -65,11 +93,8 @@ session_start();
             if ($result = $conn->query($sql_2)) {
                 if ($result->num_rows > 0) {
                     while ($row = $result->fetch_array()) {
-
-
-                        
-
                         echo            '<div class="card">';
+                        echo            '<a href="../general/view_product_specific?id='. $row['product_id'] .'" class="product-text sub-link">';
                         echo               '<div class="details-prod">';
                         echo                   '<div class="category">' . $row['category'] . '</div>';
                         echo                   '<img class="product-img">';
@@ -78,9 +103,6 @@ session_start();
                         echo               '<h3>' . $row['product_name'] . '</h3>';
                         echo               '<h3>'. $row['product_desc'] .'</h3>';
                         echo            '</div>';
-
-                        
-                        
                     }
                     $result->free();
                 }

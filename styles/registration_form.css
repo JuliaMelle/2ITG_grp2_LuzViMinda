@@ -51,6 +51,11 @@
     margin-bottom: 3vh;
 }
 
+.picture {
+    padding-top: 1px;
+    color: var(--dark-blue)
+}
+
 .input {
     border: solid;
     color: black;
