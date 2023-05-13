@@ -32,9 +32,6 @@ session_start();
     ?> 
 
     <div>
-     <h2>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi corrupti maiores at animi vero voluptatum officia beatae aspernatur tempora nesciunt, vel ad facere ea repudiandae, deleniti blanditiis necessitatibus incidunt. Sequi.</h2>
-
-
 
     <div>
     <h1 class="welcome">WELCOME TO LUZVIMINDA!</h1>
@@ -64,9 +61,17 @@ session_start();
         $sql = "SELECT* FROM blog_post";
         $result = mysqli_query($conn, $sql);
                     $resultCheck = mysqli_num_rows($result);
+        $numberOfRows = 6; // The number of rows you want to print
+
+        $rowCount = 0;
+
         if ($resultCheck > 0) {
-            while ($row = mysqli_fetch_assoc($result)) {  
+            $counter = 0;
+            $row = mysqli_fetch_assoc($result);
+            while (  $row = mysqli_fetch_assoc($result)) {  
+                if ($rowCount < $numberOfRows) { 
         ?>
+        <a href="blog_specific.php?id=<?php echo $row['post_id'] ?>" class="product-text sub-link">
             <div class="card"> <!-- CARD -->
                 <div class="capsule">
                     <p class="capsule_caption"> BLOG</p>
@@ -84,14 +89,19 @@ session_start();
                 } else {
                     echo $sentence;
                 }
-                
+                $rowCount++;
                 ?>
                 
                 <br> read more...
                 </h5>
             </div>
-         
-           <?php }
+            </a>
+           <?php 
+                }
+                else {
+                    break; // Exit the loop once the desired number of rows is printed
+                }   
+        }
            }?>
             <!-- MID CONTAINER END -->
         </div>
