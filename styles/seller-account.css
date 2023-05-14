@@ -16,6 +16,10 @@
   border-right: 3px solid var(--black);
 }
 
+a {
+  text-decoration: none!important;
+}
+
 .label {
     margin-top: 2%;
     text-align: center;
@@ -97,8 +101,10 @@
 }
 
 h3 {
-  margin-top: 10px;
-  margin-bottom: 10px;
+
+  font-size: 1rem;
+  margin-top: 5px;
+  margin-bottom: 5px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -112,6 +118,7 @@ h3 {
   border-radius: 25px;
   text-align: center;
   margin-bottom: 1rem;
+  font-weight: bold;
 }
 
 /* .card .category:nth-of-type(even) {
