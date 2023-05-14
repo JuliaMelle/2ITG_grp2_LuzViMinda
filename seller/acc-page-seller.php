@@ -49,13 +49,13 @@ session_start();
                         <div class="upper">
                             <img class="profile-img" src="../user_identification/<?php echo $row['valid_id_img'] ?>" />
 
-                            <button class="button login" type="submit" value="Login">CHANGE PROFILE</button>
-
-                            <a href="add-contact.php">
-                                <button class="button login" type="submit" value="Login">ADD CONTACT</button>
+                            <button class="change-profile"><a href="change-profile.php">CHANGE PROFILE</button>
+                            </a>
+                            
+                                <button class="add-contact"><a href="add-contact.php">ADD CONTACT</button>
                             </a>
 
-                            <button class="save" type="submit" value="Login">SAVE CHANGES</button>
+                            <button class="save" type="submit">SAVE CHANGES</button>
 
 
                         </div>
@@ -66,8 +66,8 @@ session_start();
                             <div class="box"><?php echo $row['business_name'] ?></div>
 
                             <h3 class="identifiers">CHANGE PASSWORD</h3>
-                            <button class="button login" type="submit" value="Login" style="width:90%">CHANGE PASSWORD</button>
-
+                            <button class="change-password" style="width:90%"><a href="change-password.php">CHANGE PASSWORD</button>
+                            </a>
 
                             <h3 class="identifiers">EMAIL</h3>
                             <div class="box"><?php echo $row['email'] ?></div>

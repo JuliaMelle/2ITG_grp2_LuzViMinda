@@ -24,11 +24,12 @@ a {
     margin-top: 2%;
     text-align: center;
 }
-.login{
+
+.button {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  width: 50%;
   background: var(--black);
   color: var(--white);
   height: 40px;
@@ -40,6 +41,52 @@ a {
   cursor: pointer;
   outline: none;
   transition: all 0.3s ease-in-out;
+}
+
+.change-profile {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--black);
+  color: white;
+  height: 40px;
+  margin-top: 5px;
+  border: none;
+  border-radius: 0 !important;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.change-profile:hover {
+  background: var(--orange);
+  color: var(--black);
+}
+
+.add-contact {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--black);
+  color: white;
+  height: 40px;
+  margin-top: 5px;
+  border: none;
+  border-radius: 0 !important;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.add-contact:hover {
+  background: var(--orange);
+  color: var(--black);
 }
 
 .save{
@@ -65,13 +112,13 @@ a {
   color: var(--white);
 }
 
-.button {
+.change-password {
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   background: var(--black);
-  color: var(--white);
+  color: white;
   height: 40px;
   margin-top: 5px;
   border: none;
@@ -83,7 +130,7 @@ a {
   transition: all 0.3s ease-in-out;
 }
 
-.button:hover {
+.change-password:hover {
   background: var(--orange);
   color: var(--black);
 }
