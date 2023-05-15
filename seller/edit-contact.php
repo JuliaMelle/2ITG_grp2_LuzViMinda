@@ -8,7 +8,6 @@ if (isset($_SESSION['loggedin'])) {
     require_once '../components/navbar-general.php';
 }
 ?>
-?>
 
 <!DOCTYPE html>
 <html>
