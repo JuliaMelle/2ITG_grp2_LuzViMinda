@@ -1,7 +1,7 @@
 <?php
 session_start();
 require_once '../config.php';
-$id = $_SESSION['id'];
+$id = $_SESSION['user_ID'];
 
    // $user_id = $_POST['user_id'];
     $contact_no = $_POST['contact_no'];
@@ -11,8 +11,9 @@ $id = $_SESSION['id'];
 
     $sql = "  INSERT INTO 
     contacts
-    (contact_no, facebook, instagram, others) 
+    (user_ID,contact_no, facebook, instagram, others) 
     VALUES (
+        '" . $id . "',
         '" . $contact_no . "',
         '" . $facebook . "',
         '" . $instagram . "',
