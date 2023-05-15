@@ -49,7 +49,7 @@ $sql = "SELECT * FROM contacts WHERE `user_ID` = $id ";
 
       <div class="card"> <!-- CARD -->
 
-        <h2 class="welcome">ADD CONTACT | SOCIAL DETAILS </h2>
+        <h2 class="welcome">EDIT CONTACT | SOCIAL DETAILS </h2>
         <!-- input contact number -->
         <b class="label">CONTACT NUMBER</b>
         <input type="text" class="input" name="contact_no" value="<?php echo $row['contact_no']?>"></input>

@@ -61,8 +61,8 @@ if (isset($_SESSION['loggedin'])) {
                                 <button class="button login" type="submit" value="Login">CHANGE PROFILE</button>
                             </a>
 
-                            <a href="add-contact.php">
-                                <button class="button login" type="submit" value="Login">ADD CONTACT</button>
+                            <a href="edit-contact.php">
+                                <button class="button login" type="submit" value="Login">EDIT CONTACT</button>
                             </a>
 
                             <button class="save" type="submit" value="Login">SAVE CHANGES</button>
