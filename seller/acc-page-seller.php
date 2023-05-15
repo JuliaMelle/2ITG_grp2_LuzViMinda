@@ -1,5 +1,13 @@
 <?php
 session_start();
+
+if (isset($_SESSION['loggedin'])) {
+    if ($_SESSION['loggedin'] == false) {
+        header('Location: ../login.php?security=false');
+    }
+} else {
+    header('Location: ../login.php?security=false');
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -49,15 +57,15 @@ session_start();
                         <div class="upper">
                             <img class="profile-img" src="../user_identification/<?php echo $row['valid_id_img'] ?>" />
 
-                            <button class="button login" type="submit" value="Login">CHANGE PROFILE</button>
+                            <a href="change-profile.php">
+                                <button class="button login" type="submit" value="Login">CHANGE PROFILE</button>
+                            </a>
 
                             <a href="add-contact.php">
                                 <button class="button login" type="submit" value="Login">ADD CONTACT</button>
                             </a>
 
                             <button class="save" type="submit" value="Login">SAVE CHANGES</button>
-
-
                         </div>
 
 
@@ -66,7 +74,7 @@ session_start();
                             <div class="box"><?php echo $row['business_name'] ?></div>
 
                             <h3 class="identifiers">CHANGE PASSWORD</h3>
-                            <button class="button login" type="submit" value="Login" style="width:90%">CHANGE PASSWORD</button>
+                            <a href="change-password.php"><button class="button login" value="Login" style="width:90%">CHANGE PASSWORD</button></a>
 
 
                             <h3 class="identifiers">EMAIL</h3>
@@ -75,7 +83,7 @@ session_start();
                             <div class="box"><?php echo $row['address'] ?></div>
                             <?php
                             if (!empty($row['website'])) {
-                                echo '<h3>WEBSITE</h3>';
+                                echo '<h3 class="website">WEBSITE</h3>';
                                 echo '<div class="box">' . $row['website'] . '</div>';
                             }
                             ?>
