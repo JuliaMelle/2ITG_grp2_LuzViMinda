@@ -85,7 +85,7 @@ session_start();
 
                 <!--UPLOAD NEW PROFILE PICTURE-->
                     <label for="uploadprof" class="titles">Change your Profile Picture:</label>
-                    <input class="upload-btn" type="file" name="image" required>
+                    <input class="upload-btn" type="file" name="image">
 
                 <div class="mid_position_buttons">
                     <button class="button save" type="submit" name="updateprofile" onClick="">SAVE PROFILE</button>
