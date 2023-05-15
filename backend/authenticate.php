@@ -42,6 +42,7 @@ if ($stmt = $con->prepare('SELECT user_id, password FROM users WHERE username = 
             $_SESSION['id'] = $id;
             $_SESSION['user_ID'] = $id;
             $_SESSION['password'] = $password_current;
+            $_SESSION['profile_img'] = $userProfile;
             header('Location: ../general/product-catalog.php');
         } else {
             // Incorrect password

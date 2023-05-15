@@ -36,9 +36,22 @@ if (isset($_SESSION['loggedin'])) {
 
 
     <!-- ITO YUNG PAGE FOR VIEWERS ONLY -->
+    <div class="wrapper1">
+    <?php
+                    if (isset($_GET['success'])) { //check if authenticate key exists in URL
+                        if ($_GET['success'] == "true") { ?>
 
+                            <br>
+                            <div class="alert alert-success" role="alert">
 
-
+                            <span class="closebtn">&times;</span> 
+                            You have successfully uploaded your new profile picture.
+                            </div>
+                    <?php
+                        }
+                    }
+    ?>
+    </div>
 
     <!-- // ACCOUNT DETAILS -->
     <div class="wrapper">
@@ -55,9 +68,9 @@ if (isset($_SESSION['loggedin'])) {
                     while ($row = $result->fetch_array()) {
             ?>
                         <div class="upper">
-                            <img class="profile-img" src="../user_identification/<?php echo $row['valid_id_img'] ?>" />
+                            <img class="profile-img" src="../user_identification/<?php echo $row['profile_img'] ?>"/>
 
-                            <a href="change-profile.php">
+                            <a href="change_profile.php">
                                 <button class="button login" type="submit" value="Login">CHANGE PROFILE</button>
                             </a>
 
@@ -105,6 +118,19 @@ if (isset($_SESSION['loggedin'])) {
 
 
 <?php require_once '../components/footer.php' ?>
+
+<script>
+        var close = document.getElementsByClassName("closebtn");
+        var i;
+
+        for (i = 0; i < close.length; i++) {
+        close[i].onclick = function(){
+            var div = this.parentElement;
+            div.style.opacity = "0";
+            setTimeout(function(){ div.style.display = "none"; }, 600);
+        }
+        }
+</script>
 </body>
 
 
