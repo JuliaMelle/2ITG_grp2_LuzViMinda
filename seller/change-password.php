@@ -2,8 +2,8 @@
 // require_once '../templates/navbar_seller.php'
 session_start();
 
-if (isset($_SESSION['isLogin'])) {
-    if ($_SESSION['isLogin'] == false) {
+if (isset($_SESSION['loggedin'])) {
+    if ($_SESSION['loggedin'] == false) {
         header('Location: ../login.php?security=false');
     }
 } else {
@@ -21,8 +21,8 @@ if (isset($_SESSION['isLogin'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- MAIN CSS Sheet-->
-    <link rel="stylesheet" href="../css/main.css">
-
+    <link rel="stylesheet" href="../styles/global.css">
+    <link rel="stylesheet" href="../styles/change_password.css">
     <!-- Google Font: Poppins-->
     <!-- Weights: 400 REGULAR, 600 SEMIBOLD, 700 BOLD -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,7 +32,7 @@ if (isset($_SESSION['isLogin'])) {
     <!-- FAVICON -->
     <link rel="icon" href="../img/aGROWculture-Favicon.png" type="image/gif" sizes="16x16">
 
-    <title>aGROWculture: My Profile</title>
+    <title>LuzViMinda: My Profile</title>
     <style>
         input[type="file"]::file-selector-button {
             color: white;
@@ -54,22 +54,23 @@ if (isset($_SESSION['isLogin'])) {
 </head>
 
 <body>
-    <?php require_once '../templates/navbar_seller.php' ?>
-    <div style="height:5rem;"></div>
+    <?php require_once '../components/navbar-seller.php' ?>
+   
     <!-- MAIN CONTENT -->
     <main class="full-container">
         <h1 class="sub-link center" style="font-size:48px; font-weight:900;">My Profile</h1>
         <hr>
 
-        <div class="half-container" style="width: 30rem; margin-bottom:5rem;">
-            <form action="../db/cp-backend.php" method="post" enctype="multipart/form-data">
-                <fieldset>
+        <div class="half-container">
+            <form action="../backend/cp-backend.php" method="post" enctype="multipart/form-data">
                     <?php
                     if (isset($_GET['fillout'])) { //check if authenticate key exists in URL
                         if ($_GET['fillout'] == "false") { ?>
 
                             <br>
                             <div class="alert alert-danger" role="alert">
+
+                            <span class="closebtn">&times;</span> 
                                 Fill out all fields.
                             </div>
                     <?php
@@ -80,10 +81,10 @@ if (isset($_SESSION['isLogin'])) {
                     if (isset($_GET['wrongpassword'])) { //check if authenticate key exists in URL
                         if ($_GET['wrongpassword'] == "true") { ?>
 
-                            <br>
-                            <div class="alert alert-danger" role="alert">
-                                There was a problem. Wrong Current Password.
-                            </div>
+                        <div class="alert warning">
+                        <span class="closebtn">&times;</span>  
+                        <strong>Incorrect Password</strong> 
+                        </div>
                     <?php
                         }
                     }
@@ -94,6 +95,7 @@ if (isset($_SESSION['isLogin'])) {
 
                             <br>
                             <div class="alert alert-danger" role="alert">
+                            <span class="closebtn">&times;</span> 
                                 Passwords don't match.
                             </div>
                     <?php
@@ -101,20 +103,19 @@ if (isset($_SESSION['isLogin'])) {
                     }
                     ?>
 
-                    <label for="cur_password">Current Password:</label>
-                    <div class="wrapper"><input type="password" id="cur_password" name="cur_password" style="width: 514px;"></div>
+                    <label for="cur_password" class="titles">Current Password:</label>
+                    <input class="wrapper" type="password" id="cur_password" name="cur_password" require>
 
-                    <label for="password1">New Password:</label>
-                    <div class="wrapper"><input type="password" id="password1" name="password1" style="width: 514px;"></div>
+                    <label for="password1" class="titles">New Password:</label>
+                    <input class="wrapper" type="password" id="password1" name="password1" require>
 
-                    <label for="password2">Confirm New Password:</label>
-                    <div class="wrapper"><input type="password" id="password2" name="password2" style="width: 514px;"></div>
+                    <label for="password2" class="titles">Confirm New Password:</label>
+                    <input class="wrapper" type="password" id="password2" name="password2"require>
 
-                    <div class="flex row">
+                  
                         <button type="submit" class="btn-circle btn-center" name="updatepassword" onClick="window.location.reload();">Save Password</button>
-
-                    </div>
-                </fieldset>
+                    
+            
             </form>
         </div>
     </main>
@@ -122,7 +123,17 @@ if (isset($_SESSION['isLogin'])) {
     <footer>
 
     </footer>
+    <script>
+var close = document.getElementsByClassName("closebtn");
+var i;
 
+for (i = 0; i < close.length; i++) {
+  close[i].onclick = function(){
+    var div = this.parentElement;
+    div.style.opacity = "0";
+    setTimeout(function(){ div.style.display = "none"; }, 600);
+  }
+}
+</script>
 </body>
-
 </html>

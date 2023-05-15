@@ -134,6 +134,40 @@ h3 {
   object-fit: cover;
 }
 
+/* ALERT */
+.alert {
+  width: 80%;
+  height: auto;
+  margin: 1rem auto 0 auto;
+  background-color: var(--white);
+  border: 3px solid var(--black);
+  
+  padding: 20px;
+  background-color: #f44336;
+  color: white;
+  opacity: 1;
+  transition: opacity 0.6s;
+}
+
+.alert.success {background-color: #04AA6D;}
+.alert.info {background-color: #2196F3;}
+.alert.warning {background-color: #ff9800;}
+
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: black;
+}
+/*  */
 /* MEDIUM DEVICES*/
 @media (max-width: 768px) {
     .flex-2 {

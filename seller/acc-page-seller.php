@@ -1,5 +1,13 @@
 <?php
 session_start();
+
+if (isset($_SESSION['loggedin'])) {
+    if ($_SESSION['loggedin'] == false) {
+        header('Location: ../login.php?security=false');
+    }
+} else {
+    header('Location: ../login.php?security=false');
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -66,7 +74,7 @@ session_start();
                             <div class="box"><?php echo $row['business_name'] ?></div>
 
                             <h3 class="identifiers">CHANGE PASSWORD</h3>
-                            <button class="button login" type="submit" value="Login" style="width:90%">CHANGE PASSWORD</button>
+                            <a href="change-password.php"><button class="button login" value="Login" style="width:90%">CHANGE PASSWORD</button></a>
 
 
                             <h3 class="identifiers">EMAIL</h3>
