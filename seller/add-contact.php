@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html>
 
@@ -16,7 +19,7 @@
 
 <body>
 
-  <?php require_once '../components/navbar.php' ?>
+  <?php require_once '../components/navbar-seller.php' ?>
   <div class="container">
 
     <div class="mid_container">

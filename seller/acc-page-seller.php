@@ -57,15 +57,15 @@ if (isset($_SESSION['loggedin'])) {
                         <div class="upper">
                             <img class="profile-img" src="../user_identification/<?php echo $row['valid_id_img'] ?>" />
 
-                            <button class="button login" type="submit" value="Login">CHANGE PROFILE</button>
+                            <a href="change-profile.php">
+                                <button class="button login" type="submit" value="Login">CHANGE PROFILE</button>
+                            </a>
 
                             <a href="add-contact.php">
                                 <button class="button login" type="submit" value="Login">ADD CONTACT</button>
                             </a>
 
                             <button class="save" type="submit" value="Login">SAVE CHANGES</button>
-
-
                         </div>
 
 
@@ -83,7 +83,7 @@ if (isset($_SESSION['loggedin'])) {
                             <div class="box"><?php echo $row['address'] ?></div>
                             <?php
                             if (!empty($row['website'])) {
-                                echo '<h3>WEBSITE</h3>';
+                                echo '<h3 class="website">WEBSITE</h3>';
                                 echo '<div class="box">' . $row['website'] . '</div>';
                             }
                             ?>
