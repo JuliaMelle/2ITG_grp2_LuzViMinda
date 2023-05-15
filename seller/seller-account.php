@@ -60,7 +60,7 @@ if (isset($_SESSION['loggedin'])) {
                     while ($row = $result->fetch_array()) {
 
                         echo '<div >';
-                        echo '<img class="profile-img" src="../user_identification/' . $row['valid_id_img'] . '"/>';
+                        echo '<img class="profile-img" src="../user_identification/' . $row['profile_img'] . '"/>';
                         echo '</div>';
 
                         echo '<div class="details">';
