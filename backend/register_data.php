@@ -10,8 +10,8 @@
     $username = $_POST['username'];
     $email = $_POST['email'];
     $address = $_POST['address'];
-    $password = $_POST['password'];
-    // $password = md5($_POST['password']); 
+
+    $password = md5($_POST['password']); 
     //MD5 encryption
 
     $imgName = $_FILES['image']['name'];
