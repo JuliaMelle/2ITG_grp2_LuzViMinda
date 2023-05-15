@@ -46,12 +46,12 @@ if ($stmt = $con->prepare('SELECT user_id, password FROM users WHERE username = 
         } else {
             // Incorrect password
             echo 'Incorrect username and/or password!';
-            header('Location: ../login?password=false');
+            header('Location: ../login.php?password=false');
         }
     } else {
         // Incorrect username
         echo 'Incorrect username and/or password!';
-        header('Location: ../login?fillout=false');
+        header('Location: ../login.php?fillout=false');
     }
     
 
