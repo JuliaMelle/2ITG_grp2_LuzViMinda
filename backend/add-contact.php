@@ -11,9 +11,8 @@ $id = $_SESSION['id'];
 
     $sql = "  INSERT INTO 
     contacts
-    (user_id, contact_no, facebook, instagram, others) 
+    (contact_no, facebook, instagram, others) 
     VALUES (
-        '" . $id . "',
         '" . $contact_no . "',
         '" . $facebook . "',
         '" . $instagram . "',
