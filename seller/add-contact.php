@@ -30,7 +30,7 @@ session_start();
 <form class="form-flex column" id="regForm" action="../backend/add-contact.php" method="post" enctype="multipart/form-data">
 
       <div class="card"> <!-- CARD -->
-      <p>"If you do not have social media, please kindly type <b> 'none' </b> 
+      <p>If you do not have social media, please kindly type <b> 'none' </b> 
         <h2 class="welcome">ADD CONTACT | SOCIAL DETAILS </h2>
         <!-- input contact number -->
         <b class="label">CONTACT NUMBER</b>
