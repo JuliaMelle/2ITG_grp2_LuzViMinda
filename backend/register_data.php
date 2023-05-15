@@ -2,7 +2,7 @@
 
     //1. Setup Database connection
     require_once '../config.php';
-    $upload_dir = '../user_profile_img/';
+    $upload_dir = '../user_identification/';
     $upload_dir2 = '../user_identification/';
     // $upload_dir = '../uploads/';
 
