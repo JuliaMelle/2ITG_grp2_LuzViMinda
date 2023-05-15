@@ -17,9 +17,9 @@
 
 </head>
 <body>
-         <?php $_SESSION['user_ID']?>
-                  
-
+         <!-- <?php $_SESSION['user_ID']?> -->
+         <form class="form-flex column" action="backend/add-product.php" method="post" enctype="multipart/form-data">
+      
                   <div class="container">
                   <a class="close-btn" href="manage-product.php"> <i class="fa-solid fa-xmark" style="margin-left: 700px; font-size: 50px; color: #000000;"></i> </a>
                   
@@ -46,6 +46,7 @@
 
                          </div>
                   </div>
+</form>
                         
 </body>
 </html>
