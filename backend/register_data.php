@@ -1,5 +1,5 @@
     <?php
-
+session_start();
     //1. Setup Database connection
     require_once '../config.php';
     $upload_dir = '../user_identification/';
@@ -92,10 +92,17 @@
         '" . $userPic2 . "'
         )";
 
+   
 
     //3. Execute SQL
     if (mysqli_query($conn, $sql)) {
-        header('Location:../seller/add-contact.php');
+     //user found
+  
+     $_SESSION['loggedin'] = TRUE;
+     $_SESSION['username'] = $username;
+     $_SESSION['password'] = $password;
+
+    header('Location:authenticate2.php');
     } else {
         mysqli_error($conn);
         header('Location: ../registration_form?authenticate=false');

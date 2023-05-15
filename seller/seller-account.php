@@ -51,7 +51,7 @@ if (isset($_SESSION['loggedin'])) {
         <div class="flex content">
             <?php
             require_once '../config.php';
-            $id = $_SESSION['id'];
+            $id =  $_SESSION['user_ID'];
             $sql = "SELECT * FROM users WHERE user_id = $id";
             $sql_2 = "SELECT * FROM products WHERE user_id = $id";
             $sql_3 = "SELECT * FROM contacts WHERE user_id = $id";

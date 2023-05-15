@@ -100,7 +100,7 @@ if (isset($_SESSION['loggedin'])) {
                                 echo '<div class="box">' . $row['website'] . '</div>';
                             }
                             ?>
-<!-- 
+                            <!-- 
                             <h3 class="identifiers">WEBSITE</h3>
                             <div class="box"> <</div> -->
                         </div>

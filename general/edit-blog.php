@@ -64,7 +64,7 @@
             <hr>
             <form action="../backend/blog-edit.php" method="post">
                 <p>TITLE</p>
-                <input required type="text" name="title" id="blog_title" placeholder="<?php echo $row["title"]; ?>">
+                <input required type="text" name="title" id="blog_title" value="<?php echo $row["title"]; ?>">
                 <span class="blog-category">BLOG</span>
                 <p>BLOG CONTENT</p>
                 <textarea required name="content" maxlength='10000' minlength='100'><?php echo $row["content"]; ?></textarea>
