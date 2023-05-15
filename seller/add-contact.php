@@ -21,7 +21,7 @@ session_start();
 
   <?php require_once '../components/navbar-seller.php' ?>
   <div class="container">
-    
+
 
     <div class="mid_container">
     <div class="header">
