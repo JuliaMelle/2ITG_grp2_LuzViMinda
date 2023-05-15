@@ -1,5 +1,13 @@
 <?php
 session_start();
+
+if (isset($_SESSION['loggedin'])) {
+    if ($_SESSION['loggedin'] == false) {
+        header('Location: ../login.php?security=false');
+    }
+} else {
+    header('Location: ../login.php?security=false');
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">

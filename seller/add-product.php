@@ -13,12 +13,18 @@
   <link rel="stylesheet" href="../styles/footer.css">
   <link rel="stylesheet" href="../styles/add-product.css">
 
+  <script src="https://kit.fontawesome.com/96362859e2.js" crossorigin="anonymous"></script>
+
 </head>
 <body>
       
+                  
+
                   <div class="container">
+                  <a class="close-btn" href="manage-product.php"> <i class="fa-solid fa-xmark" style="margin-left: 700px; font-size: 50px; color: #000000;"></i> </a>
+                  
                     <div class="mid_container">
-                      
+
                          <h3 class="identifiers">PRODUCT NAME</h3>
                          <input type="text" class="box"></input>
 
@@ -31,8 +37,10 @@
                          <h3 class="identifiers">CATEGORY</h3>
                          <input type="text" class="box"></input>
                          
-                         <h3 class="identifiers">PRODUCT PICTURE</h3>
-                         <input type="text" class="box"></input>
+                         <h3 class="identifiers1">PROFILE PICTURE</h3>
+                         <h5 class="picture">This only accepts .jpeg, .jpg, and .png files.</h5>
+                         <input type="file" class="upload-btn" name="image" required></input>
+                         <br>
 
                          <button class="button login" type="submit" value="Login" style ="width:90%">ADD A PRODUCT</button>
 

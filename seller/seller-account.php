@@ -1,5 +1,13 @@
 <?php
 session_start();
+
+if (isset($_SESSION['loggedin'])) {
+    if ($_SESSION['loggedin'] == false) {
+        header('Location: ../login.php?security=false');
+    }
+} else {
+    header('Location: ../login.php?security=false');
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -25,7 +33,20 @@ session_start();
 
 
     <!-- // ACCOUNT DETAILS -->
+    <?php
+    if (isset($_GET['success'])) { //check if authenticate key exists in URL
+        if ($_GET['success'] == "true") { ?>
+
+            <div class="alert success">
+                <span class="closebtn">&times;</span>
+                <strong style="color:white">CHANGED PASSWORD SUCCESSFULLY</strong>
+            </div>
+    <?php
+        }
+    }
+    ?>
     <div class="wrapper">
+
         <div class="header orange"></div>
         <div class="flex content">
             <?php
@@ -55,24 +76,22 @@ session_start();
                                 }
                                 while ($row = $result->fetch_array()) {
 
-                                    if(!empty($row['contact_no'])){
+                                    if (!empty($row['contact_no'])) {
                                         echo '<h3>CONTACT NO.</h3>';
                                         echo '<div class="box">' . $row['contact_no'] . '</div>';
                                     }
-                                    if(!empty($row['facebook'])){
+                                    if (!empty($row['facebook'])) {
                                         echo '<h3>FACEBOOK</h3>';
                                         echo '<div class="box">' . $row['facebook'] . '</div>';
                                     }
-                                    if(!empty($row['instagram'])){
+                                    if (!empty($row['instagram'])) {
                                         echo '<h3>INSTAGRAM</h3>';
                                         echo '<div class="box">' . $row['instagram'] . '</div>';
                                     }
-                                    if(!empty($row['others'])){
+                                    if (!empty($row['others'])) {
                                         echo '<h3>OTHERS</h3>';
                                         echo '<div class="box">' . $row['others'] . '</div>';
                                     }
-
-
                                 }
                             }
                         }
@@ -84,40 +103,54 @@ session_start();
                 }
             }
             ?>
-             <div class="wrapper-prod">
-                        <div class="header blue"></div>
-                        <h1 class="label">Products</h1>
-                        <div class="card-wrapper">
-                        <div class="flex-2">
-            <?php
-            if ($result = $conn->query($sql_2)) {
-                if ($result->num_rows > 0) {
-                    while ($row = $result->fetch_array()) {
-                        echo            '<div class="card">';
-                        echo            '<a href="../general/view_product_specific?id='. $row['product_id'] .'" class="product-text sub-link">';
-                        echo               '<div class="details-prod">';
-                        echo                   '<div class="category">' . $row['category'] . '</div>';
-                        echo                   '<img class="product-img">';
-                        echo              '</div>';
-                        echo              '<h3>' . $row['product_price'] . '</h3>';
-                        echo               '<h3>' . $row['product_name'] . '</h3>';
-                        echo               '<h3>'. $row['product_desc'] .'</h3>';
-                        echo            '</div>';
-                    }
-                    $result->free();
-                }
-            }
-            $conn->close();
-            ?>
-              </div>
+            <div class="wrapper-prod">
+                <div class="header blue"></div>
+                <h1 class="label">Products</h1>
+                <div class="card-wrapper">
+                    <div class="flex-2">
+                        <?php
+                        if ($result = $conn->query($sql_2)) {
+                            if ($result->num_rows > 0) {
+                                while ($row = $result->fetch_array()) {
+                                    echo            '<div class="card">';
+                                    echo            '<a href="../general/view_product_specific?id=' . $row['product_id'] . '" class="product-text sub-link">';
+                                    echo               '<div class="details-prod">';
+                                    echo                   '<div class="category">' . $row['category'] . '</div>';
+                                    echo                   '<img class="product-img">';
+                                    echo              '</div>';
+                                    echo              '<h3>' . $row['product_price'] . '</h3>';
+                                    echo               '<h3>' . $row['product_name'] . '</h3>';
+                                    echo               '<h3>' . $row['product_desc'] . '</h3>';
+                                    echo            '</div>';
+                                }
+                                $result->free();
+                            }
+                        }
+                        $conn->close();
+                        ?>
+                    </div>
+                </div>
             </div>
-        </div>
 
         </div>
 
     </div>
 
     <?php require_once '../components/footer.php' ?>
+    <script>
+        var close = document.getElementsByClassName("closebtn");
+        var i;
+
+        for (i = 0; i < close.length; i++) {
+            close[i].onclick = function() {
+                var div = this.parentElement;
+                div.style.opacity = "0";
+                setTimeout(function() {
+                    div.style.display = "none";
+                }, 600);
+            }
+        }
+    </script>
 </body>
 
 </html>

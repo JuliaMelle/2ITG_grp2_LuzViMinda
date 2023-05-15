@@ -10,8 +10,8 @@
     $username = $_POST['username'];
     $email = $_POST['email'];
     $address = $_POST['address'];
-    $password = $_POST['password'];
-    // $password = md5($_POST['password']); 
+
+    $password = md5($_POST['password']); 
     //MD5 encryption
 
     $imgName = $_FILES['image']['name'];
@@ -95,7 +95,7 @@
 
     //3. Execute SQL
     if (mysqli_query($conn, $sql)) {
-        header('Location:../login.php');
+        header('Location:../seller/add-contact.php');
     } else {
         mysqli_error($conn);
         header('Location: ../registration_form?authenticate=false');

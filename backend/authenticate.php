@@ -1,6 +1,6 @@
 <?php
 session_start();
-
+$password_current=md5($_POST['password']);
 // Change this to your connection info.
 $DATABASE_HOST = 'localhost';
 $DATABASE_USER = 'root';
@@ -33,21 +33,25 @@ if ($stmt = $con->prepare('SELECT user_id, password FROM users WHERE username = 
         $stmt->fetch();
         // Account exists, now we verify the password.
         // Note: remember to use password_hash in your registration file to store the hashed passwords.
-        if ($_POST['password'] === $password) {
+        if ($password_current === $password) {
             // Verification success! User has logged-in!
             // Create sessions, so we know the user is logged in, they basically act like cookies but remember the data on the server.
             session_regenerate_id();
             $_SESSION['loggedin'] = TRUE;
             $_SESSION['username'] = $_POST['username'];
             $_SESSION['id'] = $id;
+            $_SESSION['user_ID'] = $id;
+            $_SESSION['password'] = $password_current;
             header('Location: ../general/product-catalog.php');
         } else {
             // Incorrect password
             echo 'Incorrect username and/or password!';
+            header('Location: ../login.php?password=false');
         }
     } else {
         // Incorrect username
         echo 'Incorrect username and/or password!';
+        header('Location: ../login.php?fillout=false');
     }
     
 

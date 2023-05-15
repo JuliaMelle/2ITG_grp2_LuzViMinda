@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html>
 
@@ -16,8 +19,9 @@
 
 <body>
 
-  <?php require_once '../components/navbar.php' ?>
+  <?php require_once '../components/navbar-seller.php' ?>
   <div class="container">
+    
 
     <div class="mid_container">
     <div class="header">
@@ -31,7 +35,7 @@
         <!-- input contact number -->
         <b class="label">CONTACT NUMBER</b>
         <input type="text" class="input" name="contact_no"></input>
-
+        
         <!-- input facebook -->
         <b class="label">FACEBOOK</b>
         <input type="text" class="input" name="facebook"></input>
