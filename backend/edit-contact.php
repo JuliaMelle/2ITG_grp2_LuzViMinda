@@ -9,16 +9,15 @@ $id = $_SESSION['id'];
     $instagram = $_POST['instagram'];
     $others = $_POST['others'];
 
-    $sql = "  INSERT INTO 
-    contacts
-    (user_id, contact_no, facebook, instagram, others) 
-    VALUES (
-        '" . $id . "',
-        '" . $contact_no . "',
-        '" . $facebook . "',
-        '" . $instagram . "',
-        '" . $others . "'
-        )";
+    $sql = "  UPDATE contacts
+    SET
+    'contact_no' = '$contact_no',
+    'facebook' = '$facebook',
+    'facebook' = '$facebook',
+    'instagram' = '$instagram',
+    'others' = '$others'
+    WHERE user_ID = $id;
+        ";
 
         if (mysqli_query($conn, $sql)) {
             header('Location:../seller/seller-account.php');

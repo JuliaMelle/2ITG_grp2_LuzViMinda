@@ -95,7 +95,7 @@
 
     //3. Execute SQL
     if (mysqli_query($conn, $sql)) {
-        header('Location:../login.php');
+        header('Location:../seller/add-contact.php');
     } else {
         mysqli_error($conn);
         header('Location: ../registration_form?authenticate=false');
