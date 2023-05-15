@@ -36,36 +36,36 @@ if (isset($_SESSION['loggedin'])) {
     <div class="header">
 </div>
 <?php 
+            $id = $_SESSION['id'];
+$sql = "SELECT * FROM contacts WHERE `user_ID` = $id ";
+//    $result = mysqli_query($conn, $sql);
+//    $resultCheck = mysqli_num_rows($result);
+   if ($result = $conn->query($sql)) {
+    if ($result->num_rows > 0) {
+        while ($row = $result->fetch_array()) {
 
-$sql = "SELECT * FROM contacts WHERE `userID` = " . $_SESSION['user_ID'] . ";";
-   $result = mysqli_query($conn, $sql);
-   $resultCheck = mysqli_num_rows($result);
 ?>
-<form class="form-flex column" id="regForm" action="../backend/add-contact.php" method="post" enctype="multipart/form-data">
+<form class="form-flex column" id="regForm" action="../backend/edit-contact.php" method="post" enctype="multipart/form-data">
 
       <div class="card"> <!-- CARD -->
 
         <h2 class="welcome">ADD CONTACT | SOCIAL DETAILS </h2>
         <!-- input contact number -->
         <b class="label">CONTACT NUMBER</b>
-        <input type="text" class="input" name="contact_no">
-        <?php echo $row['contact_no'] ?></input>
+        <input type="text" class="input" name="contact_no" value="<?php echo $row['contact_no']?>"></input>
         
         <!-- input facebook -->
         <b class="label">FACEBOOK</b>
-        <input type="text" class="input" name="facebook">
-        <?php echo $row['facebook'] ?></input>
+        <input type="text" class="input" name="facebook" value="<?php echo $row['facebook']?>"></input>
 
 
          <!-- input instagram -->
          <b class="label">INSTAGRAM</b>
-         <input type="text" class="input" name="instagram">
-         <?php echo $row['instagram'] ?></input>
+         <input type="text" class="input" name="instagram" value="<?php echo $row['instagram']?>"></input>
 
          <!-- input others-->
          <b class="label">OTHERS:</b>
-         <input type="text" class="input" name="others">
-         <?php echo $row['others'] ?></input></input>
+         <input type="text" class="input" name="others" value="<?php echo $row['others']?>"></input>
         <div class="mid_position_buttons">
         <button type="submit" class="button login">SAVE CHANGES</button> 
         
@@ -75,6 +75,11 @@ $sql = "SELECT * FROM contacts WHERE `userID` = " . $_SESSION['user_ID'] . ";";
   </div>
   </div>
 </form>
+<?php         }
+                    $result->free();
+                }
+            }
+?>
   <?php require_once '../components/footer.php' ?>
 
   <!-- <script src="" async defer></script> -->
