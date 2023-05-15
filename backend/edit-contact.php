@@ -9,7 +9,7 @@ $id = $_SESSION['id'];
     $instagram = $_POST['instagram'];
     $others = $_POST['others'];
 
-    $sql = "  UPDATE `contacts`
+    $sql = "UPDATE `contacts`
     SET
     `contact_no` = '$contact_no',
     `facebook` = '$facebook',
