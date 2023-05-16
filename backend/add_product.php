@@ -8,37 +8,62 @@
    $product_desc = $_POST['product_desc'];
    $product_price = $_POST['product_price'];
    $category = $_POST['category'];
-  //  $userPic = $_POST['product_img'];
    $user_ID = $_SESSION['user_ID'];
    $seller_name = $_SESSION['username'];
 
- 
-
+   
+  if (empty($_POST['product_name'])){
+    echo "Fill out Product Name.";
+    header('Location: ../seller/add-product.php?name=false');
+    }else if (empty($_POST['product_desc'])){
+      echo "Fill out Product Description.";
+      header('Location: ../seller/add-product.php?desc=false');
+      }else if (empty($_POST['product_price'])){
+      echo "Fill out Product Price";
+      header('Location: ../seller/add-product.php?price=false');
+      }else if (empty($_POST['category'])){
+        echo "Choose a certain region.";
+        header('Location: ../seller/add-product.php?region=false');
+        }else if ($_FILES["image"]["name"] == ''){
+          echo "Invalid picture.";
+          header('Location: ../seller/add-product.php?image=false');
+         
+          }else if ($_FILES['image']['tmp_name'] == ''){
+            echo "Invalid picture.";
+            header('Location: ../seller/add-product.php?image=false');
+           
+            }else if ($_FILES['image']['size'] == ''){
+              echo "Invalid picture.";
+              header('Location: ../seller/add-product.php?image=false');
+             
+              }
+  
 
    $imgName = $_FILES['image']['name'];
    $imgTmp = $_FILES['image']['tmp_name'];
    $imgSize = $_FILES['image']['size'];
+
        
-        if(empty($product_name)){
-            $errorMsg ='Please input a Product Name';
-            header('Location: ../seller/add-product.php?authenticate=false');
-          } else if(empty($product_desc)){
-            $errorMsg ='Please input Product Description';
-            header('Location: ../seller/add-product.php?authenticate=false');
-          }
-         else if(empty($product_price)){
-            $errorMsg ='Please input Product Price';
-            header('Location: ../seller/add-product.php?authenticate=false');
-          }
-          else if(empty($category)){
-            $errorMsg ='Please input a Category';
-            header('Location: ../seller/add-product.php?authenticate=false');
-          }
-          else if(empty($product_img)){
-            $errorMsg ='Please input a Category';
-            header('Location: ../seller/add-product.php?authenticate=false');
-          }
-         else{
+        // if(empty($product_name)){
+        //     $errorMsg ='Please input a Product Name';
+        //     header('Location: ../seller/add-product.php?authenticate=false');
+        //   } else if(empty($product_desc)){
+        //     $errorMsg ='Please input Product Description';
+        //     header('Location: ../seller/add-product.php?authenticate=false');
+        //   }
+        //  else if(empty($product_price)){
+        //     $errorMsg ='Please input Product Price';
+        //     header('Location: ../seller/add-product.php?authenticate=false');
+        //   }
+        //   else if(empty($category)){
+        //     $errorMsg ='Please input a Category';
+        //     header('Location: ../seller/add-product.php?authenticate=false');
+        //   }
+        //   else if(empty($product_img)){
+        //     $errorMsg ='Please input a Category';
+        //     header('Location: ../seller/add-product.php?authenticate=false');
+        //   }
+         
             $imgExt = strtolower(pathinfo($imgName, PATHINFO_EXTENSION));
 
 
@@ -78,5 +103,5 @@
             $errorMsg = 'Error '.mysqli_error($conn);
           }
         }
-      }
+      
 ?>
