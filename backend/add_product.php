@@ -12,7 +12,7 @@
    $user_ID = $_SESSION['user_ID'];
    $seller_name = $_SESSION['username'];
 
-
+  //  <!-- <hello> -->
 
 
    $imgName = $_FILES['image']['name'];

@@ -27,6 +27,8 @@ if (isset($_SESSION['loggedin'])) {
 
 </head>
 <body>
+
+<!-- <hello> -->
 <?php $_SESSION['loggedin'] ?>
          <form class="form-flex column" action="../backend/add_product.php" method="post" enctype="multipart/form-data">
       
