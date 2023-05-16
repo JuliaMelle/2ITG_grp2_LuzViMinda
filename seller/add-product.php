@@ -36,13 +36,13 @@ if (isset($_SESSION['loggedin'])) {
                     <div class="mid_container">
 
                     <h3 class="identifiers">PRODUCT NAME</h3>
-                    <input type="text" class="box" name="product_name"></input>
+                    <input type="text" class="box" id="product_name" name="product_name"></input>
 
                     <h3 class="identifiers">PRODUCT DESCRIPTION</h3>
-                    <input type="text" class="box" name="product_desc"></input>
+                    <input type="text" class="box" id="product_desc" name="product_desc"></input>
 
                     <h3 class="identifiers">PRODUCT PRICE</h3>
-                    <input type="text" class="box" name="product_price"></input>
+                    <input type="text" class="box" id="product_price" name="product_price"></input>
 
                     <h3 class="identifiers">CATEGORY</h3>
                     <select class="dropdown-category" name="category" id="category">
