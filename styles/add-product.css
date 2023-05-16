@@ -15,24 +15,26 @@ a {
 }
 
 .close-btn {
-  right: 100px; 
+  right: 100px;
   font-size: larger;
 }
 
-.container{ 
-  display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-  }
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.mid_container {
+  width: 100vh;
+  margin-left: 60px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
   
-    .mid_container{
-    width: 100vh;
-    margin-left: 60px;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    }
+
 
 .details-prod {
     width: 100%;
@@ -83,12 +85,16 @@ h3 {
 }
 
 .picture {
-  color: var(--dark-blue)
+  color: var(--dark-blue);
 }
 
 .button:hover {
-  background: var(--orange);
-  color: var(--black);
+  background: var(--dark-blue);
+  padding: 5px 5px;
+  border: none;
+  border-radius: 10px!important;
+  border-radius: 10px !important;
+  cursor: pointer;
 }
 
 input[type="file"] {
@@ -104,6 +110,15 @@ input[type="file"] {
   border: none;
   border-radius: 10px!important;
   cursor: pointer;
+}
+
+.dropdown-category {
+  width: calc(100% - 10%);
+  height: 55px;
+  background-color: var(--gray);
+  border: 3px solid var(--black);
+  padding: 15px;
+  align-self: center;
 }
 
 /* responsiveness */
