@@ -33,11 +33,10 @@ a {
   justify-content: center;
   align-items: center;
 }
-  
 
 
 .details-prod {
-    width: 100%;
+  width: 100%;
 }
 
 .box {
@@ -58,8 +57,6 @@ h3 {
   display: flex;
   justify-content: center;
   align-items: center;
-
-
 
   width: 30%;
   background: var(--black);
@@ -108,7 +105,7 @@ input[type="file"] {
   background: var(--dark-blue);
   padding: 5px 5px;
   border: none;
-  border-radius: 10px!important;
+  border-radius: 10px !important;
   cursor: pointer;
 }
 
@@ -121,31 +118,33 @@ input[type="file"] {
   align-self: center;
 }
 
+
 /* responsiveness */
 @media only screen and (max-width:768px) {
 
+
+
+/* responsiveness */
+@media only screen and (max-width: 768px) {
   .container {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 
   .mid_container {
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      width: 90%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
   }
-
-  
-
 }
 
 /* Media Query for Mobile Devices */
 @media (max-width: 375px) {
   button {
-      font-size: 16px;
+    font-size: 16px;
   }
 }
 
@@ -155,10 +154,13 @@ input[type="file"] {
 } */
 
 /* Media Query for Tablets Ipads portrait mode */
-@media (min-width: 768px) and (max-width: 1024px) {}
+@media (min-width: 768px) and (max-width: 1024px) {
+}
 
 /* Media Query for Laptops and Desktops */
-@media (min-width: 1025px) and (max-width: 1280px) {}
+@media (min-width: 1025px) and (max-width: 1280px) {
+}
 
 /* Media Query for Large screens */
-@media (min-width: 1281px) {}
+@media (min-width: 1281px) {
+}

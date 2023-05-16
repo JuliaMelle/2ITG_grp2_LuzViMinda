@@ -51,7 +51,9 @@ if (isset($_SESSION['loggedin'])) {
         <div class="flex content">
             <?php
             require_once '../config.php';
-            $id =  $_SESSION['user_ID'];
+
+            $id =  $_SESSION['id'];
+          
             $sql = "SELECT * FROM users WHERE user_id = $id";
             $sql_2 = "SELECT * FROM products WHERE user_id = $id";
             $sql_3 = "SELECT * FROM contacts WHERE user_id = $id";
@@ -72,7 +74,9 @@ if (isset($_SESSION['loggedin'])) {
                             if ($result->num_rows > 0) {
                                 if (!empty($row['website'])) {
                                     echo '<h3>WEBSITE</h3>';
+                                    echo '<a href="https://'.$row['website'].'">';
                                     echo '<div class="box">' . $row['website'] . '</div>';
+                                    echo '</a>';
                                 }
                                 while ($row = $result->fetch_array()) {
 
@@ -82,15 +86,21 @@ if (isset($_SESSION['loggedin'])) {
                                     }
                                     if (!empty($row['facebook'])) {
                                         echo '<h3>FACEBOOK</h3>';
+                                        echo '<a target="_blank" href="https://'.$row['facebook'].'">';
                                         echo '<div class="box">' . $row['facebook'] . '</div>';
+                                        echo '</a>';
                                     }
                                     if (!empty($row['instagram'])) {
                                         echo '<h3>INSTAGRAM</h3>';
+                                        echo '<a target="_blank" href="https://'.$row['instagram'].'">';
                                         echo '<div class="box">' . $row['instagram'] . '</div>';
+                                        echo '</a>';
                                     }
                                     if (!empty($row['others'])) {
                                         echo '<h3>OTHERS</h3>';
+                                        echo '<a target="_blank" href="https://'.$row['others'].'">';
                                         echo '<div class="box">' . $row['others'] . '</div>';
+                                        echo '</a>';
                                     }
                                 }
                             }
