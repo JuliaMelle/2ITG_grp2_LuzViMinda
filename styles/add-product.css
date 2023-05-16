@@ -17,6 +17,7 @@ a {
 .close-btn {
   right: 100px;
   font-size: larger;
+  margin-top: 10px;
 }
 
 .container {
@@ -24,6 +25,7 @@ a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  
 }
 
 .mid_container {
@@ -32,6 +34,7 @@ a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-top: 20px;
 }
 
 
