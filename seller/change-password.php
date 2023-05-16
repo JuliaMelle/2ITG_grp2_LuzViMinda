@@ -32,7 +32,7 @@ if (isset($_SESSION['loggedin'])) {
     <!-- FAVICON -->
     <link rel="icon" href="../img/aGROWculture-Favicon.png" type="image/gif" sizes="16x16">
 
-    <title>LuzViMinda: My Profile</title>
+    <title>LuzViMinda | Change Password</title>
     <style>
         input[type="file"]::file-selector-button {
             color: white;

@@ -51,7 +51,9 @@ if (isset($_SESSION['loggedin'])) {
         <div class="flex content">
             <?php
             require_once '../config.php';
+
             $id =  $_SESSION['id'];
+          
             $sql = "SELECT * FROM users WHERE user_id = $id";
             $sql_2 = "SELECT * FROM products WHERE user_id = $id";
             $sql_3 = "SELECT * FROM contacts WHERE user_id = $id";
@@ -60,7 +62,7 @@ if (isset($_SESSION['loggedin'])) {
                     while ($row = $result->fetch_array()) {
 
                         echo '<div >';
-                        echo '<img class="profile-img" src="../user_identification/' . $row['valid_id_img'] . '"/>';
+                        echo '<img class="profile-img" src="../user_identification/' . $row['profile_img'] . '"/>';
                         echo '</div>';
 
                         echo '<div class="details">';

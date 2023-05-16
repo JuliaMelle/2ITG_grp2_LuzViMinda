@@ -34,19 +34,19 @@ session_start();
         <h2 class="welcome">ADD CONTACT | SOCIAL DETAILS </h2>
         <!-- input contact number -->
         <b class="label">CONTACT NUMBER</b>
-        <input type="text" class="input" name="contact_no" required></input>
+        <input type="text" class="input" name="contact_no" ></input>
         
         <!-- input facebook -->
         <b class="label">FACEBOOK</b>
-        <input type="text" class="input" name="facebook"required></input>
+        <input type="text" class="input" name="facebook"></input>
 
          <!-- input instagram -->
          <b class="label">INSTAGRAM</b>
-         <input type="text" class="input" name="instagram"required></input>
+         <input type="text" class="input" name="instagram"></input>
 
          <!-- input others-->
          <b class="label">OTHERS:</b>
-         <input type="text" class="input" name="others"required></input>
+         <input type="text" class="input" name="others"></input>
         <div class="mid_position_buttons">
         <button type="submit" class="button login">SAVE CHANGES</button> 
         
