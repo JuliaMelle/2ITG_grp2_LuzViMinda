@@ -32,7 +32,7 @@ if ($count > 0) {
     $_SESSION['user_ID'] = $row['user_id'];
     $_SESSION['password'] = $password;
     $_SESSION['profile_img'] = $userProfile;
-
+  
     header('Location: ../seller/add-contact.php');
 } else {
 
@@ -43,7 +43,6 @@ if ($count > 0) {
     $_SESSION['user_ID'] = $row['user_id'];
     $_SESSION['password'] = $password;
     $_SESSION['profile_img'] = $userProfile;
-
     echo 'wawa ayaw';
 }
 

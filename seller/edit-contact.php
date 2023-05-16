@@ -1,14 +1,16 @@
 <?php
-require_once '../config.php';
+require_once "../config.php";
 session_start();
 
+
 if (isset($_SESSION['loggedin'])) {
-  require_once '../components/navbar-seller.php';
+    if ($_SESSION['loggedin'] == false) {
+        header('Location: ../login.php?security=false');
+    }
 } else {
-  require_once '../components/navbar-general.php';
+    header('Location: ../login.php?security=false');
 }
 ?>
-
 <!DOCTYPE html>
 <html>
 
@@ -36,8 +38,10 @@ if (isset($_SESSION['loggedin'])) {
         <div class="card"> <!-- CARD -->
           <?php
           $id = $_SESSION['id'];
-          $sql = "SELECT * FROM contacts WHERE `user_ID` = $id ";
-          if (!empty($row['user_ID'])) {
+          $sql = "SELECT * FROM contacts WHERE user_id = $id ";
+          if ($result = $conn-> query($sql)) {
+            if ($result->num_rows > 0) {
+                while ($row = $result->fetch_array()) {
             echo '<h2 class="welcome">EDIT CONTACT | SOCIAL DETAILS </h2>';
             echo '<b class="label">CONTACT NUMBER</b>';
             echo '<input type="text" class="input" name="contact_no" value="' . $row['contact_no'] . '"></input>';
@@ -51,6 +55,8 @@ if (isset($_SESSION['loggedin'])) {
 
             echo  '<b class="label">OTHERS:</b>';
             echo '<input type="text" class="input" name="others" value="' . $row['others'] . '"></input>';
+                }
+              }
           }
           else {
             echo '<h2 class="welcome">EDIT CONTACT | SOCIAL DETAILS </h2>';
@@ -82,7 +88,7 @@ if (isset($_SESSION['loggedin'])) {
 
                 // echo  '<b class="label">OTHERS:</b>';
                 // echo '<input type="text" class="input" name="others" value="' . $row['others'] . '"></input>';
-
+                
           ?>
           <div class="mid_position_buttons">
             <button type="submit" class="button login">SAVE CHANGES</button>
@@ -97,6 +103,6 @@ if (isset($_SESSION['loggedin'])) {
   <!-- <script src="" async defer></script> -->
 </body>
 <?php       //.4 Closing Database Connection
-mysqli_close($conn); ?>
+$conn->close(); ?>
 
 </html>
