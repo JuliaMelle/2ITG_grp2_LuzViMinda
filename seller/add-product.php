@@ -25,8 +25,12 @@
                   
                     <div class="mid_container">
 
+<<<<<<< Updated upstream
                          <h3 class="identifiers">PRODUCT NAME</h3>
                          <input type="text" class="box"></input>
+=======
+  <form class="form-flex column" action="backend/add-product.php" method="post" enctype="multipart/form-data">
+>>>>>>> Stashed changes
 
                          <h3 class="identifiers">PRODUCT DESCRIPTION</h3>
                          <input type="text" class="box"></input>
@@ -44,9 +48,14 @@
 
                          <button class="button login" type="submit" value="Login" style ="width:90%">ADD A PRODUCT</button>
 
+<<<<<<< Updated upstream
                          </div>
                   </div>
 </form>
                         
+=======
+</form>
+
+>>>>>>> Stashed changes
 </body>
 </html>

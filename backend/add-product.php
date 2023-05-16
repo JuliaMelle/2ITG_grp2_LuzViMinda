@@ -17,7 +17,11 @@
    $imgName = $_FILES['image']['name'];
    $imgTmp = $_FILES['image']['tmp_name'];
    $imgSize = $_FILES['image']['size'];
+<<<<<<< Updated upstream
        
+=======
+
+>>>>>>> Stashed changes
         if(empty($product_name)){
             $errorMsg ='Please input a Product Name';
             header('Location: ../add-product.php?authenticate=false');
@@ -42,11 +46,19 @@
 
 
             $allowExt  = array('jpeg', 'jpg', 'png', 'gif');
+<<<<<<< Updated upstream
        
             $userPic = time() . '_' . rand(1000, 9999) . '.' . $imgExt;
        
             if (in_array($imgExt, $allowExt)) {
        
+=======
+
+            $userPic = time() . '_' . rand(1000, 9999) . '.' . $imgExt;
+
+            if (in_array($imgExt, $allowExt)) {
+
+>>>>>>> Stashed changes
                 if ($imgSize < 5000000) {
                     move_uploaded_file($imgTmp, $upload_dir . $userPic);
                 } else {
@@ -63,7 +75,11 @@
         if(!isset($errorMsg)){
             $sql = "insert into product(user_ID, seller_name,category, product_name, product_price, product_img, product_desc)
             values(".$user_ID.",'".$seller_name."','".$category."', '".$product_name."', '".$product_price."', '".$userPic."', '".$product_desc."')";
+<<<<<<< Updated upstream
  
+=======
+
+>>>>>>> Stashed changes
           $result = mysqli_query($conn, $sql);
           if($result){
             $successMsg = 'New record added successfully';
@@ -73,4 +89,8 @@
           }
         }
  }
+<<<<<<< Updated upstream
 ?>
+=======
+?>
+>>>>>>> Stashed changes
