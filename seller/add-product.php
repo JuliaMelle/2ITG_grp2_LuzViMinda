@@ -44,13 +44,13 @@ if (isset($_SESSION['loggedin'])) {
                     <div class="mid_container">
 
                     <h3 class="identifiers">PRODUCT NAME</h3>
-                    <input type="text" class="box" name="product_name"></input>
+                    <input type="text" class="box"></input>
 
                     <h3 class="identifiers">PRODUCT DESCRIPTION</h3>
-                    <input type="text" class="box" name="product_desc"></input>
+                    <input type="text" class="box"></input>
 
                     <h3 class="identifiers">PRODUCT PRICE</h3>
-                    <input type="text" class="box" name="product_price"></input>
+                    <input type="text" class="box"></input>
 
                     <h3 class="identifiers">CATEGORY</h3>
                     <select class="dropdown-category" name="category" id="category">
@@ -71,7 +71,7 @@ if (isset($_SESSION['loggedin'])) {
                   <input type="file" class="upload-btn" name="image" required></input>
                   <br>
 
-      <button class="button login" type="submit" value="Submit" style="width:90%">ADD A PRODUCT</button>
+      <button class="button login" type="submit" value="Login" style="width:90%">ADD A PRODUCT</button>
 
     </div>
   </div>
