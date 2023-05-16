@@ -19,26 +19,26 @@
    $imgTmp = $_FILES['image']['tmp_name'];
    $imgSize = $_FILES['image']['size'];
        
-        // if(empty($product_name)){
-        //     $errorMsg ='Please input a Product Name';
-        //     header('Location: ../add-product.php?authenticate=false');
-        //   } else if(empty($product_desc)){
-        //     $errorMsg ='Please input Product Description';
-        //     header('Location: ../add-product.php?authenticate=false');
-        //   }
-        //  else if(empty($product_price)){
-        //     $errorMsg ='Please input Product Price';
-        //     header('Location: ../add-product.php?authenticate=false');
-        //   }
-        //   else if(empty($category)){
-        //     $errorMsg ='Please input a Category';
-        //     header('Location: ../add-product.php?authenticate=false');
-        //   }
-        //   else if(empty($product_img)){
-        //     $errorMsg ='Please input a Category';
-        //     header('Location: ../add-product.php?authenticate=false');
-        //   }
-        //  else{
+        if(empty($product_name)){
+            $errorMsg ='Please input a Product Name';
+            header('Location: ../seller/add-product.php?authenticate=false');
+          } else if(empty($product_desc)){
+            $errorMsg ='Please input Product Description';
+            header('Location: ../seller/add-product.php?authenticate=false');
+          }
+         else if(empty($product_price)){
+            $errorMsg ='Please input Product Price';
+            header('Location: ../seller/add-product.php?authenticate=false');
+          }
+          else if(empty($category)){
+            $errorMsg ='Please input a Category';
+            header('Location: ../seller/add-product.php?authenticate=false');
+          }
+          else if(empty($product_img)){
+            $errorMsg ='Please input a Category';
+            header('Location: ../seller/add-product.php?authenticate=false');
+          }
+         else{
             $imgExt = strtolower(pathinfo($imgName, PATHINFO_EXTENSION));
 
 
@@ -78,5 +78,5 @@
             $errorMsg = 'Error '.mysqli_error($conn);
           }
         }
- 
+      }
 ?>
