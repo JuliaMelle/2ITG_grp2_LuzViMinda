@@ -204,15 +204,13 @@ table tr {
   width: 20%;
 }
 
-.title-price {
+.product_price{
   width: 20%;
 }
-
-.title-img {
+.product_img{
   width: 20%;
 }
-
-.title-desc {
+.product_desc{
   width: 20%;
 }
 
@@ -234,25 +232,32 @@ td .blog-id {
     font-size: 1rem;
   }
 
-  .title-price,
-  .title-img,
-  .title-desc {
-    width: 0;
-    display: none;
+  .product_price{
+    display: none !important;
   }
-
-  .id {
+  .product_img{
+    display: none !important;
+  }
+  .product_desc{
+    display: none !important;
+  }
+  .product_price_data{
+    display: none !important;
+  }
+  .product_img_data{
+    display: none !important;
+  }
+  .product_desc_data{
+    display: none !important;
+  }
+  .delete,
+  .edit {
     width: 20%;
+    text-align: center;
+    margin: auto;
   }
-
   .title {
     width: 50%;
   }
 
-  .delete,
-  .edit {
-    width: 15%;
-    text-align: center;
-    margin: auto;
-  }
 }

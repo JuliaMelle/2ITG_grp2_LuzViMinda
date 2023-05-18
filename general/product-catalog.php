@@ -54,7 +54,7 @@ session_start();
             </span>
         </div>
 
-        <div class="input-container2">
+        <div class="input-container2 margin-container2" >
             <form class="form-flex" action="product-catalog.php" method="get">
 
                 <select id="region-id" onchange="filterReg()" class="dropdown-category" name="category-region" id="category-region">
