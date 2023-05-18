@@ -59,7 +59,7 @@ if (isset($_SESSION['loggedin'])) {
                             while ($row = $result->fetch_array()) {
                     ?>
 
-                <tr>';
+                <tr>
                     <td class="blog"><span class="blog-id"> <?php echo  $row['product_id'] ?> </span></td>
                     <td><span class="blog-title"><?php echo $row['product_name'] ?> </span></td>
                     <td class="product_price_data"><span> <?php echo $row['product_price'] ?></span></td>
