@@ -17,7 +17,7 @@ a {
   overflow: hidden;
   text-overflow: ellipsis;
   margin: auto;
-  text-align: center; 
+  text-align: center;
 }
 
 .blog-delete,
@@ -203,6 +203,7 @@ table tr {
 .title {
   width: 20%;
 }
+
 .product_price{
   width: 20%;
 }
@@ -212,6 +213,7 @@ table tr {
 .product_desc{
   width: 20%;
 }
+
 td span i {
   text-align: center !important;
   margin: auto !important;
@@ -229,6 +231,7 @@ td .blog-id {
   td span i {
     font-size: 1rem;
   }
+
   .product_price{
     display: none !important;
   }
@@ -256,4 +259,5 @@ td .blog-id {
   .title {
     width: 50%;
   }
+
 }
