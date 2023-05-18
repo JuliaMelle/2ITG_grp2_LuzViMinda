@@ -53,7 +53,7 @@ if (isset($_SESSION['loggedin'])) {
             require_once '../config.php';
 
             $id =  $_SESSION['id'];
-          
+
             $sql = "SELECT * FROM users WHERE user_id = $id";
             $sql_2 = "SELECT * FROM products WHERE user_id = $id";
             $sql_3 = "SELECT * FROM contacts WHERE user_id = $id";
@@ -74,7 +74,7 @@ if (isset($_SESSION['loggedin'])) {
                             if ($result->num_rows > 0) {
                                 if (!empty($row['website'])) {
                                     echo '<h3>WEBSITE</h3>';
-                                    echo '<a href="https://'.$row['website'].'">';
+                                    echo '<a href="https://' . $row['website'] . '">';
                                     echo '<div class="box">' . $row['website'] . '</div>';
                                     echo '</a>';
                                 }
@@ -86,19 +86,19 @@ if (isset($_SESSION['loggedin'])) {
                                     }
                                     if (!empty($row['facebook'])) {
                                         echo '<h3>FACEBOOK</h3>';
-                                        echo '<a target="_blank" href="https://'.$row['facebook'].'">';
+                                        echo '<a target="_blank" href="https://' . $row['facebook'] . '">';
                                         echo '<div class="box">' . $row['facebook'] . '</div>';
                                         echo '</a>';
                                     }
                                     if (!empty($row['instagram'])) {
                                         echo '<h3>INSTAGRAM</h3>';
-                                        echo '<a target="_blank" href="https://'.$row['instagram'].'">';
+                                        echo '<a target="_blank" href="https://' . $row['instagram'] . '">';
                                         echo '<div class="box">' . $row['instagram'] . '</div>';
                                         echo '</a>';
                                     }
                                     if (!empty($row['others'])) {
                                         echo '<h3>OTHERS</h3>';
-                                        echo '<a target="_blank" href="https://'.$row['others'].'">';
+                                        echo '<a target="_blank" href="https://' . $row['others'] . '">';
                                         echo '<div class="box">' . $row['others'] . '</div>';
                                         echo '</a>';
                                     }
@@ -122,16 +122,33 @@ if (isset($_SESSION['loggedin'])) {
                         if ($result = $conn->query($sql_2)) {
                             if ($result->num_rows > 0) {
                                 while ($row = $result->fetch_array()) {
-                                    echo            '<div class="card">';
-                                    echo            '<a href="../general/view_product_specific?id=' . $row['product_id'] . '" class="product-text sub-link">';
-                                    echo               '<div class="details-prod">';
-                                    echo                   '<div class="category">' . $row['category'] . '</div>';
-                                    echo                   '<img class="product-img">';
-                                    echo              '</div>';
-                                    echo              '<h3>' . $row['product_price'] . '</h3>';
-                                    echo               '<h3>' . $row['product_name'] . '</h3>';
-                                    echo               '<h3>' . $row['product_desc'] . '</h3>';
-                                    echo            '</div>';
+                                    if (!empty($row['product_img']) && (str_contains($row['product_img'], '.jpg') == true) && (file_exists('../product_image/' . $row['product_img']) == true)) {
+                                        echo            '<div class="card">';
+                                        echo            '<a href="../general/view_product_specific?id=' . $row['product_id'] . '" class="product-text sub-link">';
+                                        echo               '<div class="details-prod">';
+                                        echo                   '<div class="category">' . $row['category'] . '</div>';
+                                        echo                   '<img class="product-img" src="../product_image/' . $row['product_img'] . '">';
+                                        echo               '</div>';
+                                        echo               '<h3>' . $row['product_price'] . '</h3>';
+                                        echo               '<h3>' . $row['product_name'] . '</h3>';
+                                        echo               '<h3>' . $row['product_desc'] . '</h3>';
+                                        echo            '</a>';
+                                        echo            '</div>';
+                                    }
+
+                                    if ((str_contains($row['product_img'], '.jpg') !== true) or (file_exists('../product_image/' . $row['product_img']) == false)) {
+                                        echo            '<div class="card">';
+                                        echo            '<a href="../general/view_product_specific?id=' . $row['product_id'] . '" class="product-text sub-link">';
+                                        echo               '<div class="details-prod">';
+                                        echo                   '<div class="category">' . $row['category'] . '</div>';
+                                        echo                   '<img class="product-img">';
+                                        echo              '</div>';
+                                        echo               '<h3>' . $row['product_price'] . '</h3>';
+                                        echo               '<h3>' . $row['product_name'] . '</h3>';
+                                        echo               '<h3>' . $row['product_desc'] . '</h3>';
+                                        echo            '</a>';
+                                        echo            '</div>';
+                                    }
                                 }
                                 $result->free();
                             }
