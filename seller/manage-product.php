@@ -40,9 +40,9 @@ if (isset($_SESSION['loggedin'])) {
                 <tr>
                     <th class="id">PRODUCT ID</th>
                     <th class="title">PRODUCT NAME</th>
-                    <th class="title">PRODUCT PRICE</th>
-                    <th class="title">PRODUCT IMG</th>
-                    <th class="title">PRODUCT DESCR</th>
+                    <th class="title-price">PRODUCT PRICE</th>
+                    <th class="title-img">PRODUCT IMG</th>
+                    <th class="title-desc">PRODUCT DESCR</th>
                     <th class="delete">DELETE</th>
                     <th class="edit">EDIT</th>
                 </tr>
@@ -60,12 +60,12 @@ if (isset($_SESSION['loggedin'])) {
                             echo '<tr>';
                             echo '<td class="blog"><span class="blog-id">' . $row['product_id'] . '</span></td>';
                             echo '<td><span class="blog-title">' . $row['product_name'] . '</span></td>';
-                            echo '<td><span class="blog-title">' . $row['product_price'] . '</span></td>';
-                            echo '<td><span class="blog-title">' . $row['product_img'] . '</span></td>';
-                            echo '<td><span class="blog-title">' . $row['product_desc'] . '</span></td>';
+                            echo '<td class="title-price"><span class="blog-title ">' . $row['product_price'] . '</span></td>';
+                            echo '<td class="title-img"><span class="blog-title ">' . $row['product_img'] . '</span></td>';
+                            echo '<td class=" title-desc"><span class="blog-title">' . $row['product_desc'] . '</span></td>';
 
-                            echo '<td><a href="../backend/product-delete.php?product_id=' . $row['product_id'] . '"title="Delete Record" data-toggle="tooltip"><span class="blog-delete" onclick="return confirm('."'". "Are you sure you want to delete?" ."'".');"><i class="fa-regular fa-trash-can"></i></span></a></td>';
-                            echo '<td><a href="product-edit.php?product_id=' . $row['product_id'] . '" title="Edit Record" data-toggle="tooltip"><span class="blog-edit"><i class="fa-regular fa-pen-to-square"></i></span></a></td>';
+                            echo '<td><a class="icon-blog" href="../backend/product-delete.php?product_id=' . $row['product_id'] . '"title="Delete Record" data-toggle="tooltip"><span class="blog-delete" onclick="return confirm('."'". "Are you sure you want to delete?" ."'".');"><i class="fa-regular fa-trash-can"></i></span></a></td>';
+                            echo '<td><a class="icon-blog" href="product-edit.php?product_id=' . $row['product_id'] . '" title="Edit Record" data-toggle="tooltip"><span class="blog-edit"><i class="fa-regular fa-pen-to-square"></i></span></a></td>';
 
                             
                         }
