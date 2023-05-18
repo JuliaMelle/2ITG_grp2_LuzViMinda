@@ -137,10 +137,11 @@ session_start();
                     echo    '<div class="capsule">';
                     echo        '<p class="capsule_caption">' . $row['category'] . '</p>';
                     echo    '</div>';
-                    if (!empty($row['product_img'])) {
+                    if (!empty($row['product_img']) && (str_contains($row['product_img'], '.jpg') == true) && (file_exists('../product_image/' . $row['product_img']) == true)) {
                         echo   '<img src="../product_image/' . $row['product_img'] . '"alt="Avatar" style="width:100%">';
-                    } else {
-                        echo   '<<img src="../img/temp.png" alt="Avatar" style="width:100%">';
+                    }
+                    if ((str_contains($row['product_img'], '.jpg') == false) or (file_exists('../product_image/' . $row['product_img']) == false)) {
+                        echo   '<img src="../img/temp.png" alt="Avatar" style="width:100%">';
                     }
                     echo   '<h4 class="head">' . $row['product_name'] . '</h4>';
                     echo '<h5 class="read_more">' . $row['seller_name'] . '</h5>';
@@ -169,9 +170,10 @@ session_start();
                             echo    '<div class="capsule">';
                             echo        '<p class="capsule_caption">' . $row['category'] . '</p>';
                             echo    '</div>';
-                            if (!empty($row['product_img'])) {
+                            if (!empty($row['product_img']) && (str_contains($row['product_img'], '.jpg') == true) && (file_exists('../product_image/' . $row['product_img']) == true)) {
                                 echo   '<img src="../product_image/' . $row['product_img'] . '"alt="Avatar" style="width:100%">';
-                            } else {
+                            }
+                            if ((str_contains($row['product_img'], '.jpg') == false) or (file_exists('../product_image/' . $row['product_img']) == false)) {
                                 echo   '<img src="../img/temp.png" alt="Avatar" style="width:100%">';
                             }
                             echo   '<h4 class="head">' . $row['product_name'] . '</h4>';
@@ -200,9 +202,10 @@ session_start();
                             echo    '<div class="capsule">';
                             echo        '<p class="capsule_caption">' . $row['category'] . '</p>';
                             echo    '</div>';
-                            if (!empty($row['product_img'])) {
+                            if (!empty($row['product_img']) && (str_contains($row['product_img'], '.jpg') == true) && (file_exists('../product_image/' . $row['product_img']) == true)) {
                                 echo   '<img src="../product_image/' . $row['product_img'] . '"alt="Avatar" style="width:100%">';
-                            } else {
+                            }
+                            if ((str_contains($row['product_img'], '.jpg') == false) or (file_exists('../product_image/' . $row['product_img']) == false)) {
                                 echo   '<img src="../img/temp.png" alt="Avatar" style="width:100%">';
                             }
                             echo   '<h4 class="head">' . $row['product_name'] . '</h4>';
@@ -231,11 +234,14 @@ session_start();
                     echo    '<div class="capsule">';
                     echo        '<p class="capsule_caption">' . $row['category'] . '</p>';
                     echo    '</div>';
-                    if (!empty($row['product_img'])) {
+
+                    if (!empty($row['product_img']) && (str_contains($row['product_img'], '.jpg') == true) && (file_exists('../product_image/' . $row['product_img']) == true)) {
                         echo   '<img src="../product_image/' . $row['product_img'] . '"alt="Avatar" style="width:100%">';
-                    } else {
+                    }
+                    if ((str_contains($row['product_img'], '.jpg') == false) or (file_exists('../product_image/' . $row['product_img']) == false)) {
                         echo   '<img src="../img/temp.png" alt="Avatar" style="width:100%">';
                     }
+
                     echo   '<h4 class="head">' . $row['product_name'] . '</h4>';
                     echo '<h5 class="read_more">' . $row['seller_name'] . '</h5>';
                     echo '</div>';
