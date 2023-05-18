@@ -16,7 +16,16 @@ session_start();
 
     <script src="https://kit.fontawesome.com/b1d36f5527.js" crossorigin="anonymous"></script>
 </head>
-
+<style>  
+.upload-btn::-webkit-file-upload-button {
+  color: var(--white);
+  background: var(--dark-blue);
+  padding: 5px 5px;
+  border: none;
+  border-radius: 10px !important;
+  cursor: pointer;
+}
+</style>
 <body>
     <?php require_once '../components/navbar.php' ?>
 
@@ -76,11 +85,14 @@ session_start();
                 <input required type="text" name="product_name"" id="blog_title" placeholder="<?php echo $row["product_name"]; ?>">
                 <p>PRODUCT PRICE</p>
                 <input required type="text" name="product_price" id="blog_title" placeholder="<?php echo $row["product_price"]; ?>">
-                <p>PRODUCT IMAGE</p>
-                <input required type="text" name="product_img" id="blog_title" placeholder="<?php echo $row["product_img"]; ?>">
                 <p>PRODUCT DESCRIPTION</p>
                 <input required type="text" name="product_desc" id="blog_title" placeholder="<?php echo $row["product_desc"]; ?>">
 
+                <p>PRODUCT IMAGE</p>
+                <h5 class="picture">This only accepts .jpeg, .jpg, and .png files.</h5>
+                <input required type="file" name="product_img" class="upload-btn" placeholder="<?php echo $row["product_img"]; ?>"></input>
+
+               
                 <input type="hidden" name="id" value="<?php echo $_GET["product_id"]; ?>" />
                 <button type="submit" class="button" title="submit" id="submit">PUBLISH POST</button>
             </form>
