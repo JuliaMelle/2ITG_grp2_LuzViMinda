@@ -31,18 +31,18 @@ if (isset($_SESSION['loggedin'])) {
     <!-- product_id	user_id	category	product_name	product_price	product_img	product_desc -->
     <div class="blog-container">
 
-    <a href="add-product.php">
-    <button class="button" id="btn-add">ADD A PRODUCT</button>
-    </a>
+        <a href="add-product.php">
+            <button class="button" id="btn-add">ADD A PRODUCT</button>
+        </a>
 
         <table class="a">
             <thead>
                 <tr>
                     <th class="id">PRODUCT ID</th>
                     <th class="title">PRODUCT NAME</th>
-                    <th class="title">PRODUCT PRICE</th>
-                    <th class="title">PRODUCT IMG</th>
-                    <th class="title">PRODUCT DESCR</th>
+                    <th class="product_price">PRODUCT PRICE</th>
+                    <th class="product_img">PRODUCT IMG</th>
+                    <th class="product_desc">PRODUCT DESCR</th>
                     <th class="delete">DELETE</th>
                     <th class="edit">EDIT</th>
                 </tr>
@@ -50,35 +50,35 @@ if (isset($_SESSION['loggedin'])) {
             <tbody>
 
                 <tr>
-            <?php
-                require_once '../config.php';
-                $id = $_SESSION['id'];
-                $sql = "SELECT * FROM products WHERE user_id = $id";
-                if ($result = $conn-> query($sql)) {
-                    if ($result->num_rows > 0) {
-                        while ($row = $result->fetch_array()) {
-                            echo '<tr>';
-                            echo '<td class="blog"><span class="blog-id">' . $row['product_id'] . '</span></td>';
-                            echo '<td><span class="blog-title">' . $row['product_name'] . '</span></td>';
-                            echo '<td><span class="blog-title">' . $row['product_price'] . '</span></td>';
-                            echo '<td><span class="blog-title">' . $row['product_img'] . '</span></td>';
-                            echo '<td><span class="blog-title">' . $row['product_desc'] . '</span></td>';
+                    <?php
+                    require_once '../config.php';
+                    $id = $_SESSION['id'];
+                    $sql = "SELECT * FROM products WHERE user_id = $id";
+                    if ($result = $conn->query($sql)) {
+                        if ($result->num_rows > 0) {
+                            while ($row = $result->fetch_array()) {
+                    ?>
 
-                            echo '<td><a href="../backend/product-delete.php?product_id=' . $row['product_id'] . '"title="Delete Record" data-toggle="tooltip"><span class="blog-delete" onclick="return confirm('."'". "Are you sure you want to delete?" ."'".');"><i class="fa-regular fa-trash-can"></i></span></a></td>';
-                            echo '<td><a href="product-edit.php?product_id=' . $row['product_id'] . '" title="Edit Record" data-toggle="tooltip"><span class="blog-edit"><i class="fa-regular fa-pen-to-square"></i></span></a></td>';
+                <tr>';
+                    <td class="blog"><span class="blog-id"> <?php echo  $row['product_id'] ?> </span></td>
+                    <td><span class="blog-title"><?php echo $row['product_name'] ?> </span></td>
+                    <td class="product_price_data"><span> <?php echo $row['product_price'] ?></span></td>
+                    <td class="product_img_data"><span> <?php echo $row['product_img'] ?></span></td>
+                    <td class="product_desc_data"><span> <?php echo $row['product_desc'] ?> </span></td>
 
-                            
+        <?php echo '<td > <a href="../backend/product-delete.php?product_id=' . $row['product_id'] . '"title="Delete Record" data-toggle="tooltip"><span class="blog-delete" onclick="return confirm(' . "'" . "Are you sure you want to delete?" . "'" . ');"><i class="fa-regular fa-trash-can"></i></span></a></td>';
+                                echo '<td ><a href="product-edit.php?product_id=' . $row['product_id'] . '" title="Edit Record" data-toggle="tooltip"><span class="blog-edit"><i class="fa-regular fa-pen-to-square"></i></span></a></td>';
+                            }
+                            $result->free();
                         }
-                        $result->free();
                     }
-                }
-                $conn->close();
-                ?>
+                    $conn->close();
+        ?>
 
             </tbody>
         </table>
 
-        
+
 
     </div>
 
