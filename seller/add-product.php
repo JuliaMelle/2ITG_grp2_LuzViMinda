@@ -15,14 +15,9 @@ if (isset($_SESSION['loggedin'])) {
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>LuzViMinda | Add Product</title>
   <meta name="description" content="">
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
 
   <link rel="stylesheet" href="../styles/global.css">
   <link rel="stylesheet" href="../styles/navbar.css">
@@ -31,6 +26,7 @@ if (isset($_SESSION['loggedin'])) {
 
   <script src="https://kit.fontawesome.com/96362859e2.js" crossorigin="anonymous"></script>
 
+  <title>LuzViMinda | Add Product</title>
   <style>
     /* ALERT */
     .alert {
@@ -73,6 +69,7 @@ if (isset($_SESSION['loggedin'])) {
       color: black;
     }
   </style>
+
 </head>
 
 <body>
@@ -152,8 +149,29 @@ if (isset($_SESSION['loggedin'])) {
     ?>
     <div class="container">
 
-      <a class="close-btn" href="manage-product.php"> <i class="fa-solid fa-xmark" style="margin-left: 700px; font-size: 50px; color: #000000;"></i> </a>
-      <div class="mid_container">
+  <?php
+  if (isset($_GET['imagesize'])) { //check if authenticate key exists in URL
+    if ($_GET['imagesize'] == "false") { ?>
+      <br>
+      <div class="alert alert-danger" role="alert">
+
+        <span class="closebtn">&times;</span>
+        Invalid picture. Image size too large.
+      </div>
+  <?php
+    }
+  }
+  ?>
+
+  <div class="wrapper">
+    <div class="wrapper-content">
+      <form action="../backend/add_product.php" method="post" enctype="multipart/form-data">
+        <div class="header-title">
+          <p>ADD PRODUCT</p>
+        <a class="close-btn" href="manage-product.php"> <i class="fa-solid fa-xmark" style="font-size: 25px; color: #000000;"></i> </a>
+        </div>
+        <hr>
+        <div class="mid_container">
 
         <h3 class="identifiers">PRODUCT NAME</h3>
         <input type="text" class="box" id="product_name" name="product_name"></input>
