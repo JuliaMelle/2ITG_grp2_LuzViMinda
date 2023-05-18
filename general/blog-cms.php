@@ -54,7 +54,7 @@ if (isset($_SESSION['loggedin'])) {
                             echo '<td><span class="blog-title">' . $row['content'] . '</span></td>';
                             // echo '<td><a id="btn-add" href="backend/blog-delete2.php?post_id=' . $row['post_id'] . '" title="Delete Record" data-toggle="tooltip"><span class="blog-delete"><i class="fa-regular fa-trash-can"></i></span></a></td>';
 
-                            echo '<td><a href="../backend/blog-delete.php?post_id=' . $row['post_id'] . '"title="Delete Record" data-toggle="tooltip"><span class="blog-delete" onclick="return confirm('."'". "Are you sure?" ."'".');"><i class="fa-regular fa-trash-can"></i></span></a></td>';
+                            echo '<td><a href="../backend/blog-delete.php?post_id=' . $row['post_id'] . '"title="Delete Record" data-toggle="tooltip"><span class="blog-delete" onclick="return confirm('."'". "Are you sure you want to delete?" ."'".');"><i class="fa-regular fa-trash-can"></i></span></a></td>';
                             echo '<td><a href="edit-blog.php?post_id=' . $row['post_id'] . '" title="Edit Record" data-toggle="tooltip"><span class="blog-edit"><i class="fa-regular fa-pen-to-square"></i></span></a></td>';
                             
                         }
