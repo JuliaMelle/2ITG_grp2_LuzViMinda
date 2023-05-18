@@ -19,7 +19,7 @@
 
     <div>
       <!-- RIGHT SIDE OF NAVBAR -->
-      <input type="checkbox" id="click">
+      <input type="checkbox" id="click" class="check">
       <label for="click" class="menu-btn">
         <i><ion-icon name="menu-outline"></ion-icon></i>
       </label>

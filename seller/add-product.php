@@ -19,7 +19,7 @@ if (isset($_SESSION['loggedin'])) {
   <meta name="description" content="">
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -33,167 +33,176 @@ if (isset($_SESSION['loggedin'])) {
 
   <style>
     /* ALERT */
-.alert {
-  padding: 20px;
-  background-color: #f44336;
-  color: white;
-  opacity: 1;
-  transition: opacity 0.6s;
-  margin-bottom: 15px;
-  width:44%;
-  margin: auto;
-  justify-content: center;
-  align-items: center;
-}
+    .alert {
+      padding: 20px;
+      background-color: #f44336;
+      color: white;
+      opacity: 1;
+      transition: opacity 0.6s;
+      margin-bottom: 15px;
+      width: 44%;
+      margin: auto;
+      justify-content: center;
+      align-items: center;
+    }
 
-.alert.success {background-color: #04AA6D;}
-.alert.info {background-color: #2196F3;}
-.alert.warning {background-color: #ff9800;}
+    .alert.success {
+      background-color: #04AA6D;
+    }
 
-.closebtn {
-  margin-left: 15px;
-  color: white;
-  font-weight: bold;
-  float: right;
-  font-size: 22px;
-  line-height: 20px;
-  cursor: pointer;
-  transition: 0.3s;
-}
+    .alert.info {
+      background-color: #2196F3;
+    }
 
-.closebtn:hover {
-  color: black;
-}
+    .alert.warning {
+      background-color: #ff9800;
+    }
 
-</style>
+    .closebtn {
+      margin-left: 15px;
+      color: white;
+      font-weight: bold;
+      float: right;
+      font-size: 22px;
+      line-height: 20px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .closebtn:hover {
+      color: black;
+    }
+  </style>
 </head>
 
 <body>
 
-<?php $_SESSION['loggedin'] ?>
-         <form class="form-flex column" action="../backend/add_product.php" method="post" enctype="multipart/form-data">
-         <?php
-                    if (isset($_GET['name'])) { //check if authenticate key exists in URL
-                        if ($_GET['name'] == "false") { ?>
+  <?php $_SESSION['loggedin'] ?>
+  <form class="form-flex column" action="../backend/add_product.php" method="post" enctype="multipart/form-data">
+    <?php
+    if (isset($_GET['name'])) { //check if authenticate key exists in URL
+      if ($_GET['name'] == "false") { ?>
 
-                            <br>
-                            <div class="alert alert-danger" role="alert">
+        <br>
+        <div class="alert alert-danger" role="alert">
 
-                            <span class="closebtn">&times;</span> 
-                                Fill out Product Name.
-                            </div>
-                    <?php
-                        }
-                    }
-                    ?>
-                      <?php
-                    if (isset($_GET['desc'])) { //check if authenticate key exists in URL
-                        if ($_GET['desc'] == "false") { ?>
+          <span class="closebtn">&times;</span>
+          Fill out Product Name.
+        </div>
+    <?php
+      }
+    }
+    ?>
+    <?php
+    if (isset($_GET['desc'])) { //check if authenticate key exists in URL
+      if ($_GET['desc'] == "false") { ?>
 
-                            <br>
-                            <div class="alert alert-danger" role="alert">
+        <br>
+        <div class="alert alert-danger" role="alert">
 
-                            <span class="closebtn">&times;</span> 
-                                Fill out Product Description.
-                            </div>
-                    <?php
-                        }
-                    }
-                    ?>
-                      <?php
-                    if (isset($_GET['price'])) { //check if authenticate key exists in URL
-                        if ($_GET['price'] == "false") { ?>
+          <span class="closebtn">&times;</span>
+          Fill out Product Description.
+        </div>
+    <?php
+      }
+    }
+    ?>
+    <?php
+    if (isset($_GET['price'])) { //check if authenticate key exists in URL
+      if ($_GET['price'] == "false") { ?>
 
-                            <br>
-                            <div class="alert alert-danger" role="alert">
+        <br>
+        <div class="alert alert-danger" role="alert">
 
-                            <span class="closebtn">&times;</span> 
-                                Fill out Product Price.
-                            </div>
-                    <?php
-                        }
-                    }
-                    ?>
-                      <?php
-                    if (isset($_GET['region'])) { //check if authenticate key exists in URL
-                        if ($_GET['region'] == "false") { ?>
+          <span class="closebtn">&times;</span>
+          Fill out Product Price.
+        </div>
+    <?php
+      }
+    }
+    ?>
+    <?php
+    if (isset($_GET['region'])) { //check if authenticate key exists in URL
+      if ($_GET['region'] == "false") { ?>
 
-                            <br>
-                            <div class="alert alert-danger" role="alert">
+        <br>
+        <div class="alert alert-danger" role="alert">
 
-                            <span class="closebtn">&times;</span> 
-                                Choose a certain region.
-                            </div>
-                    <?php
-                        }
-                    }
-                    ?>
+          <span class="closebtn">&times;</span>
+          Choose a certain region.
+        </div>
+    <?php
+      }
+    }
+    ?>
 
-<?php
-                    if (isset($_GET['image'])) { //check if authenticate key exists in URL
-                        if ($_GET['image'] == "false") { ?>
+    <?php
+    if (isset($_GET['image'])) { //check if authenticate key exists in URL
+      if ($_GET['image'] == "false") { ?>
 
-                            <br>
-                            <div class="alert alert-danger" role="alert">
+        <br>
+        <div class="alert alert-danger" role="alert">
 
-                            <span class="closebtn">&times;</span> 
-                               Invalid picture.
-                            </div>
-                    <?php
-                        }
-                    }
-                    ?>
-         <div class="container">
-        
-         <a class="close-btn" href="manage-product.php"> <i class="fa-solid fa-xmark" style="margin-left: 700px; font-size: 50px; color: #000000;"></i> </a>
-                    <div class="mid_container">
+          <span class="closebtn">&times;</span>
+          Invalid picture.
+        </div>
+    <?php
+      }
+    }
+    ?>
+    <div class="container">
 
-                    <h3 class="identifiers">PRODUCT NAME</h3>
-                    <input type="text" class="box" id="product_name" name="product_name"></input>
+      <a class="close-btn" href="manage-product.php"> <i class="fa-solid fa-xmark" style="margin-left: 700px; font-size: 50px; color: #000000;"></i> </a>
+      <div class="mid_container">
 
-                    <h3 class="identifiers">PRODUCT DESCRIPTION</h3>
-                    <input type="text" class="box" id="product_desc" name="product_desc" ></input>
+        <h3 class="identifiers">PRODUCT NAME</h3>
+        <input type="text" class="box" id="product_name" name="product_name"></input>
 
-                    <h3 class="identifiers">PRODUCT PRICE</h3>
-                    <input type="text" class="box" id="product_price" name="product_price"></input>
+        <h3 class="identifiers">PRODUCT DESCRIPTION</h3>
+        <input type="text" class="box" id="product_desc" name="product_desc"></input>
 
-                    <h3 class="identifiers">CATEGORY</h3>
-                    <select class="dropdown-category" name="category" id="category">
-                         <option value="region-ncr">NCR</option>
-                        <option value="region-car">CAR</option>
-                       <option value="region-armm">ARMM</option>
-                       <option value="region-1">Region 1</option>
-                      <option value="region-4a">Region 4-A</option>
-                      <option value="region-4b">Region 4-B</option>
-                      <option value="region-5">Region 5</option>
-                      <option value="region-6">Region 6</option>
-                      <option value="region-7">Region 7</option>
-                      <option value="region-10">Region 10</option>
-                    </select>
+        <h3 class="identifiers">PRODUCT PRICE</h3>
+        <input type="text" class="box" id="product_price" name="product_price"></input>
 
-                    <h3 class="identifiers1">PROFILE PICTURE</h3>
-                   <h5 class="picture">This only accepts .jpeg, .jpg, and .png files.</h5>
-                  <input type="file" class="upload-btn" name="image"></input>
-                  <br>
+        <h3 class="identifiers">CATEGORY</h3>
+        <select class="dropdown-category" name="category" id="category">
+          <option value="NCR">NCR</option>
+          <option value="CAR">CAR</option>
+          <option value="ARMM">ARMM</option>
+          <option value="REGION 1">Region 1</option>
+          <option value="REGION 4A">Region 4-A</option>
+          <option value="REGION 4B">Region 4-B</option>
+          <option value="REGION 5">Region 5</option>
+          <option value="REGION 6">Region 6</option>
+          <option value="REGION 7">Region 7</option>
+          <option value="REGION 10">Region 10</option>
+        </select>
 
-      <button class="button login" type="Submit" value="Submit" name="Submit" style="width:90%">ADD A PRODUCT</button>
+        <h3 class="identifiers1">PROFILE PICTURE</h3>
+        <h5 class="picture">This only accepts .jpeg, .jpg, and .png files.</h5>
+        <input type="file" class="upload-btn" name="image"></input>
+        <br>
 
+        <button class="button login" type="Submit" value="Submit" name="Submit" style="width:90%">ADD A PRODUCT</button>
+
+      </div>
     </div>
-  </div>
-</form>
+  </form>
 
-<script>
-var close = document.getElementsByClassName("closebtn");
-var i;
+  <script>
+    var close = document.getElementsByClassName("closebtn");
+    var i;
 
-for (i = 0; i < close.length; i++) {
-  close[i].onclick = function(){
-    var div = this.parentElement;
-    div.style.opacity = "0";
-    setTimeout(function(){ div.style.display = "none"; }, 600);
-  }
-}
-</script>
+    for (i = 0; i < close.length; i++) {
+      close[i].onclick = function() {
+        var div = this.parentElement;
+        div.style.opacity = "0";
+        setTimeout(function() {
+          div.style.display = "none";
+        }, 600);
+      }
+    }
+  </script>
 
 
 </body>
