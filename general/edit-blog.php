@@ -60,7 +60,11 @@
 
     <div class="wrapper">
         <div class="wrapper-content">
-            <p>EDIT A BLOG</p>
+        <div class="box-header">
+                <p>EDIT YOUR BLOG</p>
+                <a class="close-btn" href="blog-cms.php"> <i class="fa-solid fa-xmark" style="font-size: 25px; color: #000000;"></i> </a>
+
+            </div>
             <hr>
             <form action="../backend/blog-edit.php" method="post">
                 <p>TITLE</p>

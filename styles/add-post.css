@@ -1,6 +1,6 @@
 .wrapper {
   width: 55%;
-  margin: 2% auto;
+  margin: 1% auto;
 }
 
 .wrapper-content {
@@ -19,6 +19,14 @@
   align-items: center;
   width: 100%;
   padding: 0 3%;
+}
+
+.box-header {
+  padding: 0 3%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 hr {
