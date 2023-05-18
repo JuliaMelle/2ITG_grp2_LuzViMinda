@@ -6,6 +6,7 @@ session_start();
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -30,14 +31,12 @@ session_start();
     <?php
     if (isset($_SESSION['loggedin'])) {
         require_once '../components/navbar-seller.php';
-    }
-        else{
+    } else {
         require_once '../components/navbar-general.php';
-
     }
-    ?> 
+    ?>
 
-<div class="container">
+    <div class="container">
         <div class="mid_container">
 
             <!-- SEARCH PAGE -->
@@ -54,38 +53,45 @@ session_start();
                     <div class="card"> <!-- CARD -->
                         <div class="up">
 
-                        <div class="close-btn"> <a href="product-catalog.php"> 
-                            <i class="fa-solid fa-xmark" style="color: #000000;"></i> </a></div>
+                            <div class="close-btn"> <a href="product-catalog.php">
+                                    <i class="fa-solid fa-xmark" style="color: #000000;"></i> </a></div>
                         </div>
 
                         <div class="pposition">
-                        <!-- <img class="pimage" src=<?php echo   $row['product_name'] ?>> -->
-                        <img class="pimg" src="../product_image/<?php echo $row['product_img']?>" alt="...">
+                            <!-- <img class="pimage" src=<?php echo   $row['product_name'] ?>> -->
+
+
+                            <img class="pimg" <?php
+                                                if (!empty($row['product_img'])) {
+                                                    echo 'src="../product_image/' . $row['product_img'] . '"alt="...">';
+                                                } else {
+                                                    echo 'src="../img/temp.png" "alt="...">';
+                                                }
+                                                ?> </div>
+
+                            <h1 class="head">
+                                <?php echo   $row['product_name'] ?>
+                            </h1>
+
+                            <?php echo   $row['product_desc'] ?>
+
+                            <h1 class="head1">
+                                <?php echo   $row['product_price'] ?>
+                            </h1>
+
+                            <div class="capsule">
+                                <p class="capsule_caption"> <?php echo $row['category'] ?> </p>
+                            </div>
                         </div>
 
-                        <h1 class="head">
-                            <?php echo   $row['product_name'] ?>
-                        </h1>
-
-                        <?php echo   $row['product_desc'] ?>
-
-                        <h1 class="head1">
-                            <?php echo   $row['product_price'] ?>
-                        </h1>
-
-                        <div class="capsule">
-                            <p class="capsule_caption">   <?php echo $row ['category'] ?> </p>
-                        </div>
-                    </div>
-
-            <?php
+                <?php
                 }
             } ?>
 
-            <!-- MID CONTAINER END -->
+                <!-- MID CONTAINER END -->
+                    </div>
         </div>
-    </div>
 
-    <?php require_once '../components/footer.php'?>
+        <?php require_once '../components/footer.php' ?>
 
 </body>

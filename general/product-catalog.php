@@ -58,8 +58,9 @@ session_start();
             <form class="form-flex" action="product-catalog.php" method="get">
 
                 <select id="region-id" onchange="filterReg()" class="dropdown-category" name="category-region" id="category-region">
-                <option value="">Filter by region...</option>
-                <option value="NCR">NCR</option>
+                    <option value="placeholder">Filter by region...</option>
+                    <option value="ALL">SHOW ALL</option>
+                    <option value="NCR">NCR</option>
                     <option value="CAR">CAR</option>
                     <option value="ARMM">ARMM</option>
                     <option value="REGION 1">Region 1</option>
@@ -113,7 +114,7 @@ session_start();
             }
             if (!empty(isset($_REQUEST['category-region']))) {
                 $region = $_REQUEST['category-region'];
-            } 
+            }
         }
         $sql = "SELECT * FROM products";
         if ($sSearch <> "") {
@@ -127,7 +128,7 @@ session_start();
 
             $result = mysqli_query($conn, $sql);
             $resultCheck = mysqli_num_rows($result);
-            
+
             if ($resultCheck > 0) {
                 echo '<div class="mid_container">';
                 while ($row = mysqli_fetch_assoc($result)) {
@@ -136,10 +137,9 @@ session_start();
                     echo    '<div class="capsule">';
                     echo        '<p class="capsule_caption">' . $row['category'] . '</p>';
                     echo    '</div>';
-                    if(!empty($row['product_img'] )){
-                        echo   '<img src="../product_image/'. $row['product_img'] . '"alt="Avatar" style="width:100%">';
-                    }
-                    else {
+                    if (!empty($row['product_img'])) {
+                        echo   '<img src="../product_image/' . $row['product_img'] . '"alt="Avatar" style="width:100%">';
+                    } else {
                         echo   '<<img src="../img/temp.png" alt="Avatar" style="width:100%">';
                     }
                     echo   '<h4 class="head">' . $row['product_name'] . '</h4>';
@@ -154,39 +154,69 @@ session_start();
                 echo '<img src="../img/noitemsfound.png" style=" height: 300px;">';
                 echo '</div>';
                 echo '</div>';
-                
             }
         } else if (!empty($region)) {
-            $sql2 = "SELECT * FROM products WHERE category = '$region'";
+            if ($region != 'ALL') {
+                $sql2 = "SELECT * FROM products WHERE category = '$region'";
 
-            if ($result = $conn->query($sql2)) {
-
-                if ($result->num_rows > 0) {
-                    echo '<div class="mid_container">';
-                    while ($row = $result->fetch_array()) {
-                        // $sql_req = "SELECT * FROM products WHERE category = $region";
-                        echo '<a href="view_product_specific?id=' . $row['product_id'] . '" class="product-text sub-link">';
-                        echo '<div class="card">';
-                        echo    '<div class="capsule">';
-                        echo        '<p class="capsule_caption">' . $row['category'] . '</p>';
-                        echo    '</div>';
-                        if(!empty($row['product_img'] )){
-                            echo   '<img src="../product_image/'. $row['product_img'] . '"alt="Avatar" style="width:100%">';
+                if ($result = $conn->query($sql2)) {
+                    if ($result->num_rows > 0) {
+                        echo '<div class="mid_container">';
+                        while ($row = $result->fetch_array()) {
+                            // $sql_req = "SELECT * FROM products WHERE category = $region";
+                            echo '<a href="view_product_specific?id=' . $row['product_id'] . '" class="product-text sub-link">';
+                            echo '<div class="card">';
+                            echo    '<div class="capsule">';
+                            echo        '<p class="capsule_caption">' . $row['category'] . '</p>';
+                            echo    '</div>';
+                            if (!empty($row['product_img'])) {
+                                echo   '<img src="../product_image/' . $row['product_img'] . '"alt="Avatar" style="width:100%">';
+                            } else {
+                                echo   '<img src="../img/temp.png" alt="Avatar" style="width:100%">';
+                            }
+                            echo   '<h4 class="head">' . $row['product_name'] . '</h4>';
+                            echo '<h5 class="read_more">' . $row['seller_name'] . '</h5>';
+                            echo '</div>';
                         }
-                        else {
-                            echo   '<img src="../img/temp.png" alt="Avatar" style="width:100%">';
-                        }
-                        echo   '<h4 class="head">' . $row['product_name'] . '</h4>';
-                        echo '<h5 class="read_more">' . $row['seller_name'] . '</h5>';
+                        echo '</div>';
+                    } else {
+                        echo '<div class="ex1">';
+                        echo '<div class="card2">';
+                        echo '<img src="../img/noitemsfound.png" style=" height: 300px;">';
+                        echo '</div>';
                         echo '</div>';
                     }
-                    echo '</div>';
-                } else {
-                    echo '<div class="ex1">';
-                    echo '<div class="card2">';
-                    echo '<img src="../img/noitemsfound.png" style=" height: 300px;">';
-                    echo '</div>';
-                    echo '</div>';
+                }
+            } else {
+                $sql3 = "SELECT * FROM products";
+
+                if ($result = $conn->query($sql3)) {
+                    if ($result->num_rows > 0) {
+                        echo '<div class="mid_container">';
+                        while ($row = $result->fetch_array()) {
+                            // $sql_req = "SELECT * FROM products WHERE category = $region";
+                            echo '<a href="view_product_specific?id=' . $row['product_id'] . '" class="product-text sub-link">';
+                            echo '<div class="card">';
+                            echo    '<div class="capsule">';
+                            echo        '<p class="capsule_caption">' . $row['category'] . '</p>';
+                            echo    '</div>';
+                            if (!empty($row['product_img'])) {
+                                echo   '<img src="../product_image/' . $row['product_img'] . '"alt="Avatar" style="width:100%">';
+                            } else {
+                                echo   '<img src="../img/temp.png" alt="Avatar" style="width:100%">';
+                            }
+                            echo   '<h4 class="head">' . $row['product_name'] . '</h4>';
+                            echo '<h5 class="read_more">' . $row['seller_name'] . '</h5>';
+                            echo '</div>';
+                        }
+                        echo '</div>';
+                    } else {
+                        echo '<div class="ex1">';
+                        echo '<div class="card2">';
+                        echo '<img src="../img/noitemsfound.png" style=" height: 300px;">';
+                        echo '</div>';
+                        echo '</div>';
+                    }
                 }
             }
         } else {
@@ -201,10 +231,9 @@ session_start();
                     echo    '<div class="capsule">';
                     echo        '<p class="capsule_caption">' . $row['category'] . '</p>';
                     echo    '</div>';
-                    if(!empty($row['product_img'] )){
-                        echo   '<img src="../product_image/'. $row['product_img'] . '"alt="Avatar" style="width:100%">';
-                    }
-                    else {
+                    if (!empty($row['product_img'])) {
+                        echo   '<img src="../product_image/' . $row['product_img'] . '"alt="Avatar" style="width:100%">';
+                    } else {
                         echo   '<img src="../img/temp.png" alt="Avatar" style="width:100%">';
                     }
                     echo   '<h4 class="head">' . $row['product_name'] . '</h4>';
@@ -223,7 +252,13 @@ session_start();
     <script>
         function filterReg() {
             var regionID = document.getElementById('region-id').value;
-            self.location='product-catalog.php?category-region=' + regionID;
+            console.log(toString(regionID) + 'hahaha');
+            if (regionID !== 'ALL') {
+                self.location = 'product-catalog.php?category-region=' + regionID;
+            } else {
+                self.location = 'product-catalog.php';
+            }
+
         }
     </script>
 </body>
