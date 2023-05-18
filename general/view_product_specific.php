@@ -60,7 +60,7 @@ session_start();
 
                         <div class="pposition">
                         <!-- <img class="pimage" src=<?php echo   $row['product_name'] ?>> -->
-                        <img class="pimg" src="../img/temp.png" alt="...">
+                        <img class="pimg" src="../product_image/<?php echo $row['product_img']?>" alt="...">
                         </div>
 
                         <h1 class="head">
