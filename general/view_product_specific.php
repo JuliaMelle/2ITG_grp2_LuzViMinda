@@ -76,7 +76,7 @@ session_start();
                             <?php echo   $row['product_desc'] ?>
 
                             <h1 class="head1">
-                                <?php echo   $row['product_price'] ?>
+                            ₱ <?php echo   $row['product_price'] ?>
                             </h1>
 
                             <div class="capsule">

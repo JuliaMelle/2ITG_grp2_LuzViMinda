@@ -36,10 +36,12 @@ session_start();
 }
 </style>
 <body>
-    <?php require_once '../components/navbar.php' ?>
+
 
     <?php
     require_once "../config.php";
+
+    
     if (isset($_GET["product_id"])) {
         $sql = "SELECT * FROM products WHERE product_id = ?";
 
@@ -84,8 +86,13 @@ session_start();
     ?>
 
     <div class="wrapper">
+        
         <div class="wrapper-content">
+            <div class="header-title">
             <p>EDIT PRODUCT</p>
+            <a class="close-btn" href="manage-product.php"> <i class="fa-solid fa-xmark" style="font-size: 25px; color: #000000;"></i> </a>
+            </div>
+
             <hr>
             <form action="../backend/product-update.php" method="post">
                 <p>CATEGORY</p>
