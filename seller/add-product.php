@@ -75,85 +75,90 @@ if (isset($_SESSION['loggedin'])) {
 <body>
 
   <?php $_SESSION['loggedin'] ?>
-  <form class="form-flex column" action="../backend/add_product.php" method="post" enctype="multipart/form-data">
-    <?php
-    if (isset($_GET['name'])) { //check if authenticate key exists in URL
-      if ($_GET['name'] == "false") { ?>
 
-        <br>
-        <div class="alert alert-danger" role="alert">
+  <?php
+  if (isset($_GET['name'])) { //check if authenticate key exists in URL
+    if ($_GET['name'] == "false") { ?>
 
-          <span class="closebtn">&times;</span>
-          Fill out Product Name.
-        </div>
-    <?php
-      }
+      <br>
+      <div class="alert alert-danger" role="alert">
+
+        <span class="closebtn">&times;</span>
+        Fill out Product Name.
+      </div>
+  <?php
     }
-    ?>
-    <?php
-    if (isset($_GET['desc'])) { //check if authenticate key exists in URL
-      if ($_GET['desc'] == "false") { ?>
+  }
+  ?>
+  <?php
+  if (isset($_GET['desc'])) { //check if authenticate key exists in URL
+    if ($_GET['desc'] == "false") { ?>
 
-        <br>
-        <div class="alert alert-danger" role="alert">
+      <br>
+      <div class="alert alert-danger" role="alert">
 
-          <span class="closebtn">&times;</span>
-          Fill out Product Description.
-        </div>
-    <?php
-      }
+        <span class="closebtn">&times;</span>
+        Fill out Product Description.
+      </div>
+  <?php
     }
-    ?>
-    <?php
-    if (isset($_GET['price'])) { //check if authenticate key exists in URL
-      if ($_GET['price'] == "false") { ?>
+  }
+  ?>
+  <?php
+  if (isset($_GET['price'])) { //check if authenticate key exists in URL
+    if ($_GET['price'] == "false") { ?>
 
-        <br>
-        <div class="alert alert-danger" role="alert">
+      <br>
+      <div class="alert alert-danger" role="alert">
 
-          <span class="closebtn">&times;</span>
-          Fill out Product Price.
-        </div>
-    <?php
-      }
+        <span class="closebtn">&times;</span>
+        Fill out Product Price.
+      </div>
+  <?php
     }
-    ?>
-    <?php
-    if (isset($_GET['region'])) { //check if authenticate key exists in URL
-      if ($_GET['region'] == "false") { ?>
+  }
+  ?>
+  <?php
+  if (isset($_GET['region'])) { //check if authenticate key exists in URL
+    if ($_GET['region'] == "false") { ?>
 
-        <br>
-        <div class="alert alert-danger" role="alert">
+      <br>
+      <div class="alert alert-danger" role="alert">
 
-          <span class="closebtn">&times;</span>
-          Choose a certain region.
-        </div>
-    <?php
-      }
+        <span class="closebtn">&times;</span>
+        Choose a certain region.
+      </div>
+  <?php
     }
-    ?>
+  }
+  ?>
 
-    <?php
-    if (isset($_GET['image'])) { //check if authenticate key exists in URL
-      if ($_GET['image'] == "false") { ?>
+  <?php
+  if (isset($_GET['image'])) { //check if authenticate key exists in URL
+    if ($_GET['image'] == "false") { ?>
 
-        <br>
-        <div class="alert alert-danger" role="alert">
+      <br>
+      <div class="alert alert-danger" role="alert">
 
-          <span class="closebtn">&times;</span>
-          Invalid picture.
-        </div>
-    <?php
-      }
+        <span class="closebtn">&times;</span>
+        Invalid picture.
+      </div>
+  <?php
     }
+
     ?>
     <div class="container">
+
+  }
+  ?>
+
 
   <?php
   if (isset($_GET['imagesize'])) { //check if authenticate key exists in URL
     if ($_GET['imagesize'] == "false") { ?>
       <br>
       <div class="alert alert-danger" role="alert">
+
 
         <span class="closebtn">&times;</span>
         Invalid picture. Image size too large.
@@ -203,9 +208,60 @@ if (isset($_SESSION['loggedin'])) {
 
         <button class="button login" type="Submit" value="Submit" name="Submit" style="width:90%">ADD A PRODUCT</button>
 
+
+        <span class="closebtn">&times;</span>
+        Invalid picture. Image size too large.
       </div>
+  <?php
+    }
+  }
+  ?>
+
+  <div class="wrapper">
+    <div class="wrapper-content">
+      <form action="../backend/add_product.php" method="post" enctype="multipart/form-data">
+        <div class="header-title">
+          <p>ADD PRODUCT</p>
+        <a class="close-btn" href="manage-product.php"> <i class="fa-solid fa-xmark" style="font-size: 25px; color: #000000;"></i> </a>
+        </div>
+        <hr>
+        <div class="mid_container">
+
+          <h3 class="identifiers">PRODUCT NAME</h3>
+          <input type="text" class="box" id="product_name" name="product_name"></input>
+
+          <h3 class="identifiers">PRODUCT DESCRIPTION</h3>
+          <input type="text" class="box" id="product_desc" name="product_desc"></input>
+
+          <h3 class="identifiers">PRODUCT PRICE</h3>
+          <input type="text" class="box" id="product_price" name="product_price"></input>
+
+          <h3 class="identifiers">CATEGORY</h3>
+          <select class="dropdown-category" name="category" id="category">
+            <option value="NCR">NCR</option>
+            <option value="CAR">CAR</option>
+            <option value="ARMM">ARMM</option>
+            <option value="REGION 1">Region 1</option>
+            <option value="REGION 4A">Region 4-A</option>
+            <option value="REGION 4B">Region 4-B</option>
+            <option value="REGION 5">Region 5</option>
+            <option value="REGION 6">Region 6</option>
+            <option value="REGION 7">Region 7</option>
+            <option value="REGION 10">Region 10</option>
+          </select>
+
+          <h3 class="identifiers1">PRODUCT IMAGE</h3>
+          <h5 class="picture">This only accepts .jpeg, .jpg, and .png files.</h5>
+          <input type="file" class="upload-btn" name="image"></input>
+          <br>
+
+          <button class="button login" type="Submit" value="Submit" name="Submit" style="width:90%">ADD A PRODUCT</button>
+
+        </div>
+      </form>
     </div>
-  </form>
+  </div>
+
 
   <script>
     var close = document.getElementsByClassName("closebtn");

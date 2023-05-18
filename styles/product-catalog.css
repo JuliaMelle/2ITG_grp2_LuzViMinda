@@ -21,7 +21,9 @@ a {
   align-items: center;
   margin-top: 20px;
 }
-
+.margin-container2{
+  margin-bottom: 3vh!important;
+}
 /* .center1{
   display: flex;
   flex-wrap: wrap;
@@ -128,7 +130,7 @@ img {
   height: 40px;
   padding: 10px;
   transition: 0.2s linear;
-  border: 2.5px solid black;
+  border: 3px solid black;
   font-size: 14px;
   text-transform: uppercase;
   letter-spacing: 2px;

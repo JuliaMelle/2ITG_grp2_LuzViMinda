@@ -34,7 +34,7 @@ if (isset($_SESSION['loggedin'])) {
                 <tr>
                     <th class="id">POST ID</th>
                     <th class="title">BLOG TITLE</th>
-                    <th class="title">BLOG CONTENT</th>
+                    <th class="title-content">BLOG CONTENT</th>
                     <th class="delete">DELETE</th>
                     <th class="edit">EDIT</th>
                 </tr>
@@ -51,10 +51,10 @@ if (isset($_SESSION['loggedin'])) {
                             echo '<tr>';
                             echo '<td class="blog"><span class="blog-id">' . $row['post_id'] . '</span></td>';                            
                             echo '<td><span class="blog-title">' . $row['title'] . '</span></td>';
-                            echo '<td><span class="blog-title">' . $row['content'] . '</span></td>';
+                            echo '<td class="title-content"><span class="blog-title">' . $row['content'] . '</span></td>';
                             // echo '<td><a id="btn-add" href="backend/blog-delete2.php?post_id=' . $row['post_id'] . '" title="Delete Record" data-toggle="tooltip"><span class="blog-delete"><i class="fa-regular fa-trash-can"></i></span></a></td>';
 
-                            echo '<td><a href="../backend/blog-delete.php?post_id=' . $row['post_id'] . '"title="Delete Record" data-toggle="tooltip"><span class="blog-delete" onclick="return confirm('."'". "Are you sure?" ."'".');"><i class="fa-regular fa-trash-can"></i></span></a></td>';
+                            echo '<td><a href="../backend/blog-delete.php?post_id=' . $row['post_id'] . '"title="Delete Record" data-toggle="tooltip"><span class="blog-delete" onclick="return confirm('."'". "Are you sure you want to delete?" ."'".');"><i class="fa-regular fa-trash-can"></i></span></a></td>';
                             echo '<td><a href="edit-blog.php?post_id=' . $row['post_id'] . '" title="Edit Record" data-toggle="tooltip"><span class="blog-edit"><i class="fa-regular fa-pen-to-square"></i></span></a></td>';
                             
                         }

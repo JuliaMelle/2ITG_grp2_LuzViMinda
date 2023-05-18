@@ -17,7 +17,7 @@ a {
   overflow: hidden;
   text-overflow: ellipsis;
   margin: auto;
-  text-align: center; 
+  text-align: center;
 }
 
 .blog-delete,
@@ -204,6 +204,16 @@ table tr {
   width: 20%;
 }
 
+.product_price{
+  width: 20%;
+}
+.product_img{
+  width: 20%;
+}
+.product_desc{
+  width: 20%;
+}
+
 td span i {
   text-align: center !important;
   margin: auto !important;
@@ -221,4 +231,33 @@ td .blog-id {
   td span i {
     font-size: 1rem;
   }
+
+  .product_price{
+    display: none !important;
+  }
+  .product_img{
+    display: none !important;
+  }
+  .product_desc{
+    display: none !important;
+  }
+  .product_price_data{
+    display: none !important;
+  }
+  .product_img_data{
+    display: none !important;
+  }
+  .product_desc_data{
+    display: none !important;
+  }
+  .delete,
+  .edit {
+    width: 20%;
+    text-align: center;
+    margin: auto;
+  }
+  .title {
+    width: 50%;
+  }
+
 }

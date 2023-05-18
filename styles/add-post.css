@@ -13,6 +13,14 @@
   background-color: var(--white);
 }
 
+.header-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0 3%;
+}
+
 hr {
   background: var(--black);
   height: 3px;
@@ -109,4 +117,12 @@ form .button {
 .button:hover {
   background: var(--orange);
   color: var(--black);
+}
+.upload-btn::-webkit-file-upload-button {
+  color: var(--white);
+  background: var(--dark-blue);
+  padding: 5px 5px;
+  border: none;
+  border-radius: 10px !important;
+  cursor: pointer;
 }
