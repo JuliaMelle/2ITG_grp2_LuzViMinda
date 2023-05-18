@@ -25,6 +25,15 @@ session_start();
   border-radius: 10px !important;
   cursor: pointer;
 }
+
+.dropdown-category {
+  width: calc(100%);
+  height: 55px;
+  background-color: var(--gray);
+  border: 3px solid var(--black);
+  padding: 15px;
+  align-self: center;
+}
 </style>
 <body>
     <?php require_once '../components/navbar.php' ?>
@@ -80,7 +89,20 @@ session_start();
             <hr>
             <form action="../backend/product-update.php" method="post">
                 <p>CATEGORY</p>
-                <input required type="text" name="category" id="blog_title" placeholder="<?php echo $row["category"]; ?>">
+                <!-- <input required type="text" name="category" id="blog_title" placeholder="<?php echo $row["category"]; ?>"> -->
+                <select class="dropdown-category" name="category" id="blog_title" <?php echo $row["category"]; ?>>
+                <option value="NCR">NCR</option>
+                <option value="CAR">CAR</option>
+                <option value="ARMM">ARMM</option>
+                <option value="REGION 1">Region 1</option>
+                <option value="REGION 4A">Region 4-A</option>
+                <option value="REGION 4B">Region 4-B</option>
+                <option value="REGION 5">Region 5</option>
+                <option value="REGION 6">Region 6</option>
+                <option value="REGION 7">Region 7</option>
+                <option value="REGION 10">Region 10</option>
+                </select>
+                
                 <p>PRODUCT NAME</p>
                 <input required type="text" name="product_name"" id="blog_title" placeholder="<?php echo $row["product_name"]; ?>">
                 <p>PRODUCT PRICE</p>
