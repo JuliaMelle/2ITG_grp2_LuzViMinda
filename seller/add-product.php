@@ -150,6 +150,20 @@ if (isset($_SESSION['loggedin'])) {
       }
     }
     ?>
+
+<?php
+    if (isset($_GET['imagesize'])) { //check if authenticate key exists in URL
+      if ($_GET['imagesize'] == "false") { ?>
+        <br>
+        <div class="alert alert-danger" role="alert">
+
+          <span class="closebtn">&times;</span>
+          Invalid picture. Image size too large.
+        </div>
+    <?php
+      }
+    }
+    ?>
     <div class="container">
 
       <a class="close-btn" href="manage-product.php"> <i class="fa-solid fa-xmark" style="margin-left: 700px; font-size: 50px; color: #000000;"></i> </a>
@@ -178,7 +192,7 @@ if (isset($_SESSION['loggedin'])) {
           <option value="REGION 10">Region 10</option>
         </select>
 
-        <h3 class="identifiers1">PROFILE PICTURE</h3>
+        <h3 class="identifiers1">PRODUCT IMAGE</h3>
         <h5 class="picture">This only accepts .jpeg, .jpg, and .png files.</h5>
         <input type="file" class="upload-btn" name="image"></input>
         <br>
