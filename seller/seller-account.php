@@ -129,7 +129,7 @@ if (isset($_SESSION['loggedin'])) {
                                         echo                   '<div class="category">' . $row['category'] . '</div>';
                                         echo                   '<img class="product-img" src="../product_image/' . $row['product_img'] . '">';
                                         echo               '</div>';
-                                        echo               '<h3>' . $row['product_price'] . '</h3>';
+                                        echo               '<h3> ₱ ' . $row['product_price'] . '</h3>';
                                         echo               '<h3>' . $row['product_name'] . '</h3>';
                                         echo               '<h3>' . $row['product_desc'] . '</h3>';
                                         echo            '</a>';
@@ -143,7 +143,7 @@ if (isset($_SESSION['loggedin'])) {
                                         echo                   '<div class="category">' . $row['category'] . '</div>';
                                         echo                   '<img class="product-img">';
                                         echo              '</div>';
-                                        echo               '<h3>' . $row['product_price'] . '</h3>';
+                                        echo               '<h3> ₱ ' . $row['product_price'] . '</h3>';
                                         echo               '<h3>' . $row['product_name'] . '</h3>';
                                         echo               '<h3>' . $row['product_desc'] . '</h3>';
                                         echo            '</a>';
