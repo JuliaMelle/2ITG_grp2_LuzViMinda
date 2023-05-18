@@ -189,6 +189,7 @@ table td {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  text-align: center;
 }
 
 .id {
@@ -203,6 +204,11 @@ table td {
 }
 
 .title {
+  width: 10%;
+  text-align: center;
+}
+
+.title-content {
   width: 10%;
   text-align: center;
 }
@@ -224,5 +230,10 @@ td .blog-id {
 
   form .button {
     width: 50%;
+  }
+
+  .title-content {
+    width: 0;
+    display: none;
   }
 }
