@@ -101,6 +101,12 @@ a {
     color: var(--black);
 }
 
+.homeimg {
+    margin-left: 10px;
+    width: 100%;
+    height: auto;
+}
+
 /* Media Query for Mobile Devices */
 @media (max-width: 600px) {
 
@@ -125,12 +131,22 @@ a {
         background-color: var(--white);
         padding: 20px;
     }
+
+    .homeimg {
+        width: 100%;
+        height: auto;
+    }
 }
 
 /* Media Query for Mobile Devices */
 @media (max-width: 375px) {
     button {
         font-size: 10px;
+    }
+
+    .homeimg {
+        width: 100%;
+        height: auto;
     }
 }
 
