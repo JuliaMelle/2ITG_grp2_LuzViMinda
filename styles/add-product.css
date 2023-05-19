@@ -54,6 +54,7 @@ a {
 
 .mid_container {
   width: 100vh;
+  height: 75vh;
   margin-left: 60px;
   flex-direction: column;
   justify-content: center;
@@ -125,7 +126,10 @@ h3 {
   border-radius: 10px !important;
   cursor: pointer;
 }
-
+.header{
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
 input[type="file"] {
   display: flex;
   width: 15rem;
@@ -153,7 +157,9 @@ input[type="file"] {
 
 /* responsiveness */
 @media only screen and (max-width:768px) {
-
+  .wrapper {
+    width: 90%;
+      }
 
 
 /* responsiveness */
@@ -170,6 +176,7 @@ input[type="file"] {
     justify-content: center;
     align-items: center;
     width: 90%;
+    height: 75vh;
   }
 }
 /* ALERT */
@@ -218,6 +225,10 @@ input[type="file"] {
 
 /* Media Query for Tablets Ipads portrait mode */
 @media (min-width: 768px) and (max-width: 1024px) {
+  .wrapper {
+    width: 90%;
+    
+  }
 }
 
 /* Media Query for Laptops and Desktops */
