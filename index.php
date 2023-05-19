@@ -22,26 +22,20 @@ session_start();
 
 <body>
     <?php
-    if (isset($_SESSION['loggedin'])) {
-        require_once 'components/navbar-seller.php';
-    }
-        else{
-        require_once 'components/navbar.php';
-
-    }
+        require_once 'components/navbar.php';    
     ?> 
 
     <div>
 
     <div>
-    <h1 class="welcome">WELCOME TO LUZVIMINDA!</h1>
+    <image src="img/homebanner.png" class="homeimg" alt="LuzViMinda | Banner">
 
-    <h2 class="tagline">Various Filipino Merchandise from Various Regions in the Philippines</h2>
+    <!-- <h2 class="tagline">Various Filipino Merchandise from Various Regions in the Philippines</h2>
 
     <h3 class="content">A website that embodies the idea of supporting locals. This highlights the products made by the local Filipino artisans, 
     being an instrument to promote and preserve the Filipino culture. LuzViMinda features locally made products available from different regions present in the Philippines. 
     A market place that offers high-quality products made with the greatest love and care of each Filipino maker. At LuzViMinda, our goal is to let this platform be a space for showcasing the creations of each Filipino. 
-    Flourishing the local Filipino industry. Through this website, we hope to be able to contribute how supporting local products can have a greater impact in promoting cultural growth in our country.</h3>
+    Flourishing the local Filipino industry. Through this website, we hope to be able to contribute how supporting local products can have a greater impact in promoting cultural growth in our country.</h3> -->
     </div>
 
     <div>
