@@ -11,7 +11,7 @@
 
   <!-- <title>Navbar</title> -->
 
-  <title>Luzviminda</title>
+  <title></title>
 
 
   <link rel="stylesheet" href="../styles/global.css">
