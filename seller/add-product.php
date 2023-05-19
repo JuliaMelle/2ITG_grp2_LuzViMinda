@@ -149,9 +149,6 @@ if (isset($_SESSION['loggedin'])) {
     ?>
     <div class="container">
 
-  }
-  ?>
-
 
   <?php
   if (isset($_GET['imagesize'])) { //check if authenticate key exists in URL
@@ -214,7 +211,7 @@ if (isset($_SESSION['loggedin'])) {
       </div>
   <?php
     }
-  }
+  
   ?>
 
   <div class="wrapper">
