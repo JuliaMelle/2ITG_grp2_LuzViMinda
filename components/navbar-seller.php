@@ -20,9 +20,9 @@
 
 <body>
   <nav class="sticky" id="navbar">
-    <div class="logo">
-      <p>TITLE</p>
-    </div>
+
+    <img class="logo" src="../img/logo.png" alt="LUZVIMINDA" style="height:75px; width:75px">
+
 
     <div>
       <!-- RIGHT SIDE OF NAVBAR -->

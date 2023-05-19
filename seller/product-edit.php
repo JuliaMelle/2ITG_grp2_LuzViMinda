@@ -111,11 +111,11 @@ session_start();
                 </select>
                 
                 <p>PRODUCT NAME</p>
-                <input required type="text" name="product_name"" id="blog_title" placeholder="<?php echo $row["product_name"]; ?>">
+                <input required type="text" name="product_name"" id="blog_title" value="<?php echo $row["product_name"]; ?>">
                 <p>PRODUCT PRICE</p>
-                <input required type="text" name="product_price" id="blog_title" placeholder="<?php echo $row["product_price"]; ?>">
+                <input required type="text" name="product_price" id="blog_title" value="<?php echo $row["product_price"]; ?>">
                 <p>PRODUCT DESCRIPTION</p>
-                <input required type="text" name="product_desc" id="blog_title" placeholder="<?php echo $row["product_desc"]; ?>">
+                <input required type="text" name="product_desc" id="blog_title" value="<?php echo $row["product_desc"]; ?>">
 
                 <p>PRODUCT IMAGE</p>
                 <h5 class="picture">This only accepts .jpeg, .jpg, and .png files.</h5>

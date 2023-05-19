@@ -62,10 +62,11 @@ session_start();
 
 
                             <img class="pimg" <?php
-                                                if (!empty($row['product_img'])) {
-                                                    echo 'src="../product_image/' . $row['product_img'] . '"alt="...">';
-                                                } else {
-                                                    echo 'src="../img/temp.png" "alt="...">';
+                                                if (!empty($row['product_img']) && (str_contains($row['product_img'], '.jpg') == true) && (file_exists('../product_image/' . $row['product_img']) == true)) {
+                                                    echo   '<img src="../product_image/' . $row['product_img'] . '"alt="Avatar">';
+                                                }
+                                                if ((str_contains($row['product_img'], '.jpg') == false) or (file_exists('../product_image/' . $row['product_img']) == false)) {
+                                                    echo   '<img src="../img/temp.png" alt="Avatar">';
                                                 }
                                                 ?> </div>
 
@@ -76,7 +77,7 @@ session_start();
                             <?php echo   $row['product_desc'] ?>
 
                             <h1 class="head1">
-                            ₱ <?php echo   $row['product_price'] ?>
+                                ₱ <?php echo   $row['product_price'] ?>
                             </h1>
 
                             <div class="capsule">
