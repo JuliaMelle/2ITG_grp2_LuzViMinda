@@ -23,7 +23,8 @@ if (isset($_SESSION['loggedin'])) {
     <link rel="stylesheet" href="../styles/navbar.css">
     <link rel="stylesheet" href="../styles/footer.css">
 
-
+    <!-- FAVICON -->
+    <link rel="icon" type="image/x-icon" href="../img/favicon.ico">
 
 
     <link rel="stylesheet" href="../styles/acc-page-seller2.css">

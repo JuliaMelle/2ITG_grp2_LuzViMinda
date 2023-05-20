@@ -26,6 +26,8 @@ if (isset($_SESSION['loggedin'])) {
   <link rel="stylesheet" href="../styles/navbar.css">
   <link rel="stylesheet" href="../styles/footer.css">
   <link rel="stylesheet" href="../styles/add-product.css">
+  <!-- FAVICON -->
+  <link rel="icon" type="image/x-icon" href="../img/favicon.ico">
 
   <script src="https://kit.fontawesome.com/96362859e2.js" crossorigin="anonymous"></script>
 

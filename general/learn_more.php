@@ -15,6 +15,8 @@ session_start();
     <link rel="stylesheet" href="../styles/global.css">
     <link rel="stylesheet" href="../styles/learn_more.css">
 
+    <!-- FAVICON -->
+    <link rel="icon" type="image/x-icon" href="../img/favicon.ico">
     <style>
         h2 {
             font-size: 32px;

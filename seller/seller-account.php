@@ -20,9 +20,11 @@ if (isset($_SESSION['loggedin'])) {
     <link rel="stylesheet" href="../styles/global.css">
     <link rel="stylesheet" href="../styles/navbar.css">
     <link rel="stylesheet" href="../styles/footer.css">
-
-
     <link rel="stylesheet" href="../styles/seller-account.css">
+
+    <!-- FAVICON -->
+    <link rel="icon" type="image/x-icon" href="../img/favicon.ico">
+
     <title>LuzViMinda | Account Page</title>
 </head>
 <style>

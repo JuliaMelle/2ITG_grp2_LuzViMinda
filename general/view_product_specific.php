@@ -18,6 +18,9 @@ session_start();
     <link rel="stylesheet" href="../styles/view_product_specific.css">
     <link rel="stylesheet" href="../styles/navbar.css">
     <link rel="stylesheet" href="../styles/footer.css">
+    
+    <!-- FAVICON -->
+    <link rel="icon" type="image/x-icon" href="../img/favicon.ico">
 
     <script src="https://kit.fontawesome.com/96362859e2.js" crossorigin="anonymous"></script>
     <style>
