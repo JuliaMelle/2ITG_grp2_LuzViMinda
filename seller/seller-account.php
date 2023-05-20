@@ -25,10 +25,34 @@ if (isset($_SESSION['loggedin'])) {
     <link rel="stylesheet" href="../styles/seller-account.css">
     <title>LuzViMinda | Account Page</title>
 </head>
-
+<style>
+    .alert alert-success {
+    padding: 20px;
+    background-color: #04AA6D;
+    color: white;
+    opacity: 1;
+    transition: opacity 0.6s;
+    margin-bottom: 15px;
+  }
+    </style>
 <body>
+   
     <?php require_once '../components/navbar-seller.php' ?>
+    
+    <?php
+                    if (isset($_GET['success2'])) { //check if authenticate key exists in URL
+                        if ($_GET['success2'] == "true") { ?>
 
+                            <br>
+                            <div class="alert alert-success" role="alert">
+
+                            <span class="closebtn">&times;</span> 
+                            You have successfully uploaded your new product image.
+                            </div>
+                    <?php
+                        }
+                    }
+    ?>
     <!-- ITO YUNG PAGE FOR VIEWERS ONLY -->
 
 
