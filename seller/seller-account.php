@@ -66,10 +66,12 @@ if (isset($_SESSION['loggedin'])) {
                         echo '</div>';
 
                         echo '<div class="details">';
-                        echo '<h3>SELLER NAME</h3>';
+                        echo '<h3>DISPLAY NAME</h3>';
                         echo '<div class="box">' . $row['business_name'] . '</div>';
                         echo '<h3>EMAIL</h3>';
                         echo '<div class="box">' . $row['email'] . '</div>';
+                        echo '<h3>ADDRESS</h3>';
+                        echo '<div class="box">' . $row['address'] . '</div>';
                         if ($result = $conn->query($sql_3)) {
                             if ($result->num_rows > 0) {
                                 if (!empty($row['website'])) {
