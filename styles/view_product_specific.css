@@ -39,10 +39,14 @@
 
 .head {
   width: 100%;
-  margin-top: 30px;
-  margin-bottom: 20px;
+  /* margin-top: 30px; */
+  /* margin-bottom: 20px; */
 }
-
+.seller_name{
+   margin-top: 30px;
+   font-weight: bold;
+   color:#474040 ;
+}
 .head1 {
   width: 100%;
   margin-top: 30px;

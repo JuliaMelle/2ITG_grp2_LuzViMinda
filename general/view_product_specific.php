@@ -69,6 +69,9 @@ session_start();
                                                     echo   '<img src="../img/temp.png" alt="Avatar">';
                                                 }
                                                 ?> </div>
+                            
+                            <a href="view_user_specific.php?user_id=<?php echo $row['user_id'] ?>" class="product-text sub-link"> <p class="seller_name"><?php echo   $row['seller_name'] ?></p>
+                            </a>
 
                             <h1 class="head">
                                 <?php echo   $row['product_name'] ?>
