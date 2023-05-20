@@ -8,7 +8,7 @@ session_start();
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta title="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit Product</title>
+    <title>LuzViminda | Edit Product</title>
     <link rel="stylesheet" href="../styles/global.css">
     <link rel="stylesheet" href="../styles/navbar.css">
     <link rel="stylesheet" href="../styles/footer.css">
@@ -89,7 +89,7 @@ session_start();
         
         <div class="wrapper-content">
             <div class="header-title">
-            <p>EDIT PRODUCT</p>
+            <p class="header-edit">EDIT PRODUCT</p>
             <a class="close-btn" href="manage-product.php"> <i class="fa-solid fa-xmark" style="font-size: 25px; color: #000000;"></i> </a>
             </div>
 
@@ -117,7 +117,7 @@ session_start();
                 <p>PRODUCT DESCRIPTION</p>
                 <input required type="text" name="product_desc" id="blog_title" value="<?php echo $row["product_desc"]; ?>">
 
-                <p>PRODUCT IMAGE</p>
+                <p class="header-image">PRODUCT IMAGE</p>
                 <h5 class="picture">This only accepts .jpeg, .jpg, and .png files.</h5>
                 <input required type="file" name="product_img" class="upload-btn" placeholder="<?php echo $row["product_img"]; ?>"></input>
 
