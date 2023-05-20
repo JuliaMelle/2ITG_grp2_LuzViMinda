@@ -28,7 +28,7 @@ session_start();
     <div>
 
     <div>
-    <image src="img/homebanner1.png" class="homeimg" alt="LuzViMinda | Banner">
+    <image src="img/homebanner.png" class="homeimg" alt="LuzViMinda | Banner">
 
     <!-- <h2 class="tagline">Various Filipino Merchandise from Various Regions in the Philippines</h2>
 
