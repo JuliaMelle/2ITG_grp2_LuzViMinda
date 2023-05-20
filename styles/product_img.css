@@ -1,0 +1,148 @@
+.full-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.half-container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+
+.another-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+
+.wrapper {
+    width: calc(100% - 10%);
+    height: 50px;
+    background-color: var(--gray);
+    /* border: 3px solid var(--black); */
+    padding: 12px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.mid_position_buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    margin-top: 3vh;
+}
+
+.titles {
+    display: flex;
+    padding-bottom: 5PX;
+    font-weight: bold;
+}
+
+.pimg {
+    align-items: center !important;
+    justify-content: center !important;
+    width: 35%;
+}
+
+.pposition {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 10px;
+  }
+
+.upload-btn {
+    display: flex;
+    font-size: 15px;
+    margin-top: 10px;
+}
+  
+.upload-btn::-webkit-file-upload-button {
+    color: var(--white);
+    background: var(--dark-blue);
+    padding: 5px 5px;
+    border: none;
+    border-radius: 10px!important;
+    cursor: pointer;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background: var(--orange);
+    color: var(--black);
+    height: 40px;
+    margin-top: 5px;
+    border: none;
+    border-radius: 0 !important;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.3s ease-in-out;
+}
+
+.save:hover{
+    background: var(--black);
+    color: var(--white);
+}
+
+.sub-link{
+    margin-top: 50px;
+}
+
+
+
+/* ALERT */
+.alert {
+    padding: 20px;
+    background-color: #04AA6D;
+    color: white;
+    opacity: 1;
+    transition: opacity 0.6s;
+    margin-bottom: 15px;
+  }
+  
+  .alert.success {background-color: #04AA6D;}
+  .alert.info {background-color: #2196F3;}
+  .alert.warning {background-color: #ff9800;}
+  
+  .closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .closebtn:hover {
+    color: black;
+  }
+
+@media (max-width: 768px) {
+    .half-container {
+       
+        width: 80%;
+    }
+    
+}
+
+/* Media Query for Mobile Devices */
+@media (max-width: 375px) {
+    .upload-btn {
+        font-size: 10px;
+    }
+}

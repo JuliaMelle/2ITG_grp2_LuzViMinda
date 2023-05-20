@@ -1,6 +1,7 @@
 <?php
 // Include config file
 require_once "../config.php";
+$upload_dir = '../product_image/';
 
 // Define variables and initialize with empty values
 $category = $product_name = $product_price = $product_img = $product_desc = "";

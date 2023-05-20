@@ -117,9 +117,10 @@ session_start();
                 <p>PRODUCT DESCRIPTION</p>
                 <input required type="text" name="product_desc" id="blog_title" value="<?php echo $row["product_desc"]; ?>">
 
-                <p class="header-image">PRODUCT IMAGE</p>
-                <h5 class="picture">This only accepts .jpeg, .jpg, and .png files.</h5>
-                <input required type="file" name="product_img" class="upload-btn" placeholder="<?php echo $row["product_img"]; ?>"></input>
+               
+                <p>CHANGE PRODUCT IMAGE</p>
+                <a href="product_img.php?id=<?php echo $row['product_id'] ?>" style="text-decoration: none; width: 100%;" class="button login">CHANGE PRODUCT IMAGE</a>
+
 
                
                 <input type="hidden" name="id" value="<?php echo $_GET["product_id"]; ?>" />
