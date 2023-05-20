@@ -66,7 +66,7 @@ if (isset($_SESSION['loggedin'])) {
                         echo '</div>';
 
                         echo '<div class="details">';
-                        echo '<h3>SELLER NAME</h3>';
+                        echo '<h3>DISPLAY NAME</h3>';
                         echo '<div class="box">' . $row['business_name'] . '</div>';
                         echo '<h3>EMAIL</h3>';
                         echo '<div class="box">' . $row['email'] . '</div>';
