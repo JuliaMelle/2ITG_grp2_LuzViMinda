@@ -57,8 +57,8 @@ if (isset($_SESSION['loggedin'])) {
                 // echo  $row['content'];
                 
                 $sentence=$row['content'];
-                if(strlen($sentence) >= 30) {
-                    echo substr($sentence,0,29)."...";
+                if(strlen($sentence) >= 200) {
+                    echo substr($sentence,0,199)."...";
                 } else {
                     echo $sentence;
                 }
