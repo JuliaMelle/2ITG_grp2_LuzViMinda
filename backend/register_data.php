@@ -57,14 +57,12 @@
         $errorMsg = 'Please select a valid image';
     }
 
-
-
     if (empty($business_name) or empty($username) or empty($email) or empty($password) or empty($address)) {
         $errorMsg = 'There is a missing input. Cannot complete registration. Please try again.';
         header('Location: ../registration_form.php?authenticate=false');
     }
 
-    $sql2 = "SELECT * FROM users"; // to change user_id to session id variable
+    $sql2 = "SELECT * FROM users";
     if ($result = $conn->query($sql2)) {
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_array()) {
@@ -77,37 +75,39 @@
                 if (($username == $row['username']) and ($email == $row['email'])) {
                     header('Location: ../registration_form.php?useremail=false');
                 }
+                if (($username !== $row['username'] or $email !== $row['email']) AND ($username == $row['username']) and ($email == $row['email'])) {
+                    $sql = "INSERT INTO `users`
+                (`business_name`, `username`, `email`, `password`, `address`, `profile_img`, `valid_id_img`) 
+                VALUES (
+                    '" . $business_name . "',
+                    '" . $username . "',
+                    '" . $email . "',
+                    '" . $password . "',
+                    '" . $address . "',
+                    '" . $userPic . "',
+                    '" . $userPic2 . "'
+                    )";
+            
+                    //3. Execute SQL
+                    if (mysqli_query($conn, $sql)) {
+                        $_SESSION['loggedin'] = TRUE;
+                        $_SESSION['username'] = $username;
+                        $_SESSION['password'] = $password;
+            
+                        header('Location:authenticate2.php');
+                    } else {
+                        mysqli_error($conn);
+                        header('Location: ../registration_form?authenticate=false');
+                    }
+            
+                    mysqli_close($conn);
+                }
+
             }
         }
-    } else {
-        $sql = "INSERT INTO `users`
-    (`business_name`, `username`, `email`, `password`, `address`, `profile_img`, `valid_id_img`) 
-    VALUES (
-        '" . $business_name . "',
-        '" . $username . "',
-        '" . $email . "',
-        '" . $password . "',
-        '" . $address . "',
-        '" . $userPic . "',
-        '" . $userPic2 . "'
-        )";
+        
 
-
-
-        //3. Execute SQL
-        if (mysqli_query($conn, $sql)) {
-            $_SESSION['loggedin'] = TRUE;
-            $_SESSION['username'] = $username;
-            $_SESSION['password'] = $password;
-
-            header('Location:authenticate2.php');
-        } else {
-            mysqli_error($conn);
-            header('Location: ../registration_form?authenticate=false');
-        }
-
-        mysqli_close($conn);
-    }
+    } 
 
 
 
