@@ -53,14 +53,19 @@ session_start();
                             <div class="capsule">
                                 <p class="capsule_caption"> BLOG</p>
                             </div>
-                            <div class="close-btn"> <a href="learn_more.php"> <i class="fa-solid fa-xmark" style="color: #000000;"></i> </a></div>
                         </div>
 
                         <h4 class="head">
                             <?php echo   $row['title'] ?>
                         </h4>
+                        <div class="cspecific">
                         <?php echo   $row['content'] ?>
-
+                        </div>
+                        <div class="bright">
+                        <a href="learn_more.php">
+                        <button class="button">BACK</button>
+                        </a>
+                        </div>
                     </div>
 
             <?php
