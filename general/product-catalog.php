@@ -75,36 +75,6 @@ session_start();
                     <option value="REGION 10">Region 10</option>
                 </select>
 
-                <!-- <div>
-                    <h6>NCR</h6>
-                    <input class="region-check" type="checkbox" name="NCR" value="NCR">
-                    <h6>CAR</h6>
-
-                    <input class="region-check"  type="checkbox" name="CAR" value="CAR">
-                    <h6>ARM</h6>
-
-                    <input class="region-check"  type="checkbox" name="ARMM" value="ARMM">
-                    <h6>REGION 1</h6>
-
-                    <input class="region-check"  type="checkbox" name="REGION 1" value="REGION 1">
-                    <h6>REGION 4A</h6>
-
-                    <input class="region-check"  type="checkbox" name="REGION 4A" value="REGION 4A">
-                    <h6>REGION 4B</h6>
-
-                    <input class="region-check"  type="checkbox" name="REGION 4B" value="REGION 4B">
-                    <h6>REGION 5</h6>
-                    <input class="region-check"  type="checkbox" name="REGION 5" value="REGION 5">
-                    <h6>REGION 6</h6>
-                    <input class="region-check"  type="checkbox" name="REGION 6" value="REGION 6">
-                    <h6>REGION 7</h6>
-                    <input class="region-check"  type="checkbox" name="REGION 7" value="REGION 7">
-                    <h6>REGION 10</h6>
-                    <input class="region-check"  type="checkbox" name="REGION 10" value="REGION 10">
-                </div> -->
-
-
-                <!-- <button class="dropdown-search" type="submit">DROPDOWN</button> -->
             </form>
         </div>
 
@@ -141,10 +111,10 @@ session_start();
                     echo        '<p class="capsule_caption">' . $row['category'] . '</p>';
                     echo    '</div>';
                     if (!empty($row['product_img']) && (str_contains($row['product_img'], '.jpg') == true) && (file_exists('../product_image/' . $row['product_img']) == true)) {
-                        echo   '<img src="../product_image/' . $row['product_img'] . '"alt="Avatar" style="width:100%">';
+                        echo   '<img src="../product_image/' . $row['product_img'] . '"alt="Avatar">';
                     }
                     if ((str_contains($row['product_img'], '.jpg') == false) or (file_exists('../product_image/' . $row['product_img']) == false)) {
-                        echo   '<img src="../img/temp.png" alt="Avatar" style="width:100%">';
+                        echo   '<img src="../img/temp.png" alt="Avatar">';
                     }
                     echo   '<h4 class="head">' . $row['product_name'] . '</h4>';
                     echo '<h5 class="read_more">' . $row['seller_name'] . '</h5>';
@@ -174,10 +144,10 @@ session_start();
                             echo        '<p class="capsule_caption">' . $row['category'] . '</p>';
                             echo    '</div>';
                             if (!empty($row['product_img']) && (str_contains($row['product_img'], '.jpg') == true) && (file_exists('../product_image/' . $row['product_img']) == true)) {
-                                echo   '<img src="../product_image/' . $row['product_img'] . '"alt="Avatar" style="width:100%">';
+                                echo   '<img src="../product_image/' . $row['product_img'] . '"alt="Avatar">';
                             }
                             if ((str_contains($row['product_img'], '.jpg') == false) or (file_exists('../product_image/' . $row['product_img']) == false)) {
-                                echo   '<img src="../img/temp.png" alt="Avatar" style="width:100%">';
+                                echo   '<img src="../img/temp.png" alt="Avatar" >';
                             }
                             echo   '<h4 class="head">' . $row['product_name'] . '</h4>';
                             echo '<h5 class="read_more">' . $row['seller_name'] . '</h5>';
@@ -206,10 +176,10 @@ session_start();
                             echo        '<p class="capsule_caption">' . $row['category'] . '</p>';
                             echo    '</div>';
                             if (!empty($row['product_img']) && (str_contains($row['product_img'], '.jpg') == true) && (file_exists('../product_image/' . $row['product_img']) == true)) {
-                                echo   '<img src="../product_image/' . $row['product_img'] . '"alt="Avatar" style="width:100%">';
+                                echo   '<img src="../product_image/' . $row['product_img'] . '"alt="Avatar" >';
                             }
                             if ((str_contains($row['product_img'], '.jpg') == false) or (file_exists('../product_image/' . $row['product_img']) == false)) {
-                                echo   '<img src="../img/temp.png" alt="Avatar" style="width:100%">';
+                                echo   '<img src="../img/temp.png" alt="Avatar" >';
                             }
                             echo   '<h4 class="head">' . $row['product_name'] . '</h4>';
                             echo '<h5 class="read_more">' . $row['seller_name'] . '</h5>';
@@ -239,10 +209,10 @@ session_start();
                     echo    '</div>';
 
                     if (!empty($row['product_img']) && (str_contains($row['product_img'], '.jpg') == true) && (file_exists('../product_image/' . $row['product_img']) == true)) {
-                        echo   '<img src="../product_image/' . $row['product_img'] . '"alt="Avatar" style="width:100%">';
+                        echo   '<img src="../product_image/' . $row['product_img'] . '"alt="Avatar" >';
                     }
                     if ((str_contains($row['product_img'], '.jpg') == false) or (file_exists('../product_image/' . $row['product_img']) == false)) {
-                        echo   '<img src="../img/temp.png" alt="Avatar" style="width:100%">';
+                        echo   '<img src="../img/temp.png" alt="Avatar">';
                     }
 
                     echo   '<h4 class="head">' . $row['product_name'] . '</h4>';
