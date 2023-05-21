@@ -22,6 +22,10 @@ a {
     margin-bottom: 30px;
     font-size: 20px;
     text-align: justify;
+
+
+    font-weight: normal!important;
+
 }
 
 .card {
@@ -76,17 +80,26 @@ a {
 .login {
     margin-right: 10px;
 }
-
-.button {
-    display: inline;
+.mid_position_buttons{
+    display: flex;
     justify-content: center;
     align-items: center;
-    width: 22%;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+
+
+    width: 400px;
     background: var(--black);
     color: var(--white);
     height: 40px;
     margin-top: 30px;
-    margin-left: 33px;
     border: none;
     border-radius: 0 !important;
     font-size: 16px;
@@ -108,7 +121,12 @@ a {
 
 /* Media Query for Mobile Devices */
 @media (max-width: 600px) {
-
+    .welcome {
+    
+        font-size: 50px;
+    
+    }
+    
     .container {
         display: flex;
         flex-direction: column;
@@ -129,24 +147,70 @@ a {
         color: black;
         background-color: var(--white);
         padding: 20px;
+        margin-left: 15px;
+
     }
 
     .homeimg {
         width: 100%;
         height: auto;
     }
+    .button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width:250px;
+        background: var(--black);
+        color: var(--white);
+        height: 40px;
+
+        margin-top: 30px;
+        margin-left: 15px;
+    }
+.mid_position_buttons
+{ 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+}
+.tagline {
+    margin-top: 10px;
+    margin-left: 32px;
+    font-size: 16px;
+}
+.content {
+    font-size: 16px;
+    font-weight: normal;
 }
 
 /* Media Query for Mobile Devices */
 @media (max-width: 375px) {
-    button {
+    .button {
         font-size: 10px;
+        width: 200px;
+        margin-left: 10px;  
     }
-
+        .mid_position_buttons
+        { 
+            display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+        
+        }
     .homeimg {
         width: 100%;
         height: auto;
     }
+
+    .welcome {
+    
+        font-size: 30px;
+    
+    }
+    
 }
 
 /* Media Query for low resolution  Tablets, Ipads */
@@ -155,10 +219,25 @@ a {
 } */
 
 /* Media Query for Tablets Ipads portrait mode */
-@media (min-width: 768px) and (max-width: 1024px) {}
+@media (min-width: 768px) and (max-width: 1024px) {
+    .button {
+        font-size: 10px;
+        width: 200px;
+    }
+    .tagline {
+        margin-top: 10px;
+        margin-left: 32px;
+        font-size: 20px;
+    }
+    .content {
+        font-size: 16px;
+        font-weight: normal!important;
+    }
+}
+
 
 /* Media Query for Laptops and Desktops */
 @media (min-width: 1025px) and (max-width: 1280px) {}
-
+}
 /* Media Query for Large screens */
-@media (min-width: 1281px) {}
+/* @media (min-width: 1281px) {} */
