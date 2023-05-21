@@ -51,6 +51,7 @@
 .read_more {
   width: 200px;
   margin-bottom: 60px;
+  overflow: hidden;
 }
 
 a {

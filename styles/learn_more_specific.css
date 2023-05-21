@@ -48,9 +48,10 @@
     margin-bottom: 10px;
 }
 
-.read_more {
+.cspecific {
     width: 100%;
     margin-bottom: 60px;
+    overflow: hidden;
 }
 
 a {
@@ -70,6 +71,37 @@ a {
 .close-btn {
     font-size: larger;
     margin-top: 0px;
+}
+
+.bright {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 200px;
+    background: var(--black);
+    color: var(--white);
+    height: 40px;
+    margin-top: 30px;
+    border: none;
+    border-radius: 0 !important;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.3s ease-in-out;
+}
+
+.button:hover {
+    background: var(--orange);
+    color: var(--black);
 }
 
 /* Media Query for Mobile Devices */
