@@ -62,52 +62,56 @@
         header('Location: ../registration_form.php?authenticate=false');
     }
 
-    $sql2 = "SELECT * FROM users";
-    if ($result = $conn->query($sql2)) {
-        if ($result->num_rows > 0) {
-            while ($row = $result->fetch_array()) {
-                if (($username == $row['username'])) {
-                    header('Location: ../registration_form.php?username=false');
-                }
-                if (($email == $row['email'])) {
-                    header('Location: ../registration_form.php?email=false');
-                }
-                if (($username == $row['username']) and ($email == $row['email'])) {
-                    header('Location: ../registration_form.php?useremail=false');
-                }
-                if (($username !== $row['username'] or $email !== $row['email']) AND ($username == $row['username']) and ($email == $row['email'])) {
-                    $sql = "INSERT INTO `users`
-                (`business_name`, `username`, `email`, `password`, `address`, `profile_img`, `valid_id_img`) 
-                VALUES (
-                    '" . $business_name . "',
-                    '" . $username . "',
-                    '" . $email . "',
-                    '" . $password . "',
-                    '" . $address . "',
-                    '" . $userPic . "',
-                    '" . $userPic2 . "'
-                    )";
-            
-                    //3. Execute SQL
-                    if (mysqli_query($conn, $sql)) {
-                        $_SESSION['loggedin'] = TRUE;
-                        $_SESSION['username'] = $username;
-                        $_SESSION['password'] = $password;
-            
-                        header('Location:authenticate2.php');
-                    } else {
-                        mysqli_error($conn);
-                        header('Location: ../registration_form?authenticate=false');
-                    }
-            
-                    mysqli_close($conn);
-                }
+    $sql2 = "SELECT * FROM users WHERE username = '$username' OR email = '$email'";
+    $result2 = mysqli_query($conn, $sql2);
+    $count2 = mysqli_num_rows($result2);
+    $row2 = mysqli_fetch_assoc($result2);
 
-            }
+    if ($count2 > 0) {
+        header('Location: ../registration_form.php?useremail=false');
+    } else {
+        $sql = "INSERT INTO `users`
+        (`business_name`, `username`, `email`, `password`, `address`, `profile_img`, `valid_id_img`) 
+        VALUES (
+            '" . $business_name . "',
+            '" . $username . "',
+            '" . $email . "',
+            '" . $password . "',
+            '" . $address . "',
+            '" . $userPic . "',
+            '" . $userPic2 . "'
+            )";
+
+        //3. Execute SQL
+        if (mysqli_query($conn, $sql)) {
+            $_SESSION['loggedin'] = TRUE;
+            $_SESSION['username'] = $username;
+            $_SESSION['password'] = $password;
+            header('Location:authenticate2.php');
+        } else {
+            header('Location: ../registration_form?authenticate=false');
         }
-        
 
-    } 
+        mysqli_close($conn);
+    }
+
+    // $sql2 = "SELECT * FROM users";
+    // if ($result = $conn->query($sql2)) {
+    //     if ($result->num_rows > 0) {
+    //         while ($row = $result->fetch_array()) {
+    //             if (($username == $row['username'])) {
+    //                 header('Location: ../registration_form.php?username=false');
+    //             } 
+    //             if (($email == $row['email'])) {
+    //                 header('Location: ../registration_form.php?email=false');
+    //             }
+    //             if (($username == $row['username']) and ($email == $row['email'])) {
+    //                 header('Location: ../registration_form.php?useremail=false');
+    //             }
+    //         }
+    //     }
+    // }
+
 
 
 
