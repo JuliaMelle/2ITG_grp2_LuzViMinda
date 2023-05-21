@@ -150,12 +150,12 @@ if (isset($_SESSION['loggedin'])) {
                         if ($result = $conn->query($sql_2)) {
                             if ($result->num_rows > 0) {
                                 while ($row = $result->fetch_array()) {
-                                    if (!empty($row['product_img']) && (str_contains($row['product_img'], '.jpg') == true) && (file_exists('../product_image/' . $row['product_img']) == true)) {
+                                    if (!empty($row['product_img']) && ((str_contains($row['product_img'], '.jpg') == true) OR (str_contains($row['product_img'], '.png') == true)) && (file_exists('../product_image/' . $row['product_img']) == true)) {
                                         echo            '<div class="card">';
-                                        echo            '<a href="../general/view_product_specific?id=' . $row['product_id'] . '" class="product-text sub-link">';
+                                        echo            '<a href="../general/view_product_specific.php?id=' . $row['product_id'] . '" class="product-text sub-link">';
                                         echo               '<div class="details-prod">';
                                         echo                   '<div class="category">' . $row['category'] . '</div>';
-                                        echo                   '<img class="product-img" src="../product_image/' . $row['product_img'] . '">';
+                                        echo                   '<img class="product-img1" src="../product_image/' . $row['product_img'] . '">';
                                         echo               '</div>';
                                         echo               '<h3> ₱ ' . $row['product_price'] . '</h3>';
                                         echo               '<h3>' . $row['product_name'] . '</h3>';
@@ -164,9 +164,9 @@ if (isset($_SESSION['loggedin'])) {
                                         echo            '</div>';
                                     }
 
-                                    if ((str_contains($row['product_img'], '.jpg') !== true) or (file_exists('../product_image/' . $row['product_img']) == false)) {
+                                    if (((str_contains($row['product_img'], '.jpg') == false) OR (str_contains($row['product_img'], '.png') == false)) && (file_exists('../product_image/' . $row['product_img']) == false)) {
                                         echo            '<div class="card">';
-                                        echo            '<a href="../general/view_product_specific?id=' . $row['product_id'] . '" class="product-text sub-link">';
+                                        echo            '<a href="../general/view_product_specific.php?id=' . $row['product_id'] . '" class="product-text sub-link">';
                                         echo               '<div class="details-prod">';
                                         echo                   '<div class="category">' . $row['category'] . '</div>';
                                         echo                   '<img class="product-img">';
