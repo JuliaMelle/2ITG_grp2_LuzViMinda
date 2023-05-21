@@ -47,43 +47,13 @@
         ?>
 
         <?php
-        if (isset($_GET['email'])) { //check if authenticate key exists in URL
-          if ($_GET['email'] == "false") {
-        ?>
-            <br>
-            <div class="alert">
-              <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-              Invalid<strong style="color:white"> email. Already existing.</strong> Please try again.
-            </div>
-
-        <?php
-          }
-        }
-        ?>
-
-        <?php
-        if (isset($_GET['username'])) { //check if authenticate key exists in URL
-          if ($_GET['username'] == "false") {
-        ?>
-            <br>
-            <div class="alert">
-              <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-              Invalid<strong style="color:white"> username. Already existing.</strong> Please try again.
-            </div>
-
-        <?php
-          }
-        }
-        ?>
-
-        <?php
         if (isset($_GET['useremail'])) { //check if authenticate key exists in URL
           if ($_GET['useremail'] == "false") {
         ?>
             <br>
             <div class="alert">
               <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-              Invalid<strong style="color:white"> username and email. Already existing.</strong> Please try again.
+              Invalid<strong style="color:white"> username or email. Already existing.</strong> Please try again.
             </div>
 
         <?php
