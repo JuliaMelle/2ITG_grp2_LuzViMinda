@@ -44,7 +44,7 @@ if (isset($_SESSION['loggedin'])) {
                     $resultCheck = mysqli_num_rows($result);
         if ($resultCheck > 0) {
             while ($row = mysqli_fetch_assoc($result)) {  
-        ?> <a href="learn_more_specific?id=<?php echo $row['post_id'] ?>" class="product-text sub-link">
+        ?> <a href="learn_more_specific.php?id=<?php echo $row['post_id'] ?>" class="product-text sub-link">
             <div class="card"> <!-- CARD -->
                 <div class="capsule">
                     <p class="capsule_caption"> BLOG</p>

@@ -134,6 +134,14 @@ h3 {
   object-fit: cover;
 }
 
+.product-img1 {
+  width: 100%;
+  height: 250px;
+  margin: auto;
+  border-image: 3px solid var(--black);
+  object-fit: cover;
+}
+
 /* ALERT */
 .alert {
   width: 80%;

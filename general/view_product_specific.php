@@ -65,10 +65,10 @@ session_start();
 
 
                             <img class="pimg" <?php
-                                                if (!empty($row['product_img']) && (str_contains($row['product_img'], '.jpg') == true) && (file_exists('../product_image/' . $row['product_img']) == true)) {
+                                                if (!empty($row['product_img']) && ((str_contains($row['product_img'], '.jpg') == true) OR (str_contains($row['product_img'], '.png') == true)) && (file_exists('../product_image/' . $row['product_img']) == true)) {
                                                     echo   '<img src="../product_image/' . $row['product_img'] . '"alt="Avatar">';
                                                 }
-                                                if ((str_contains($row['product_img'], '.jpg') == false) or (file_exists('../product_image/' . $row['product_img']) == false)) {
+                                                if (((str_contains($row['product_img'], '.jpg') == false) OR (str_contains($row['product_img'], '.png') == false)) && (file_exists('../product_image/' . $row['product_img']) == false)) {
                                                     echo   '<img src="../img/temp.png" alt="Avatar">';
                                                 }
                                                 ?> </div>
