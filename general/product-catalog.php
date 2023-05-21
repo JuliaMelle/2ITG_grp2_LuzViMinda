@@ -105,15 +105,15 @@ session_start();
             if ($resultCheck > 0) {
                 echo '<div class="mid_container">';
                 while ($row = mysqli_fetch_assoc($result)) {
-                    echo '<a href="view_product_specific?id=' . $row['product_id'] . '" class="product-text sub-link">';
+                    echo '<a href="view_product_specific.php?id=' . $row['product_id'] . '" class="product-text sub-link">';
                     echo '<div class="card">';
                     echo    '<div class="capsule">';
                     echo        '<p class="capsule_caption">' . $row['category'] . '</p>';
                     echo    '</div>';
-                    if (!empty($row['product_img']) && (str_contains($row['product_img'], '.jpg') == true) && (file_exists('../product_image/' . $row['product_img']) == true)) {
+                    if (!empty($row['product_img']) && ((str_contains($row['product_img'], '.jpg') == true) OR (str_contains($row['product_img'], '.png') == true)) && (file_exists('../product_image/' . $row['product_img']) == true)) {
                         echo   '<img src="../product_image/' . $row['product_img'] . '"alt="Avatar">';
                     }
-                    if ((str_contains($row['product_img'], '.jpg') == false) or (file_exists('../product_image/' . $row['product_img']) == false)) {
+                    if (((str_contains($row['product_img'], '.jpg') == false) OR (str_contains($row['product_img'], '.png') == false)) && (file_exists('../product_image/' . $row['product_img']) == false)) {
                         echo   '<img src="../img/temp.png" alt="Avatar">';
                     }
                     echo   '<h4 class="head">' . $row['product_name'] . '</h4>';
@@ -138,15 +138,15 @@ session_start();
                         echo '<div class="mid_container">';
                         while ($row = $result->fetch_array()) {
                             // $sql_req = "SELECT * FROM products WHERE category = $region";
-                            echo '<a href="view_product_specific?id=' . $row['product_id'] . '" class="product-text sub-link">';
+                            echo '<a href="view_product_specific.php?id=' . $row['product_id'] . '" class="product-text sub-link">';
                             echo '<div class="card">';
                             echo    '<div class="capsule">';
                             echo        '<p class="capsule_caption">' . $row['category'] . '</p>';
                             echo    '</div>';
-                            if (!empty($row['product_img']) && (str_contains($row['product_img'], '.jpg') == true) && (file_exists('../product_image/' . $row['product_img']) == true)) {
+                            if (!empty($row['product_img']) && ((str_contains($row['product_img'], '.jpg') == true) OR (str_contains($row['product_img'], '.png') == true)) && (file_exists('../product_image/' . $row['product_img']) == true)) {
                                 echo   '<img src="../product_image/' . $row['product_img'] . '"alt="Avatar">';
                             }
-                            if ((str_contains($row['product_img'], '.jpg') == false) or (file_exists('../product_image/' . $row['product_img']) == false)) {
+                            if (((str_contains($row['product_img'], '.jpg') == false) OR (str_contains($row['product_img'], '.png') == false)) && (file_exists('../product_image/' . $row['product_img']) == false)) {
                                 echo   '<img src="../img/temp.png" alt="Avatar" >';
                             }
                             echo   '<h4 class="head">' . $row['product_name'] . '</h4>';
@@ -170,15 +170,15 @@ session_start();
                         echo '<div class="mid_container">';
                         while ($row = $result->fetch_array()) {
                             // $sql_req = "SELECT * FROM products WHERE category = $region";
-                            echo '<a href="view_product_specific?id=' . $row['product_id'] . '" class="product-text sub-link">';
+                            echo '<a href="view_product_specific.php?id=' . $row['product_id'] . '" class="product-text sub-link">';
                             echo '<div class="card">';
                             echo    '<div class="capsule">';
                             echo        '<p class="capsule_caption">' . $row['category'] . '</p>';
                             echo    '</div>';
-                            if (!empty($row['product_img']) && (str_contains($row['product_img'], '.jpg') == true) && (file_exists('../product_image/' . $row['product_img']) == true)) {
+                            if (!empty($row['product_img']) && ((str_contains($row['product_img'], '.jpg') == true) OR (str_contains($row['product_img'], '.png') == true)) && (file_exists('../product_image/' . $row['product_img']) == true)) {
                                 echo   '<img src="../product_image/' . $row['product_img'] . '"alt="Avatar" >';
                             }
-                            if ((str_contains($row['product_img'], '.jpg') == false) or (file_exists('../product_image/' . $row['product_img']) == false)) {
+                            if (((str_contains($row['product_img'], '.jpg') == false) OR (str_contains($row['product_img'], '.png') == false)) && (file_exists('../product_image/' . $row['product_img']) == false)) {
                                 echo   '<img src="../img/temp.png" alt="Avatar" >';
                             }
                             echo   '<h4 class="head">' . $row['product_name'] . '</h4>';
@@ -202,16 +202,16 @@ session_start();
 
             if ($resultCheck > 0) {
                 while ($row = mysqli_fetch_assoc($result)) {
-                    echo '<a href="view_product_specific?id=' . $row['product_id'] . '" class="product-text sub-link">';
+                    echo '<a href="view_product_specific.php?id=' . $row['product_id'] . '" class="product-text sub-link">';
                     echo '<div class="card">';
                     echo    '<div class="capsule">';
                     echo        '<p class="capsule_caption">' . $row['category'] . '</p>';
                     echo    '</div>';
 
-                    if (!empty($row['product_img']) && (str_contains($row['product_img'], '.jpg') == true) && (file_exists('../product_image/' . $row['product_img']) == true)) {
+                    if (!empty($row['product_img']) && ((str_contains($row['product_img'], '.jpg') == true) OR (str_contains($row['product_img'], '.png') == true)) && (file_exists('../product_image/' . $row['product_img']) == true)) {
                         echo   '<img src="../product_image/' . $row['product_img'] . '"alt="Avatar" >';
                     }
-                    if ((str_contains($row['product_img'], '.jpg') == false) or (file_exists('../product_image/' . $row['product_img']) == false)) {
+                    if (((str_contains($row['product_img'], '.jpg') == false) OR (str_contains($row['product_img'], '.png') == false)) && (file_exists('../product_image/' . $row['product_img']) == false)) {
                         echo   '<img src="../img/temp.png" alt="Avatar">';
                     }
 
