@@ -74,11 +74,11 @@ if (isset($_SESSION['loggedin'])) {
                             <img class="profile-img" src="../user_identification/<?php echo $row['profile_img'] ?>"/>
 
                             <a href="change_profile.php">
-                            <button class="button login">CHANGE PROFILE</button>
+                            <button class="login">CHANGE PROFILE</button>
                             </a>
 
                             <a href="edit-contact.php">
-                            <button class="button login" >EDIT CONTACT</button>
+                            <button class="login" >EDIT CONTACT</button>
                             </a>
                             <form action="../backend/update.php" method="post" enctype="multipart/form-data">
 
@@ -95,7 +95,7 @@ if (isset($_SESSION['loggedin'])) {
                             <input class="box" value="<?php echo $row['username'] ?>" name="username"></input>
 
                             <h3 class="identifiers">CHANGE PASSWORD</h3>
-                            <a href="change-password.php"><button class="button login" value="Login" style="width:90%">CHANGE PASSWORD</button></a>
+                            <a href="change-password.php"><button class="button" value="Login" >CHANGE PASSWORD</button></a>
 
 
                             <h3 class="identifiers">EMAIL</h3>
