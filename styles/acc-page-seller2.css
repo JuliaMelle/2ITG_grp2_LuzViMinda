@@ -26,10 +26,10 @@ a {
 }
 
 .label {
-    margin-top: 2%;
-    text-align: center;
+  margin-top: 2%;
+  text-align: center;
 }
-.login{
+.login {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -47,7 +47,7 @@ a {
   transition: all 0.3s ease-in-out;
 }
 
-.save{
+.save {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -71,7 +71,7 @@ a {
 }
 
 .button {
-  width: 100%;
+  width: calc(100% - 10%);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -101,20 +101,20 @@ a {
 }
 
 .flex-2 {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    margin: 5%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 5%;
 }
 
 .card-wrapper {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .column {
-    flex-direction: column;
+  flex-direction: column;
 }
 
 .header {
@@ -144,13 +144,12 @@ a {
 }
 
 .details {
-    width: calc(100%/2);
-    margin-left: 20px;
-
+  width: calc(100% / 2);
+  margin-left: 20px;
 }
 
 .details-prod {
-    width: 100%;
+  width: 100%;
 }
 
 .box {
@@ -160,8 +159,7 @@ a {
   border: 3px solid var(--black);
   padding: 12px;
 }
-.identifiers{
-
+.identifiers {
   padding: 10px;
   padding-left: 0px;
 }
@@ -195,10 +193,6 @@ h3 {
   margin-bottom: 1rem;
 }
 
-/* .card .category:nth-of-type(even) {
-    background-color: var(--pastel-blue);
-} */
-
 .product-img {
   width: 100%;
   height: 250px;
@@ -211,7 +205,7 @@ h3 {
 /* ALERT */
 .alert {
   padding: 20px;
-  background-color: #04AA6D;
+  background-color: #04aa6d;
   border: 3px solid var(--black);
   color: white;
   opacity: 1;
@@ -219,9 +213,15 @@ h3 {
   margin-bottom: 15px;
 }
 
-.alert.success {background-color: #04AA6D;}
-.alert.info {background-color: #2196F3;}
-.alert.warning {background-color: #ff9800;}
+.alert.success {
+  background-color: #04aa6d;
+}
+.alert.info {
+  background-color: #2196f3;
+}
+.alert.warning {
+  background-color: #ff9800;
+}
 
 .closebtn {
   margin-left: 15px;
@@ -240,50 +240,51 @@ h3 {
 
 /* MEDIUM DEVICES*/
 @media (max-width: 768px) {
-    .flex-2 {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-    }
-    .upper {
-      width: 80%;
-      text-align: center;
-    }
-    .profile-img {
-        width: 50vh;
-        height: 50vh;
-        background-color: var(--orange);
-      }
+  .flex-2 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .upper {
+    width: 80%;
+    text-align: center;
+  }
+  .profile-img {
+    width: 50vh;
+    height: 50vh;
+    background-color: var(--orange);
+  }
 
-      .details {
-        width: 90%;
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
+  .details {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 
-        margin-top: 5%;
+    margin-top: 5%;
 
-          margin-left: 0px;
-      
-     
-      
-    }
+    margin-left: 0px;
+  }
 
-    .box {
-        width: 100%;
-        height: 50px;
-        background-color: var(--gray);
-        border: 3px solid var(--black);
-      }      
-      
+  .button {
+    width: 100%;
+
+  }
+
+  .box {
+    width: 100%;
+    height: 50px;
+    background-color: var(--gray);
+    border: 3px solid var(--black);
+  }
 }
 
 @media (max-width: 767px) {
-    .profile-img {
-        width: 200px;
-        height: 200px;
-        background-color: var(--orange);
-      }
+  .profile-img {
+    width: 200px;
+    height: 200px;
+    background-color: var(--orange);
+  }
 }
 /* GUSTO KO LANG MAG COMMIT */
