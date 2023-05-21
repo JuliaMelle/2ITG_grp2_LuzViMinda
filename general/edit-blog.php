@@ -9,7 +9,10 @@
     <link rel="stylesheet" href="../styles/global.css">
     <link rel="stylesheet" href="../styles/add-post.css">
 
+
     <script src="https://kit.fontawesome.com/b1d36f5527.js" crossorigin="anonymous"></script>
+    <!-- FAVICON -->
+    <link rel="icon" type="image/x-icon" href="../img/favicon.ico">
 </head>
 
 <body>

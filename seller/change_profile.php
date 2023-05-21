@@ -16,6 +16,8 @@ session_start();
     <!-- MAIN CSS Sheet-->
     <link rel="stylesheet" href="../styles/global.css">
     <link rel="stylesheet" href="../styles/change_profile.css">
+    <!-- FAVICON -->
+    <link rel="icon" type="image/x-icon" href="../img/favicon.ico">
     <!-- Google Font: Poppins-->
     <!-- Weights: 400 REGULAR, 600 SEMIBOLD, 700 BOLD -->
     <link rel="preconnect" href="https://fonts.googleapis.com">

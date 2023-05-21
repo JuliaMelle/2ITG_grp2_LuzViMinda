@@ -25,14 +25,10 @@ if (isset($_SESSION['loggedin'])) {
   <link rel="stylesheet" href="../styles/global.css">
   <link rel="stylesheet" href="../styles/navbar.css">
   <link rel="stylesheet" href="../styles/footer.css">
-<<<<<<< Updated upstream
-  <link rel="stylesheet" href="../styles/add-product.css">
-=======
   <!-- <link rel="stylesheet" href="../styles/add-product.css"> -->
   <link rel="stylesheet" href="../styles/add-post.css">
   <!-- FAVICON -->
   <link rel="icon" type="image/x-icon" href="../img/favicon.ico">
->>>>>>> Stashed changes
 
   <script src="https://kit.fontawesome.com/96362859e2.js" crossorigin="anonymous"></script>
 

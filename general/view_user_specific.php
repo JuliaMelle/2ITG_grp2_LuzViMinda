@@ -20,41 +20,18 @@ if (isset($_SESSION['loggedin'])) {
     <link rel="stylesheet" href="../styles/global.css">
     <link rel="stylesheet" href="../styles/navbar.css">
     <link rel="stylesheet" href="../styles/footer.css">
-    <link rel="stylesheet" href="../styles/seller-account.css">
 
     <!-- FAVICON -->
     <link rel="icon" type="image/x-icon" href="../img/favicon.ico">
 
+
+    <link rel="stylesheet" href="../styles/seller-account.css">
     <title>LuzViMinda | Account Page</title>
 </head>
-<style>
-    .alert alert-success {
-    padding: 20px;
-    background-color: #04AA6D;
-    color: white;
-    opacity: 1;
-    transition: opacity 0.6s;
-    margin-bottom: 15px;
-  }
-    </style>
+
 <body>
-   
     <?php require_once '../components/navbar-seller.php' ?>
-    
-    <?php
-                    if (isset($_GET['success2'])) { //check if authenticate key exists in URL
-                        if ($_GET['success2'] == "true") { ?>
 
-                            <br>
-                            <div class="alert alert-success" role="alert">
-
-                            <span class="closebtn">&times;</span> 
-                            You have successfully uploaded your new product image.
-                            </div>
-                    <?php
-                        }
-                    }
-    ?>
     <!-- ITO YUNG PAGE FOR VIEWERS ONLY -->
 
 
@@ -77,12 +54,12 @@ if (isset($_SESSION['loggedin'])) {
         <div class="flex content">
             <?php
             require_once '../config.php';
+            $varUserid = $_GET['user_id'];
+            $to_id = intval($varUserid);
 
-            $id =  $_SESSION['id'];
-
-            $sql = "SELECT * FROM users WHERE user_id = $id";
-            $sql_2 = "SELECT * FROM products WHERE user_id = $id";
-            $sql_3 = "SELECT * FROM contacts WHERE user_id = $id";
+            $sql = "SELECT * FROM users WHERE user_id =$varUserid";
+            $sql_2 = "SELECT * FROM products WHERE user_id =$varUserid";
+            $sql_3 = "SELECT * FROM contacts WHERE user_id = $varUserid";
             if ($result = $conn->query($sql)) {
                 if ($result->num_rows > 0) {
                     while ($row = $result->fetch_array()) {
@@ -96,8 +73,6 @@ if (isset($_SESSION['loggedin'])) {
                         echo '<div class="box">' . $row['business_name'] . '</div>';
                         echo '<h3>EMAIL</h3>';
                         echo '<div class="box">' . $row['email'] . '</div>';
-                        echo '<h3>ADDRESS</h3>';
-                        echo '<div class="box">' . $row['address'] . '</div>';
                         if ($result = $conn->query($sql_3)) {
                             if ($result->num_rows > 0) {
                                 if (!empty($row['website'])) {

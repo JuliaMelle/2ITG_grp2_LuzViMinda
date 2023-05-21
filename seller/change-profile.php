@@ -30,7 +30,7 @@ if (isset($_SESSION['isLogin'])) {
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
     <!-- FAVICON -->
-    <link rel="icon" href="../img/aGROWculture-Favicon.png" type="image/gif" sizes="16x16">
+    <link rel="icon" type="image/x-icon" href="../img/favicon.ico">
 
     <title>aGROWculture: My Profile</title>
 </head>

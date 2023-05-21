@@ -22,6 +22,8 @@ if (isset($_SESSION['loggedin'])) {
     <link rel="stylesheet" href="../styles/footer.css">
     <link rel="stylesheet" href="../styles/manage-product.css">
     <script src="https://kit.fontawesome.com/b1d36f5527.js" crossorigin="anonymous"></script>
+    <!-- FAVICON -->
+    <link rel="icon" type="image/x-icon" href="../img/favicon.ico">
 
     <title>LuzViMinda | Manage Product</title>
 </head>

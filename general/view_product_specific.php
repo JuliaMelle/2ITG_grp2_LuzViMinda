@@ -18,6 +18,9 @@ session_start();
     <link rel="stylesheet" href="../styles/view_product_specific.css">
     <link rel="stylesheet" href="../styles/navbar.css">
     <link rel="stylesheet" href="../styles/footer.css">
+    
+    <!-- FAVICON -->
+    <link rel="icon" type="image/x-icon" href="../img/favicon.ico">
 
     <script src="https://kit.fontawesome.com/96362859e2.js" crossorigin="anonymous"></script>
     <style>
@@ -69,6 +72,9 @@ session_start();
                                                     echo   '<img src="../img/temp.png" alt="Avatar">';
                                                 }
                                                 ?> </div>
+                            
+                            <a href="view_user_specific.php?user_id=<?php echo $row['user_id'] ?>" class="product-text sub-link"> <p class="seller_name"><?php echo   $row['seller_name'] ?></p>
+                            </a>
 
                             <h1 class="head">
                                 <?php echo   $row['product_name'] ?>

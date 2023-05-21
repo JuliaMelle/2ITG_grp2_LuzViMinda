@@ -17,6 +17,9 @@ session_start();
     <link rel="stylesheet" href="../styles/product-catalog.css">
     <link rel="stylesheet" href="../styles/navbar.css">
     <link rel="stylesheet" href="../styles/footer.css">
+    
+    <!-- FAVICON -->
+    <link rel="icon" type="image/x-icon" href="../img/favicon.ico">
 
     <style>
         h2 {

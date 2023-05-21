@@ -23,7 +23,8 @@ if (isset($_SESSION['loggedin'])) {
     <link rel="stylesheet" href="../styles/navbar.css">
     <link rel="stylesheet" href="../styles/footer.css">
 
-
+    <!-- FAVICON -->
+    <link rel="icon" type="image/x-icon" href="../img/favicon.ico">
 
 
     <link rel="stylesheet" href="../styles/acc-page-seller2.css">
@@ -73,41 +74,50 @@ if (isset($_SESSION['loggedin'])) {
                             <img class="profile-img" src="../user_identification/<?php echo $row['profile_img'] ?>"/>
 
                             <a href="change_profile.php">
-                                <button class="button login" type="submit" value="Login">CHANGE PROFILE</button>
+                            <button class="button login">CHANGE PROFILE</button>
                             </a>
 
                             <a href="edit-contact.php">
-                                <button class="button login" type="submit" value="Login">EDIT CONTACT</button>
+                            <button class="button login" >EDIT CONTACT</button>
                             </a>
+                            <form action="../backend/update.php" method="post" enctype="multipart/form-data">
 
-                            <button class="save" type="submit" value="Login">SAVE CHANGES</button>
+                            <button class="save" type="submit" name="submit">SAVE CHANGES</button>
                         </div>
 
 
                         <div class="details">
-                            <h3 class="identifiers">DISPLAY NAME</h3>
-                            <div class="box"><?php echo $row['business_name'] ?></div>
+
+                        <h3 class="identifiers">DISPLAY NAME</h3>
+                            <input class="box" value="<?php echo $row['business_name'] ?>" name="business_name"></input>
+                            
+                            <h3 class="identifiers">USER NAME</h3>
+                            <input class="box" value="<?php echo $row['username'] ?>" name="username"></input>
 
                             <h3 class="identifiers">CHANGE PASSWORD</h3>
                             <a href="change-password.php"><button class="button login" value="Login" style="width:90%">CHANGE PASSWORD</button></a>
 
 
                             <h3 class="identifiers">EMAIL</h3>
-                            <div class="box"><?php echo $row['email'] ?></div>
+                            <input class="box" value="<?php echo $row['email'] ?>" name="email"></input>
                             <h3 class="identifiers">ADDRESS</h3>
-                            <div class="box"><?php echo $row['address'] ?></div>
+                            <input class="box" value="<?php echo $row['address'] ?>" name="address"></input>
                             <?php
                             if (!empty($row['website'])) {
                                 echo '<h3 class="website">WEBSITE</h3>';
-                                echo '<div class="box">' . $row['website'] . '</div>';
+                                echo '<input class="box" value="'.$row['website'].'" name="website"></input>';
                             }
                             ?>
                             <!-- 
                             <h3 class="identifiers">WEBSITE</h3>
                             <div class="box"> <</div> -->
+
+                            </form>
                         </div>
         </div>
+   
     </div>
+
 <?php         }
                     $result->free();
                 }
