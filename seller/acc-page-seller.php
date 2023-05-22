@@ -103,10 +103,10 @@ if (isset($_SESSION['loggedin'])) {
                             <h3 class="identifiers">ADDRESS</h3>
                             <input class="box" value="<?php echo $row['address'] ?>" name="address"></input>
                             <?php
-                            if (!empty($row['website'])) {
-                                echo '<h3 class="website">WEBSITE</h3>';
-                                echo '<input class="box" value="'.$row['website'].'" name="website"></input>';
-                            }
+                            // if (!empty($row['website'])) {
+                            //     echo '<h3 class="website">WEBSITE</h3>';
+                            //     echo '<input class="box" value="'.$row['website'].'" name="website"></input>';
+                            // }
                             ?>
                             <!-- 
                             <h3 class="identifiers">WEBSITE</h3>

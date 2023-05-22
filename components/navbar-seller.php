@@ -21,7 +21,7 @@
 <body>
   <nav class="sticky" id="navbar">
 
-    <a href="../index.php"><img class="logo" src="../img/logo.png" alt="LUZVIMINDA" style="height:75px; width:75px"></a>
+<img class="logo" src="../img/logo.png" alt="LUZVIMINDA" style="height:75px; width:75px">
 
 
     <div>

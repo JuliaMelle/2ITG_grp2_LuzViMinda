@@ -6,7 +6,7 @@ $upload_dir = '../user_identification/';
 $username = $_POST['username'];
 $email = $_POST['email'];
 $address = $_POST['address'];
-$website = $_POST['website'];
+// $website = $_POST['website'];
 $business_name= $_POST['business_name'];
 $currentID = $_SESSION['user_ID'];
 
@@ -24,10 +24,11 @@ if (empty($email)) {
   $errorMsg = 'Please input your business name';
   header('Location: ../seller/acc-page-seller.php?authenticate=false');
 } 
-else if (empty($website)) {
-  $errorMsg = 'Please input your website';
-  header('Location: ../seller/acc-page-seller.php?authenticate=false');
-}else {
+// else if (empty($website)) {
+//   $errorMsg = 'Please input your website';
+//   header('Location: ../seller/acc-page-seller.php?authenticate=false');
+// }
+else {
 
   $sql = "UPDATE users
          SET
@@ -35,16 +36,15 @@ else if (empty($website)) {
             `business_name` = '$business_name',
              `username` = '$username',
              `email` = '$email',
-             `address` = '$address',
-             `website` = '$website'
-         WHERE user_ID = $currentID
+             `address` = '$address'
+             WHERE user_ID = $currentID
              ";
 }
 
 if (mysqli_query($conn, $sql)) {
   $_SESSION['username'] = $_POST['username'];
   $_SESSION['email'] = $email;
-  $_SESSION["website"] = $website;
+  // $_SESSION["website"] = $website;
   $_SESSION["address"] = $address;
 
 
