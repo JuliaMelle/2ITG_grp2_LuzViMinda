@@ -258,7 +258,7 @@ h3 {
   .profile-img {
     width: 50vh;
     height: 50vh;
-    background-color: var(--orange);
+    background-color: white;
   }
 
   .details {
@@ -289,7 +289,8 @@ h3 {
   .profile-img {
     width: 200px;
     height: 200px;
-    background-color: var(--orange);
-  }
+    background-color:white;
+  } 
 }
+
 /* GUSTO KO LANG MAG COMMIT */
