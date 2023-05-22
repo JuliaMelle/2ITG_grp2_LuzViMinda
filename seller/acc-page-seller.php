@@ -95,7 +95,7 @@ if (isset($_SESSION['loggedin'])) {
                             <input class="box" value="<?php echo $row['username'] ?>" name="username"></input>
 
                             <h3 class="identifiers">CHANGE PASSWORD</h3>
-                            <a href="change-password.php"><button class="button" value="Login" >CHANGE PASSWORD</button></a>
+                            <a href="change-password.php" class="button" value="Login" >CHANGE PASSWORD </a>
 
 
                             <h3 class="identifiers">EMAIL</h3>
