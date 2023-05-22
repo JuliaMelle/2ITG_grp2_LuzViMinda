@@ -9,23 +9,25 @@ if (isset($_POST['updatepassword'])) {
     $curpassword=md5($_POST['cur_password']);
     $password1=md5($_POST['password1']);
     $password2=md5($_POST['password2']);
-    if (empty($curpassword)){
+    if (empty ($_POST['cur_password'])){
+        echo "Fill out all fields.";
         header('Location: ../seller/change-password.php?fillout=false');
-        }
-    if (empty($password1) or empty($password2)){
-         header('Location: ../seller/change-password.php?fillout=false');
+        }else if (empty($_POST['password1'])){
+          echo "Fill out all fields.";
+          header('Location: ../seller/change-password.php?fillout=false');
           }
-    if ($curpassword !== $password) {
-        //echo "There was a problem. Wrong Password.";
-       // echo $curpassword;
+        else if ($curpassword != $password) {
+     
+        echo "There was a problem. Wrong Password.";
+        echo $curpassword;
         header('Location: ../seller/change-password.php?wrongpassword=true');
-        }
-    if ($password1 !== $password2) {
-        //echo "Passwords don't match.";
+        
+        } else if ($password1 != $password2) {
+        echo "Passwords don't match.";
+
         header('Location: ../seller/change-password.php?match=false');
 
-        }
-    if(!($password1 !== $password2) AND !($curpassword !== $password) )
+        } else {
         $sql = "UPDATE users SET `password` = '$password1'  WHERE user_ID='$currentID'";
         $_SESSION['password'] = $password1;
         $query = mysqli_query($conn, $sql);
@@ -40,7 +42,7 @@ if (isset($_POST['updatepassword'])) {
            echo $errorMsg = 'Error '.mysqli_error($conn);
           }
         echo "Success! Password has been changed.";
-        
+        }
 }
 
 mysqli_close($conn);

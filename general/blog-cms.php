@@ -1,13 +1,4 @@
-<?php
-session_start();
-if (isset($_SESSION['loggedin'])) {
-    require_once '../components/navbar-seller.php';
-}
-    else{
-    require_once '../components/navbar-general.php';
 
-}
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -28,7 +19,16 @@ if (isset($_SESSION['loggedin'])) {
 </head>
 
 <body>
+<?php
+session_start();
+if (isset($_SESSION['loggedin'])) {
+    require_once '../components/navbar-seller.php';
+}
+    else{
+    require_once '../components/navbar-general.php';
 
+}
+ ?>
     <div class="blog-container">
         <a href="add-blog.php"><button class="button">ADD A POST</button></a>
         <!-- id="btn-add" -->

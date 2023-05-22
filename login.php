@@ -21,14 +21,7 @@
 
 <body>
 
-    <?php
-        if (isset($_SESSION['loggedin'])) {
-    require_once 'components/navbar-seller.php';
-}
-    else{
-    require_once 'components/navbar-general.php';
-}  
-    ?> 
+  <?php require_once 'components/navbar.php' ?>
   <?php
                     if (isset($_GET['fillout'])) { //check if authenticate key exists in URL
                         if ($_GET['fillout'] == "false") { ?>

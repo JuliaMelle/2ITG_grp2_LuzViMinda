@@ -45,7 +45,7 @@ session_start();
 
         .alert {
     padding: 20px;
-    background-color: #f44336;
+    background-color: #04AA6D;
     color: white;
     opacity: 1;
     transition: opacity 0.6s;
@@ -59,7 +59,7 @@ session_start();
     <?php
         $id = $_SESSION['id'];
         $varUserid = $_GET['id'];
-        $to_id = intval($varUserid);
+            $to_id = intval($varUserid);
 
             $sql = "SELECT * FROM `products` WHERE `product_id`=" . $varUserid;
         if ($result = $conn->query($sql)) {
@@ -73,7 +73,7 @@ session_start();
 
         <div class="half-container">
             <form action="../backend/product_image.php" method="post" enctype="multipart/form-data">
-            <input type="hidden" name="product_id" value="<?php echo $varUserid?>">
+            <input type="hidden" name="product_id" value="<?php echo $to_id?>">
             <?php
                     if (isset($_GET['image'])) { //check if authenticate key exists in URL
                         if (isset ($_GET['image']) == "false") { ?>

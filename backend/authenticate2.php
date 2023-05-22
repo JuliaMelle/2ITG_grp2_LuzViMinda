@@ -1,8 +1,7 @@
 <?php
-ob_start();
-session_start();
-session_regenerate_id();
 require_once '../config.php';
+
+session_start();
 
 $username = $_SESSION['username'];
 $password = $_SESSION['password'];
@@ -49,5 +48,3 @@ if ($count > 0) {
 
 //CLOSE DATABASE CONNECTION
 mysqli_close($conn);
-ob_end_flush();
-?>

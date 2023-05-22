@@ -124,7 +124,7 @@ session_start();
 
                
                 <input type="hidden" name="id" value="<?php echo $_GET["product_id"]; ?>" />
-                <button type="submit" class="button" title="submit" id="submit">SAVE CHANGES</button>
+                <button type="submit" class="button" title="submit" id="submit">PUBLISH POST</button>
             </form>
         </div>
     </div>

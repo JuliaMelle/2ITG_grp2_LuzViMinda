@@ -1,12 +1,3 @@
-<?php
-    session_start();
-    if (isset($_SESSION['loggedin'])) {
-        require_once '../components/navbar-seller.php';
-    } else {
-        require_once '../components/navbar-general.php';
-    }
-
-?>
 <!DOCTYPE html>
 <html>
 
@@ -24,6 +15,17 @@
 </head>
 
 <body>
+
+    <?php
+    session_start();
+    if (isset($_SESSION['loggedin'])) {
+        require_once '../components/navbar-seller.php';
+    } else {
+        require_once '../components/navbar-general.php';
+    }
+
+    ?>
+
     <div class="wrapper">
         <div class="wrapper-content">
             <div class="box-header">

@@ -1,6 +1,5 @@
 a {
     text-decoration: none;
-    margin: 5px;
 }
 
 .welcome {
@@ -94,11 +93,13 @@ a {
     align-items: center;
     flex-wrap: wrap;
     flex-direction: row;
+
+
     width: 400px;
     background: var(--black);
     color: var(--white);
     height: 40px;
-    margin: 15px auto;
+    margin-top: 30px;
     border: none;
     border-radius: 0 !important;
     font-size: 16px;
@@ -163,7 +164,8 @@ a {
         color: var(--white);
         height: 40px;
 
-        margin: 15px auto
+        margin-top: 30px;
+        margin-left: 15px;
     }
 .mid_position_buttons
 { 
@@ -188,6 +190,7 @@ a {
     .button {
         font-size: 10px;
         width: 200px;
+        margin-left: 10px;  
     }
         .mid_position_buttons
         { 

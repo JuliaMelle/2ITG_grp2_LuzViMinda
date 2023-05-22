@@ -1,10 +1,13 @@
 <?php
 session_start();
-    if (isset($_SESSION['loggedin'])) {
-        require_once '../components/navbar-seller.php';
-    } else {
-        require_once '../components/navbar-general.php';
+
+if (isset($_SESSION['loggedin'])) {
+    if ($_SESSION['loggedin'] == false) {
+        header('Location: ../login.php?security=false');
     }
+} else {
+    header('Location: ../login.php?security=false');
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -27,6 +30,7 @@ session_start();
 </head>
 
 <body>
+    <?php require_once '../components/navbar-seller.php' ?>
 
     <!-- ITO YUNG PAGE FOR VIEWERS ONLY -->
 
@@ -121,7 +125,7 @@ session_start();
                         if ($result = $conn->query($sql_2)) {
                             if ($result->num_rows > 0) {
                                 while ($row = $result->fetch_array()) {
-                                    if (!empty($row['product_img']) && ((str_contains($row['product_img'], '.jpg') == true) OR (str_contains($row['product_img'], '.png') == true)) && (file_exists('../product_image/' . $row['product_img']) == true)) {
+                                    if (!empty($row['product_img']) && (str_contains($row['product_img'], '.jpg') == true) && (file_exists('../product_image/' . $row['product_img']) == true)) {
                                         echo            '<div class="card">';
                                         echo            '<a href="../general/view_product_specific?id=' . $row['product_id'] . '" class="product-text sub-link">';
                                         echo               '<div class="details-prod">';
@@ -135,7 +139,7 @@ session_start();
                                         echo            '</div>';
                                     }
 
-                                    if (((str_contains($row['product_img'], '.jpg') == false) OR (str_contains($row['product_img'], '.png') == false)) && (file_exists('../product_image/' . $row['product_img']) == false)) {
+                                    if ((str_contains($row['product_img'], '.jpg') !== true) or (file_exists('../product_image/' . $row['product_img']) == false)) {
                                         echo            '<div class="card">';
                                         echo            '<a href="../general/view_product_specific?id=' . $row['product_id'] . '" class="product-text sub-link">';
                                         echo               '<div class="details-prod">';

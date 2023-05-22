@@ -14,10 +14,10 @@ server with default setting (user 'root' with no password) */
 //     die("ERROR: Could not connect. " . $mysqli->connect_error);
 // }
 
-$servername = "fdb1029.awardspace.net";
-$db_username = "4316349_luzviminda"; //xampp default
-$db_password = "Luzviminda123!";  //xampp default
-$database = "4316349_luzviminda"; //name of database
+$servername = "localhost";
+$db_username = "root"; //xampp default
+$db_password = "";  //xampp default
+$database = "luzviminda"; //name of database
 
  // CREATE CONNECTION
  $conn = mysqli_connect($servername, $db_username, $db_password, $database);

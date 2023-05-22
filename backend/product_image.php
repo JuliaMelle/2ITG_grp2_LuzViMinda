@@ -8,7 +8,7 @@
   $imgSize = $_FILES['image'] ['size'];
 
   if ($_FILES["image"]["name"] == ''){
-    //echo "A valid product image must be uploaded.";
+    echo "A valid product image must be uploaded.";
     header('Location: ../seller/product_img.php?image=false');
     exit;
   } 

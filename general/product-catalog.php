@@ -119,7 +119,6 @@ session_start();
                     echo   '<h4 class="head">' . $row['product_name'] . '</h4>';
                     echo '<h5 class="read_more">' . $row['seller_name'] . '</h5>';
                     echo '</div>';
-                    echo '</a>';
                 }
                 echo '</div>';
             } else {
@@ -153,7 +152,6 @@ session_start();
                             echo   '<h4 class="head">' . $row['product_name'] . '</h4>';
                             echo '<h5 class="read_more">' . $row['seller_name'] . '</h5>';
                             echo '</div>';
-                            echo '</a>';
                         }
                         echo '</div>';
                     } else {
@@ -186,7 +184,6 @@ session_start();
                             echo   '<h4 class="head">' . $row['product_name'] . '</h4>';
                             echo '<h5 class="read_more">' . $row['seller_name'] . '</h5>';
                             echo '</div>';
-                            echo '</a>';
                         }
                         echo '</div>';
                     } else {
@@ -221,7 +218,6 @@ session_start();
                     echo   '<h4 class="head">' . $row['product_name'] . '</h4>';
                     echo '<h5 class="read_more">' . $row['seller_name'] . '</h5>';
                     echo '</div>';
-                    echo '</a>';
                 }
             }
         }
