@@ -60,6 +60,36 @@
           }
         }
         ?>
+        
+        <?php
+        if (isset($_GET['email'])) { //check if authenticate key exists in URL
+          if ($_GET['email'] == "false") {
+        ?>
+            <br>
+            <div class="alert">
+              <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+              Invalid<strong style="color:white"> email. Already existing.</strong> Please try again.
+            </div>
+
+        <?php
+          }
+        }
+        ?>
+
+        <?php
+        if (isset($_GET['username'])) { //check if authenticate key exists in URL
+          if ($_GET['username'] == "false") {
+        ?>
+            <br>
+            <div class="alert">
+              <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+              Invalid<strong style="color:white"> username. Already existing.</strong> Please try again.
+            </div>
+
+        <?php
+          }
+        }
+        ?>
 
 
         <div class="card"> <!-- CARD -->
@@ -68,37 +98,37 @@
           <h3 class="register">LOGIN CREDENTIALS</h3>
           <!-- input username -->
           <b>USERNAME</b>
-          <input type="text" class="input" name="username" placeholder="Username" required></input>
+          <input type="text" class="input" name="username" placeholder="Username"></input>
 
           <!-- input password -->
           <b>PASSWORD</b>
-          <input type="password" class="input" name="password" placeholder="Password" required></input>
+          <input type="password" class="input" name="password" placeholder="Password"></input>
           <br>
           <br>
 
           <h3 class="register">BUSINESS INFORMATION</h3>
           <!-- input display name -->
           <b>DISPLAY NAME</b>
-          <input type="displayname" class="input" name="business_name" placeholder="Display Name" required></input>
+          <input type="displayname" class="input" name="business_name" placeholder="Display Name"></input>
 
           <!-- input email -->
           <b>EMAIL</b>
-          <input type="email" class="input" name="email" placeholder="Email" placeholder="Email" required> </input>
+          <input type="email" class="input" name="email" placeholder="Email" placeholder="Email"> </input>
 
           <!-- input address -->
           <b>ADDRESS</b>
-          <input type="address" class="input" name="address" placeholder="Address" required></input>
+          <input type="address" class="input" name="address" placeholder="Address"></input>
 
           <!-- input profile picture -->
           <b>PROFILE PICTURE</b>
           <h5 class="picture">This only accepts .jpeg, .jpg, and .png files.</h5>
-          <input type="file" class="upload-btn" name="image" required></input>
+          <input type="file" class="upload-btn" name="image"></input>
           <br>
 
           <!-- input profile valid ID -->
           <b>VALID ID</b>
           <h5 class="picture">This only accepts .jpeg, .jpg, and .png files.</h5>
-          <input type="file" class="upload-btn" name="image_v2" required></input>
+          <input type="file" class="upload-btn" name="image_v2"></input>
           <br>
 
           <div class="mid_position_buttons">

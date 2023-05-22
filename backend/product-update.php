@@ -14,23 +14,23 @@ if (isset($_POST["id"]) && !empty($_POST["id"])) {
     $category = $_POST["category"];
     $product_name = $_POST["product_name"];
     $product_price = $_POST["product_price"];
-    $product_img = $_POST["product_img"];
+    //$product_img = $_POST["product_img"];
     $product_desc = $_POST["product_desc"];
     
     // Check input errors before inserting in database
-    if (empty($name_err) && empty($price_err) && empty($category_err) && empty($img_err) && empty($desc_err)) {
+    if (empty($name_err) && empty($price_err) && empty($category_err) && empty($desc_err)) {
         // Prepare an update statement
-        $sql = "UPDATE products SET category = ?, product_name = ?, product_price = ?, product_img = ?, product_desc = ? WHERE product_id = ?";
+        $sql = "UPDATE products SET category = ?, product_name = ?, product_price = ?, product_desc = ? WHERE product_id = ?";
 
         if ($stmt = $conn->prepare($sql)) {
             // Bind variables to the prepared statement as parameters
-            $stmt->bind_param("ssiisi", $param_category, $param_name, $param_price, $param_img, $param_desc, $param_id);
+            $stmt->bind_param("ssisi", $param_category, $param_name, $param_price, $param_desc, $param_id);
 
             // Set parameters
             $param_category = $category;
             $param_name = $product_name;
             $param_price = $product_price;
-            $param_img = $product_img;
+            //$param_img = $product_img;
             $param_desc = $product_desc;
             $param_id = $id;
 
@@ -78,7 +78,7 @@ if (isset($_POST["id"]) && !empty($_POST["id"])) {
                     $category = $row["category"];
                     $product_name = $row["product_name"];
                     $product_price = $row["product_price"];
-                    $product_img = $row["product_img"];
+                    //$product_img = $row["product_img"];
                     $product_desc = $row["product_desc"];
                 } else {
                     // URL doesn't contain valid id. Redirect to error page
