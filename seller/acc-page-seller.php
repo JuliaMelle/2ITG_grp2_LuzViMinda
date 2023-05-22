@@ -91,7 +91,7 @@ if (isset($_SESSION['loggedin'])) {
                         <h3 class="identifiers">DISPLAY NAME</h3>
                             <input class="box" value="<?php echo $row['business_name'] ?>" name="business_name"></input>
                             
-                            <h3 class="identifiers">USER NAME</h3>
+                            <h3 class="identifiers">USERNAME</h3>
                             <input class="box" value="<?php echo $row['username'] ?>" name="username"></input>
 
                             <h3 class="identifiers">CHANGE PASSWORD</h3>
