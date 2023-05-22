@@ -24,7 +24,12 @@ session_start();
 
 <body>
     <?php
-        require_once 'components/navbar.php';    
+        if (isset($_SESSION['loggedin'])) {
+    require_once 'components/navbar-seller.php';
+}
+    else{
+    require_once 'components/navbar-general.php';
+}  
     ?> 
 
     <div>
@@ -102,12 +107,16 @@ session_start();
             <!-- MID CONTAINER END -->
         </div>
     </div>
+    
+    <?php
+if (!isset($_SESSION['loggedin'])) {
+    echo '<div class="mid_position_buttons">';
+        echo '<a href="registration_form.php">';
+        echo '<button class="button login">REGISTER HERE</button>';
+        echo '</a>';
+}
 
-    <div class="mid_position_buttons">
-        <a href="registration_form.php">
-        <button class="button login">REGISTER HERE</button>
-        </a>
-
+?>
         <a href="general/learn_more.php">
         <button class="button login">LEARN MORE</button>
         </a>
