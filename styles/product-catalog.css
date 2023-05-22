@@ -110,9 +110,12 @@ a {
 
 img {
   margin-bottom: 10px;
-  height: 150px;
   margin-left: -1px;
+  width: 205px;
+  height: 205px;
+  object-fit: cover;
 }
+
 .input-container {
   width: 220px;
   position: relative;

@@ -53,9 +53,9 @@ a {
 }
 
 .mid_container {
-  width: 100vh;
+  width: 100%;
   height: 83vh;
-  margin-left: 60px;
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;

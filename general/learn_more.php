@@ -15,6 +15,8 @@ session_start();
     <link rel="stylesheet" href="../styles/global.css">
     <link rel="stylesheet" href="../styles/learn_more.css">
 
+    <!-- FAVICON -->
+    <link rel="icon" type="image/x-icon" href="../img/favicon.ico">
     <style>
         h2 {
             font-size: 32px;
@@ -42,7 +44,7 @@ if (isset($_SESSION['loggedin'])) {
                     $resultCheck = mysqli_num_rows($result);
         if ($resultCheck > 0) {
             while ($row = mysqli_fetch_assoc($result)) {  
-        ?> <a href="learn_more_specific?id=<?php echo $row['post_id'] ?>" class="product-text sub-link">
+        ?> <a href="learn_more_specific.php?id=<?php echo $row['post_id'] ?>" class="product-text sub-link">
             <div class="card"> <!-- CARD -->
                 <div class="capsule">
                     <p class="capsule_caption"> BLOG</p>
@@ -55,6 +57,7 @@ if (isset($_SESSION['loggedin'])) {
                 // echo  $row['content'];
                 
                 $sentence=$row['content'];
+
                 if(strlen($sentence) >= 100) {
                     echo substr($sentence,0,99)."...";
                 } else {

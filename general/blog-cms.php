@@ -22,6 +22,9 @@ if (isset($_SESSION['loggedin'])) {
 
     <script src="https://kit.fontawesome.com/b1d36f5527.js" crossorigin="anonymous"></script>
     <title>LuzViMinda | Blog Management</title>
+
+    <!-- FAVICON -->
+    <link rel="icon" type="image/x-icon" href="../img/favicon.ico">
 </head>
 
 <body>

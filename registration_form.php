@@ -18,6 +18,9 @@
   <link rel="stylesheet" href="styles/navbar.css">
   <link rel="stylesheet" href="styles/footer.css">
 
+  <!-- FAVICON -->
+  <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+
 </head>
 
 <body>
@@ -132,20 +135,7 @@
             <button type="submit" name="Submit" class="button login" onclick="validateForm()">SIGN UP</button>
           </div>
       </form>
-      <?php
-      if (isset($_GET['authenticate'])) { //check if authenticate key exists in URL
-        if ($_GET['authenticate'] == "false") {
-      ?>
-          <br>
-          <div class="alert">
-            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-            <strong style="color:white">Invalid</strong> Please try again
-          </div>
 
-      <?php
-        }
-      }
-      ?>
     </div>
 
   </div>
