@@ -14,6 +14,10 @@ session_start();
 
     <link rel="stylesheet" href="../styles/global.css">
     <link rel="stylesheet" href="../styles/learn_more_specific.css">
+
+    <!-- FAVICON -->
+    <link rel="icon" type="image/x-icon" href="../img/favicon.ico">
+
     <script src="https://kit.fontawesome.com/96362859e2.js" crossorigin="anonymous"></script>
     <style>
         h2 {
@@ -49,14 +53,19 @@ session_start();
                             <div class="capsule">
                                 <p class="capsule_caption"> BLOG</p>
                             </div>
-                            <div class="close-btn"> <a href="learn_more.php"> <i class="fa-solid fa-xmark" style="color: #000000;"></i> </a></div>
                         </div>
 
                         <h4 class="head">
                             <?php echo   $row['title'] ?>
                         </h4>
+                        <div class="cspecific">
                         <?php echo   $row['content'] ?>
-
+                        </div>
+                        <div class="bright">
+                        <a href="learn_more.php">
+                        <button class="button">BACK</button>
+                        </a>
+                        </div>
                     </div>
 
             <?php

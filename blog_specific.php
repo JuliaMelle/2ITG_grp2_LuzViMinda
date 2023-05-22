@@ -12,6 +12,9 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LuzViMinda | Learn More</title>
 
+    <!-- FAVICON -->
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+
     <link rel="stylesheet" href="styles/global.css">
     <link rel="stylesheet" href="styles/learn_more_specific.css">
     <script src="https://kit.fontawesome.com/96362859e2.js" crossorigin="anonymous"></script>

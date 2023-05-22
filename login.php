@@ -14,7 +14,8 @@
   <link rel="stylesheet" href="styles/footer.css">
 
   <link rel="stylesheet" href="styles/navbar.css">
-    <link rel="stylesheet" href="styles/footer.css">
+  <link rel="stylesheet" href="styles/footer.css">
+  <link rel="icon" type="image/x-icon" href="img/favicon.ico">
 
 </head>
 
