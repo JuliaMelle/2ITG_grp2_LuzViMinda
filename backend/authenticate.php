@@ -1,7 +1,12 @@
 <?php
+ob_start();
 session_start();
 $password_current=md5($_POST['password']);
 // Change this to your connection info.
+// $DATABASE_HOST = 'fdb1029.awardspace.net';
+// $DATABASE_USER = '4316349_luzviminda';
+// $DATABASE_PASS = 'Luzviminda123!';
+// $DATABASE_NAME = '4316349_luzviminda';
 $DATABASE_HOST = 'localhost';
 $DATABASE_USER = 'root';
 $DATABASE_PASS = '';
@@ -58,7 +63,7 @@ if ($stmt = $con->prepare('SELECT user_id, password FROM users WHERE username = 
 
 	$stmt->close();
 }
-
+ob_end_flush();
 
 ?>
 

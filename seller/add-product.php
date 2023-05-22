@@ -1,6 +1,6 @@
 <?php
-require_once '../config.php';
 session_start();
+require_once '../config.php';
 
 if (isset($_SESSION['loggedin'])) {
   if ($_SESSION['loggedin'] == false) {
@@ -136,8 +136,8 @@ if (isset($_SESSION['loggedin'])) {
   ?>
 
   <?php
-  if (isset($_GET['image'])) { //check if authenticate key exists in URL
-    if ($_GET['image'] == "false") { ?>
+  if (isset($_GET['imagefile'])) { //check if authenticate key exists in URL
+    if ($_GET['imagefile'] == "false") { ?>
 
       <br>
       <div class="alert alert-danger" role="alert">
@@ -168,6 +168,24 @@ if (isset($_SESSION['loggedin'])) {
     }
   
   ?>
+  
+<?php
+  if (isset($_GET['fields'])) {
+
+   //check if authenticate key exists in URL
+    if ($_GET['fields'] == "false") { ?>
+
+      <br>
+      <div class="alert alert-danger" role="alert">
+
+        <span class="closebtn">&times;</span>
+        Please fill out all information needed.
+      </div>
+    <?php
+    }
+  }
+    ?>
+
 
   <div class="wrapper">
     <div class="wrapper-content">

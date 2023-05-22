@@ -8,7 +8,7 @@
   $imgSize = $_FILES['image'] ['size'];
 
   if ($_FILES["image"]["name"] == ''){
-    echo "A valid profile picture must be uploaded.";
+    //echo "A valid profile picture must be uploaded.";
     header('Location: ../seller/change_profile.php?image=false');
     exit;
   } 

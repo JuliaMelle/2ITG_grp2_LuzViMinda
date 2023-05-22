@@ -1,5 +1,6 @@
-    <?php
+<?php
 session_start();
+if (isset($_POST['Submit'])) {
     //1. Setup Database connection
     require_once '../config.php';
     $upload_dir = '../user_identification/';
@@ -57,62 +58,54 @@ session_start();
         $errorMsg = 'Please select a valid image';
     }
 
-    if(empty($business_name)){
-        $errorMsg ='Please input your Display name';
-        header('Location: ../registration_form.php?authenticate=false');
-      } else if(empty($username)){
-        $errorMsg ='Please input your username';
-        header('Location: ../registration_form.php?authenticate=false');
-      }
-     else if(empty($email)){
-        $errorMsg ='Please input your email';
-        header('Location: ../registration_form.php?authenticate=false');
-      }
-      else if(empty($password)){
-        $errorMsg ='Please input your password';
-        header('Location: ../registration_form.php?authenticate=false');
-      }
-      else if(empty($address)){
-        $errorMsg ='Please input your address';
-        header('Location: ../registration_form.php?authenticate=false');
-      }
 
-    //2. Insert SQL
-    else {
-    $sql = "  INSERT INTO 
-    `users`
-    (`business_name`, `username`, `email`, `password`, `address`, `profile_img`, `valid_id_img`) 
-    VALUES (
-        '" . $business_name . "',
-        '" . $username . "',
-        '" . $email . "',
-        '" . $password . "',
-        '" . $address . "',
-        '" . $userPic . "',
-        '" . $userPic2 . "'
-        )";
 
-   
+    $sql3 = "SELECT * FROM users";
+    if ($result = $conn->query($sql3)) {
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_array()) {
+                if (empty($business_name) or empty($username) or empty($email) or empty($password) or empty($address)) {
+                    $errorMsg = 'There is a missing input. Cannot complete registration. Please try again.';
+                    header('Location: ../registration_form.php?authenticate=false');
+                }
+                if (($username == $row['username'])) {
+                    header('Location: ../registration_form.php?username=false');
+                }
+                if (($email == $row['email'])) {
+                    header('Location: ../registration_form.php?email=false');
+                }
+                if (($username == $row['username']) and ($email == $row['email'])) {
+                    header('Location: ../registration_form.php?useremail=false');
+                }
+                if (($username !== $row['username'] or $email !== $row['email']) and ($username == $row['username']) and ($email == $row['email'])) {
+                    $sql = "INSERT INTO `users`
+                (`business_name`, `username`, `email`, `password`, `address`, `profile_img`, `valid_id_img`) 
+                VALUES (
+                    '" . $business_name . "',
+                    '" . $username . "',
+                    '" . $email . "',
+                    '" . $password . "',
+                    '" . $address . "',
+                    '" . $userPic . "',
+                    '" . $userPic2 . "'
+                    )";
 
-    //3. Execute SQL
-    if (mysqli_query($conn, $sql)) {
-     //user found
-  
-     $_SESSION['loggedin'] = TRUE;
-     $_SESSION['username'] = $username;
-     $_SESSION['password'] = $password;
+                    //3. Execute SQL
+                    if (mysqli_query($conn, $sql)) {
+                        $_SESSION['loggedin'] = TRUE;
+                        $_SESSION['username'] = $username;
+                        $_SESSION['password'] = $password;
 
-    header('Location:authenticate2.php');
-    } else {
-        mysqli_error($conn);
-        header('Location: ../registration_form?authenticate=false');
+                        header('Location:authenticate2.php');
+                    } else {
+                        mysqli_error($conn);
+                        header('Location: ../registration_form?authenticate=false');
+                    }
+
+                    mysqli_close($conn);
+                }
+            }
+        }
     }
-
-    //.4 Closing Database Connection
-    mysqli_close($conn);
-    }
-
-
-
-
-    ?>
+}
+?>

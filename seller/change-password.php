@@ -81,9 +81,9 @@ if (isset($_SESSION['loggedin'])) {
                     if (isset($_GET['wrongpassword'])) { //check if authenticate key exists in URL
                         if ($_GET['wrongpassword'] == "true") { ?>
 
-                        <div class="alert warning">
+                        <div class="alert alert-danger">
                         <span class="closebtn">&times;</span>  
-                        <strong>Incorrect Password</strong> 
+                        Incorrect Password
                         </div>
                     <?php
                         }
@@ -104,16 +104,16 @@ if (isset($_SESSION['loggedin'])) {
                     ?>
 
                     <label for="cur_password" class="titles">Current Password:</label>
-                    <input class="wrapper" type="password" id="cur_password" name="cur_password" require>
+                    <input class="wrapper" type="password" id="cur_password" name="cur_password">
 
                     <label for="password1" class="titles">New Password:</label>
-                    <input class="wrapper" type="password" id="password1" name="password1" require>
+                    <input class="wrapper" type="password" id="password1" name="password1">
 
                     <label for="password2" class="titles">Confirm New Password:</label>
-                    <input class="wrapper" type="password" id="password2" name="password2"require>
+                    <input class="wrapper" type="password" id="password2" name="password2">
 
                   
-                        <button type="submit" class="btn-circle btn-center" name="updatepassword" onClick="window.location.reload();">Save Password</button>
+                    <button type="submit" class="btn-circle btn-center" name="updatepassword" onClick="window.location.reload();">Save Password</button>
                     
             
             </form>
